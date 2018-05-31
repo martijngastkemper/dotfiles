@@ -89,6 +89,7 @@ fi
 # Example aliases
 #alias zshconfig="$EDITOR ~/.zshrc.local"
 #alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+alias e="$EDITOR"
 
 # When .zshrc.local exists load it so device specific settings can be loaded
 if [ -f ~/.zshrc.local ]; then
