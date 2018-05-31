@@ -73,7 +73,13 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
+
+if [ -f $SSH_KEY_APTH ]; then
+    ssh-add -K $SSH_KEY_PATH > /dev/null 2>&1
+else
+    echo "Add private and public key to $SSH_KEY_PATH and $SSH_KEY_PATH.pub"
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -81,10 +87,10 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="$EDITOR ~/.zshrc.local"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+#alias zshconfig="$EDITOR ~/.zshrc.local"
+#alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 
 # When .zshrc.local exists load it so device specific settings can be loaded
 if [ -f ~/.zshrc.local ]; then
-	source ~/.zshrc.local
+    source ~/.zshrc.local
 fi
