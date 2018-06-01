@@ -2,7 +2,7 @@
 
 My workspace!
 
-Inspired by https://github.com/harmenjanssen/dotfiles and https://github.com/mathiasbynens/dotfiles
+Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles) and [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 
 ## Install
 
