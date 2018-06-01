@@ -2,7 +2,7 @@
 
 My workspace!
 
-Inspired by [https://github.com/harmenjanssen/dotfiles] and [https://github.com/mathiasbynens/dotfiles]
+Inspired by https://github.com/harmenjanssen/dotfiles and https://github.com/mathiasbynens/dotfiles
 
 ## Install
 
@@ -14,4 +14,4 @@ Inspired by [https://github.com/harmenjanssen/dotfiles] and [https://github.com/
 
 To load settings to Zsh which aren't global add them to:
 
-    touch ~/.zshrc.local
+    vim ~/.zshrc.local
