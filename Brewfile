@@ -1,5 +1,5 @@
+tap "eugenmayer/dockersync"
 tap "homebrew/core"
-tap "homebrew/php"
 tap "homebrew/cask"
 tap "homebrew/bundle"
 brew "composer"
@@ -9,9 +9,11 @@ brew "node", link: false
 brew "node@8", link: true
 brew "php"
 brew "ruby"
+brew "unison"
 brew "vim"
 brew "wget"
 brew "yarn"
+brew "eugenmayer/dockersync/unox"
 cask "1password"
 cask "docker"
 cask "google-chrome"
