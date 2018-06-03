@@ -10,6 +10,16 @@ Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles) 
     cd ~/.dotfiles
     node install.js
 
+## Vundle 
+
+My Vim setup uses Vundle, so grab that separately:
+
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+And run `:VundleInstall` from Vim.
+
 ## Install Brew dependencies
 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
