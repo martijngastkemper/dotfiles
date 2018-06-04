@@ -64,10 +64,6 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Prevent Git from guessing email and name
-git config --global user.name "Martijn Gastkemper"
-git config --global user.useConfigOnly true
-
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
