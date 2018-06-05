@@ -22,7 +22,7 @@ function iterate(files, index, overwrite) {
   const file = files[index];
   if (undefined === file) {
     console.log("\nDone ☕️");
-    console.log("Run osx_config.sh to configure OSX");
+    console.log("Run macos_config.sh to configure MacOS");
     process.exit(0);
   }
   const target = process.env["HOME"] + "/." + file;
