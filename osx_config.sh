@@ -17,6 +17,13 @@ defaults write com.apple.dock persistent-apps -array
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# #################################################################################
+# Trackpad
+# #################################################################################
+
+# Increase tracking speed
+defaults write -g com.apple.trackpad.scaling 2
+
 for app in "Dock"; do
     killall "${app}" > /dev/null 2>&1
 done
