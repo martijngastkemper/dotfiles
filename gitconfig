@@ -9,8 +9,15 @@
 
 [alias]
 
+    # Create a feature branch
     feature = "!f() { git checkout -b 'feature/'$(git config user.name | cut -d' ' -f1 | awk '{print tolower($0)}')'-'$1; }; f"
+
+    # Create a hotfix branch
     hotfix = "!f() { [ x$# != x2 ]&&echo "Two arguments required!" >&2 || git checkout -b 'hotfix/'$(git config user.name | cut -d' ' -f1 | awk '{print tolower($0)}')'-'$1 $2; }; f"
 
+    # Interactive rebase from local branch eg. git rbi master
+    rbi = !sh -c \"git rebase -i `git merge-base $1 HEAD`\" -
+
 [rebase]
+
     autosquash = true
