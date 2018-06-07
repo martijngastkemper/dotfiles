@@ -24,7 +24,17 @@ defaults write com.apple.dock autohide -bool true
 # Increase tracking speed
 defaults write -g com.apple.trackpad.scaling 2
 
-for app in "Dock"; do
+# #################################################################################
+# iTerm2
+# #################################################################################
+
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string ~/.dotfiles/iterm2
+
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+for app in "Dock" "iTerm2"; do
     killall "${app}" > /dev/null 2>&1
 done
 
