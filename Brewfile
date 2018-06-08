@@ -5,8 +5,7 @@ tap "homebrew/bundle"
 brew "composer"
 brew "git"
 brew "mysql", restart_service: true
-brew "node", link: false
-brew "node@8", link: true
+brew "node@8"
 brew "php"
 brew "ruby"
 brew "unison"
