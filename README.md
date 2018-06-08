@@ -8,6 +8,7 @@ Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles) 
 
     git clone git://github.com/martijngastkemper/dotfiles ~/.dotfiles
     cd ~/.dotfiles
+    brew install node
     node install.js
 
 ## Vundle 
