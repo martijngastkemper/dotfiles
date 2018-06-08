@@ -1,12 +1,13 @@
 "use strict";
 const EXCLUDED_FILES = [
   ".DS_Store",
-  "README.md",
-  ".gitignore",
   ".git",
+  ".gitignore",
+  "Brewfile",
   "install.js",
-  "osx_config.sh",
-  "Brewfile"
+  "iterm2",
+  "macos_config.sh",
+  "README.md",
 ];
 const fs = require("fs");
 const readline = require("readline");
