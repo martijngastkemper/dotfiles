@@ -4,11 +4,12 @@ My workspace!
 
 Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles) and [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 
-## Install dotfiles
+## Install dotfiles and Brew
 
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     git clone git://github.com/martijngastkemper/dotfiles ~/.dotfiles
     cd ~/.dotfiles
-    brew install node
+    brew bundle install
     node install.js
 
 ## Vundle 
@@ -20,11 +21,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 And run `:VundleInstall` from Vim.
-
-## Install Brew dependencies
-
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew bundle install
 
 ## Override Zsh settings
 
