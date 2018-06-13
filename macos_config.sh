@@ -41,7 +41,15 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string ~/.dotfiles
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
-for app in "Dock" "iTerm2" "SystemUIServer"; do
+apps="Dock SystemUIServer"
+
+if [ "$TERM_PROGRAM" == 'iTerm.app' ]; then
+    echo "iTerm profile has been changes, restart iTerm"
+else
+    apps="$apps iTerm2"
+fi
+
+for app in $apps; do
     killall "${app}" > /dev/null 2>&1
 done
 
