@@ -9,7 +9,6 @@ antigen bundle arialdomartini/oh-my-git
 antigen bundle composer
 antigen bundle docker
 antigen bundle git
-antigen bundle osx
 antigen bundle symfony2
 antigen bundle yarn
 antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
