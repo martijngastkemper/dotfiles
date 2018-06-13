@@ -25,6 +25,13 @@ defaults write com.apple.dock autohide -bool true
 defaults write -g com.apple.trackpad.scaling 2
 
 # #################################################################################
+# Date/time
+# #################################################################################
+
+# Change date time appearance in menu bar
+defaults write com.apple.menuextra.clock DateFormat "d MMM  HH:mm:ss"
+
+# #################################################################################
 # iTerm2
 # #################################################################################
 
@@ -34,7 +41,7 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string ~/.dotfiles
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
-for app in "Dock" "iTerm2"; do
+for app in "Dock" "iTerm2" "SystemUIServer"; do
     killall "${app}" > /dev/null 2>&1
 done
 
