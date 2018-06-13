@@ -1,13 +1,20 @@
 # Add sbin for Composer
 export PATH="/usr/local/sbin:$PATH"
 
-# Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+# Activate Antigen - ZSH plugin manager
+source /usr/local/share/antigen/antigen.zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+antigen use oh-my-zsh
+antigen bundle arialdomartini/oh-my-git
+antigen bundle composer
+antigen bundle docker
+antigen bundle git
+antigen bundle osx
+antigen bundle symfony2
+antigen bundle yarn
+antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
+
+antigen apply
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -43,17 +50,6 @@ ZSH_THEME="robbyrussell"
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(brew composer docker git osx symfony2 yarn)
-
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
