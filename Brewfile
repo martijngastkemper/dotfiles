@@ -6,6 +6,7 @@ tap "homebrew/bundle"
 brew "antigen"
 brew "composer"
 brew "git"
+brew "inetutils"
 brew "mysql", restart_service: true
 brew "node@8"
 brew "php"
