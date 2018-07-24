@@ -25,6 +25,14 @@ defaults write com.apple.dock autohide -bool true
 defaults write -g com.apple.trackpad.scaling 2
 
 # #################################################################################
+# Keyboard 
+# #################################################################################
+
+# Increase cursor speed
+defaults write -g KeyRepeat 2
+defaults write -g InitialKeyRepeat 15
+
+# #################################################################################
 # Date/time
 # #################################################################################
 
