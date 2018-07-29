@@ -11,6 +11,7 @@ brew "mysql", restart_service: true
 brew "node@8"
 brew "php"
 brew "ruby"
+brew "tree"
 brew "unison"
 brew "vim"
 brew "wget"
