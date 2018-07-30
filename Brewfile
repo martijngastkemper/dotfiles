@@ -11,6 +11,7 @@ brew "mysql", restart_service: true
 brew "node@8", link: true
 brew "php@7.1"
 brew "ruby"
+brew "sqlite"
 brew "tree"
 brew "unison"
 brew "vim"
