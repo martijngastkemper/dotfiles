@@ -8,14 +8,14 @@ brew "composer"
 brew "git"
 brew "inetutils"
 brew "mysql", restart_service: true
-brew "node@8"
-brew "php"
+brew "node@8", link: true
+brew "php@7.1"
 brew "ruby"
 brew "tree"
 brew "unison"
 brew "vim"
 brew "wget"
-brew "yarn"
+brew "yarn", args: ["without-node"]
 brew "eugenmayer/dockersync/unox"
 brew "zsh"
 cask "1password"
