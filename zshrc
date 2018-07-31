@@ -8,8 +8,8 @@ antigen use oh-my-zsh
 antigen bundle arialdomartini/oh-my-git
 antigen bundle composer
 antigen bundle docker
+antigen bundle docker-compose
 antigen bundle git
-antigen bundle symfony2
 antigen bundle yarn
 antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
 
