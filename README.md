@@ -11,6 +11,8 @@ Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles) 
     cd ~/.dotfiles
     brew bundle install
     node install.js
+    echo $(which zsh) | sudo tee -a /etc/shells > /dev/null
+    chsh -s $(which zsh)
 
 ## Vundle 
 
