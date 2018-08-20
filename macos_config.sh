@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Close System Preferences
+osascript -e 'tell application "System Preferences" to quit'
+
+# Become root
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # #################################################################################
 # General UI/UX
 # #################################################################################
@@ -31,15 +38,15 @@ defaults write com.apple.dock autohide -bool true
 # #################################################################################
 
 # Increase tracking speed
-defaults write -g com.apple.trackpad.scaling 2
+defaults write NSGlobalDomain com.apple.trackpad.scaling -int 3
 
 # #################################################################################
 # Keyboard 
 # #################################################################################
 
 # Increase cursor speed
-defaults write -g KeyRepeat 2
-defaults write -g InitialKeyRepeat 15
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # #################################################################################
 # Date/time
@@ -70,3 +77,4 @@ for app in $apps; do
     killall "${app}" > /dev/null 2>&1
 done
 
+echo "Logout and login to apply all changes!"
