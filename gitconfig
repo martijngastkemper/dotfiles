@@ -25,3 +25,5 @@
 
     autosquash = true
     abbreviateCommands = true
+[core]
+	excludesfile = /Users/martijn/.gitignore_global
