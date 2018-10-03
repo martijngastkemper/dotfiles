@@ -10,7 +10,7 @@
 [alias]
 
     # Locally exclude file without adding it to .gitignore
-    exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
+    exclude = !sh -c 'mkdir -p .git/info && echo "$1" >> .git/info/exclude' -
 
     # Create a feature branch
     feature = "!f() { git checkout -b 'feature/'$(git config user.name | cut -d' ' -f1 | awk '{print tolower($0)}')'-'$1; }; f"
@@ -25,5 +25,7 @@
 
     autosquash = true
     abbreviateCommands = true
+
 [core]
-	excludesfile = /Users/martijn/.gitignore_global
+
+    excludesfile = ~/.gitignore_global
