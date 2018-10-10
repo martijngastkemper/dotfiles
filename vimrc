@@ -32,6 +32,21 @@
 
 " }}}}
 
+" Mappings {{{{
+    let mapleader = ","
+
+    " For when you forget to sudo.. Really Write the file.
+    cmap w!! w !sudo tee % >/dev/null
+
+" }}}}
+
+" Misc {{{{
+
+    " no swap files
+    set noswapfile
+
+" }}}}
+
 " ctrlp.vim {{{{
 
     " Ignore some files and folders
@@ -41,5 +56,7 @@
     " Use ctrlp-py-matcher for improved performance 
     let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
-" }}}}
+    " leader key + j to open CtrlP in buffer mode
+    noremap <leader>j :CtrlPBuffer<CR>
 
+" }}}}
