@@ -12,6 +12,7 @@
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'FelikZ/ctrlp-py-matcher'
     Plugin 'StanAngeloff/php.vim'
+    Plugin 'lumiliet/vim-twig'
     
     call vundle#end()
     filetype plugin indent on
