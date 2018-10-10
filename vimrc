@@ -11,6 +11,9 @@
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'StanAngeloff/php.vim'
+    
+    call vundle#end()            " required
+    filetype plugin indent on    " required
 
 " }}}}
 
