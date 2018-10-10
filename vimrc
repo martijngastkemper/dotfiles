@@ -30,3 +30,14 @@
     set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " }}}}
+
+" ctrlp.vim {{{{
+
+    " improve performance of listings by ignoring some regular files
+    set wildignore+=*.o,*.obj,*.jpg,*.jpeg,*.png,*.gif,*.ser,.git,.idea
+
+    " ignore some project folders
+    set wildignore+=vendor,node_modules,public/js/build/prod/* 
+
+" }}}}
+
