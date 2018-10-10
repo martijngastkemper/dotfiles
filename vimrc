@@ -10,10 +10,11 @@
     " let Vundle manage Vundle, required
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'ctrlpvim/ctrlp.vim'
+    Plugin 'FelikZ/ctrlp-py-matcher'
     Plugin 'StanAngeloff/php.vim'
     
-    call vundle#end()            " required
-    filetype plugin indent on    " required
+    call vundle#end()
+    filetype plugin indent on
 
 " }}}}
 
@@ -33,11 +34,12 @@
 
 " ctrlp.vim {{{{
 
-    " improve performance of listings by ignoring some regular files
+    " Ignore some files and folders
     set wildignore+=*.o,*.obj,*.jpg,*.jpeg,*.png,*.gif,*.ser,.git,.idea
-
-    " ignore some project folders
     set wildignore+=vendor,node_modules,public/js/build/prod/* 
+
+    " Use ctrlp-py-matcher for improved performance 
+    let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " }}}}
 
