@@ -1,6 +1,9 @@
 # Add sbin for Composer
 export PATH="/usr/local/sbin:$PATH"
 
+# Make Node 8 available
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+
 # Activate Antigen - ZSH plugin manager
 source /usr/local/share/antigen/antigen.zsh
 
