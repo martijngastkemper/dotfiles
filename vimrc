@@ -27,6 +27,11 @@
     " show linenumbers
     set number
 
+    " status line
+    set statusline=%f\ %y\ %m\ %r\ Line:\ %l/%L\ Col:\ %c\ Buf:\ #%n
+    set laststatus=2
+    set showcmd
+
 " }}}}
 
 " Formatting {{{{
