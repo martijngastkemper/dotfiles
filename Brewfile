@@ -19,6 +19,7 @@ brew "wget"
 brew "yarn", args: ["without-node"]
 brew "eugenmayer/dockersync/unox"
 brew "zsh"
+brew "htop"
 cask "1password"
 cask "font-awesome-terminal-fonts"
 cask "docker"
