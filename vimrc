@@ -39,6 +39,10 @@
     " For when you forget to sudo.. Really Write the file.
     cmap w!! w !sudo tee % >/dev/null
 
+    " quick access to $MYVIMRC
+    nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+    nnoremap <leader>sv :source $MYVIMRC<cr>
+
 " }}}}
 
 " Misc {{{{
