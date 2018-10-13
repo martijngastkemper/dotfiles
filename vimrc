@@ -24,6 +24,9 @@
     " Enable syntax highlighting
     syntax on
 
+    " show linenumbers
+    set number
+
 " }}}}
 
 " Formatting {{{{
