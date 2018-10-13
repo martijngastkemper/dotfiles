@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# The following is based on https://gist.github.com/sindresorhus/7996717
+changed_files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+
+check_run() {
+    echo "$changed_files" | grep --quiet "$1"
+    if [ $? -eq 0 ]
+    then
+        echo ""
+        echo " 👉  $1 changed! You may want to $2!"
+    fi
+}
+
+check_run package.json "yarn install"
+check_run composer.lock "composer install"
+check_run bower.json "bower install"
+check_run env.template "update your environment variables"
+check_run docker-compose.*yml "rebuild Docker images"
