@@ -13,6 +13,7 @@ antigen bundle composer
 antigen bundle docker
 antigen bundle docker-compose
 antigen bundle git
+antigen bundle pj
 antigen bundle yarn
 antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
 
@@ -80,6 +81,9 @@ fi
 #alias zshconfig="$EDITOR ~/.zshrc.local"
 #alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias e="$EDITOR"
+
+# Configure pj (project jump) plugin
+export PROJECT_PATHS=(~/Sites)
 
 # When .zshrc.local exists load it so device specific settings can be loaded
 if [ -f ~/.zshrc.local ]; then
