@@ -25,7 +25,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSFontPanelAttributes</key>
-	<string>1, 0</string>
+	<string>1, 8</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Documents</string>
 	<key>NSNavLastUserSetHideExtensionButtonState</key>
@@ -77,15 +77,17 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>198 448 770 429 0 0 1440 900 </string>
+	<string>198 454 918 423 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 877 0 0 1440 900 </string>
+	<string>0 450 570 427 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>645 300 570 427 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
+			<true/>
+			<key>ASCII Ligatures</key>
 			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
@@ -652,7 +654,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro+Powerline+AwesomeRegular 12</string>
+			<string>SourceCodePro+Powerline+AwesomeRegular 10</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -787,7 +789,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-11T11:50:06Z</date>
+	<date>2018-10-18T14:40:40Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
