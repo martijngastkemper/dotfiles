@@ -13,6 +13,7 @@
     Plugin 'FelikZ/ctrlp-py-matcher'
     Plugin 'StanAngeloff/php.vim'
     Plugin 'lumiliet/vim-twig'
+    Plugin 'dkarter/bullets.vim'
     
     call vundle#end()
     filetype plugin indent on
@@ -71,5 +72,16 @@
 
     " leader key + j to open CtrlP in buffer mode
     noremap <leader>j :CtrlPBuffer<CR>
+
+" }}}}
+
+" Bullets.vim {{{{
+
+    let g:bullets_enabled_file_types = [
+        \ 'markdown',
+        \ 'text',
+        \ 'gitcommit',
+        \ 'scratch'
+        \]
 
 " }}}}
