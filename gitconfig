@@ -21,6 +21,10 @@
     # Interactive rebase from local branch eg. git rbi master
     rbi = !sh -c \"git rebase -i `git merge-base $1 HEAD`\" -
 
+    # Delete branch, it will use `-D` (force) if the other branch does not contain commits that are not in the current branch. Otherwise it will use `-d
+    # Credits: https://github.com/harmenjanssen/dotfiles
+    delete = "!f() { if [ $(git log --left-right --oneline --cherry-pick $1... | sed -n -e '/^</p' | wc -l) -gt 0 ]; then git branch -d $1; else git branch -D $1; fi }; f"
+
 [rebase]
 
     autosquash = true
