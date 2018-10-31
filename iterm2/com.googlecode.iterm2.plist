@@ -73,11 +73,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>698 257 552 388 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 363 620 392 0 0 1440 877 </string>
+	<string>410 381 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>198 454 918 423 0 0 1440 900 </string>
+	<string>91 1522 916 423 -255 900 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 450 570 427 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -654,7 +654,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro+Powerline+AwesomeRegular 10</string>
+			<string>SourceCodePro+Powerline+AwesomeRegular 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -719,6 +719,8 @@
 			<string>/Users/martijn</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveRequestedFullDiskAccess</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -789,7 +791,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-18T14:40:40Z</date>
+	<date>2018-10-27T10:08:43Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -811,6 +813,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.3</string>
+	<string>3.2.4</string>
 </dict>
 </plist>
