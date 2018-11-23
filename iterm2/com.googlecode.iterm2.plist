@@ -14,6 +14,8 @@
 	<string>D06D36E3-D3E9-4B8B-84F2-5E0ADEECF402</string>
 	<key>HideActivityIndicator</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<false/>
 	<key>HideTab</key>
 	<true/>
 	<key>HideTabCloseButton</key>
@@ -73,13 +75,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>698 257 552 388 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 381 620 392 0 0 1440 900 </string>
+	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>91 1522 916 423 -255 900 1920 1080 </string>
+	<string>198 391 796 486 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 450 570 427 0 0 1440 900 </string>
+	<string>0 0 1440 878 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>645 300 570 427 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -791,11 +793,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-27T10:08:43Z</date>
+	<date>2018-11-23T08:40:46Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
@@ -808,11 +810,13 @@
 	<integer>0</integer>
 	<key>Use background pattern indicator</key>
 	<true/>
+	<key>UseLionStyleFullscreen</key>
+	<true/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.4</string>
+	<string>3.2.5</string>
 </dict>
 </plist>
