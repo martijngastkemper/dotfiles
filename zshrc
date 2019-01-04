@@ -76,11 +76,11 @@ fi
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-#alias zshconfig="$EDITOR ~/.zshrc.local"
-#alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+
 alias e="$EDITOR"
+alias zshconfig="$EDITOR ~/.zshrc.local"
+alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+alias fixup='git commit --fixup `git rev-parse HEAD`'
 
 # Configure pj (project jump) plugin
 export PROJECT_PATHS=(~/Sites)

@@ -30,10 +30,6 @@
 #############
 .idea
 
-# Docker #
-##########
-docker-compose.override.yml
-
 # OS generated files #
 ######################
 .DS_Store
