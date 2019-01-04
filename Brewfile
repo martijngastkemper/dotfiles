@@ -9,6 +9,7 @@ brew "composer"
 brew "git"
 brew "inetutils"
 brew "node@8", link: true
+brew "mysql@5.7", link: true
 brew "php@7.1"
 brew "ruby"
 brew "sqlite"
