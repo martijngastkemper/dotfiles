@@ -1,3 +1,6 @@
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Add sbin for Composer
 export PATH="/usr/local/sbin:$PATH"
 
