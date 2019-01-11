@@ -83,7 +83,10 @@ fi
 alias e="$EDITOR"
 alias zshconfig="$EDITOR ~/.zshrc.local"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
-alias fixup='git commit --fixup `git rev-parse HEAD`'
+
+function fixup () {
+    git commit --fixup=${1:-`git rev-parse HEAD`}
+}
 
 # Configure pj (project jump) plugin
 export PROJECT_PATHS=(~/Sites)
