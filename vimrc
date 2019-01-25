@@ -27,6 +27,7 @@
 
     " show linenumbers
     set number
+    set relativenumber
 
     " status line
     set statusline=%f\ %y\ %m\ %r\ Line:\ %l/%L\ Col:\ %c\ Buf:\ #%n
