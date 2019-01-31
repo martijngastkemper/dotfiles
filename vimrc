@@ -10,10 +10,12 @@
     " let Vundle manage Vundle, required
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'FelikZ/ctrlp-py-matcher'
-    Plugin 'StanAngeloff/php.vim'
-    Plugin 'lumiliet/vim-twig'
     Plugin 'dkarter/bullets.vim'
+    Plugin 'FelikZ/ctrlp-py-matcher'
+    Plugin 'lumiliet/vim-twig'
+    Plugin 'sahibalejandro/vim-php'
+    Plugin 'shawncplus/phpcomplete.vim'
+    Plugin 'StanAngeloff/php.vim'
     
     call vundle#end()
     filetype plugin indent on
