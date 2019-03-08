@@ -1,4 +1,3 @@
-tap "eugenmayer/dockersync"
 tap "homebrew/core"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -13,11 +12,11 @@ brew "mysql@5.7", link: true
 brew "php@7.1"
 brew "ruby"
 brew "sqlite"
+brew "travis"
 brew "tree"
 brew "vim"
 brew "wget"
 brew "yarn", args: ["without-node"]
-brew "eugenmayer/dockersync/unox"
 brew "zsh"
 brew "htop"
 cask "1password"
