@@ -9,6 +9,7 @@
 
     " let Vundle manage Vundle, required
     Plugin 'VundleVim/Vundle.vim'
+    Plugin 'airblade/vim-gitgutter'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'dkarter/bullets.vim'
     Plugin 'FelikZ/ctrlp-py-matcher'
@@ -26,10 +27,6 @@
     
     " Enable syntax highlighting
     syntax on
-
-    " show linenumbers
-    set number
-    set relativenumber
 
     " status line
     set statusline=%f\ %y\ %m\ %r\ Line:\ %l/%L\ Col:\ %c\ Buf:\ #%n
