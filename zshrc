@@ -20,6 +20,7 @@ antigen bundle docker
 antigen bundle docker-compose
 antigen bundle git
 antigen bundle pj
+antigen bundle tmux
 antigen bundle yarn
 antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
 
