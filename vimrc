@@ -85,3 +85,10 @@
         \]
 
 " }}}}
+
+" gitgutter {{{{
+
+    " Update after 100ms instead of the default 4000ms
+    set updatetime=100
+
+" }}}}
