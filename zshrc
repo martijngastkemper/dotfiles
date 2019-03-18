@@ -26,6 +26,9 @@ antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
 
 antigen apply
 
+# Clear oh-my-git right prompt, tmux already shows the information
+export RPROMPT=""
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
