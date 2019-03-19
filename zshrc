@@ -7,10 +7,13 @@ export PATH="/usr/local/sbin:$PATH"
 # Make Composer global available in PATH
 export PATH="~/.composer/vendor/bin:$PATH"
 
-# Make Node 8 available
+# Make Brew Node 8 available
 export PATH="/usr/local/opt/node@8/bin:$PATH"
 
-# Activate Antigen - ZSH plugin manager
+# Make Brew Ruby available
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+#Activate Antigen - ZSH plugin manager
 source /usr/local/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
