@@ -70,6 +70,9 @@
     " Use ctrlp-py-matcher for improved performance 
     let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
+    " Allow dotfiles like .env and .env.template
+    let g:ctrlp_dotfiles = 0
+
     " leader key + j to open CtrlP in buffer mode
     noremap <leader>j :CtrlPBuffer<CR>
 
