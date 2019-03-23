@@ -10,6 +10,7 @@
     " let Vundle manage Vundle, required
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'airblade/vim-gitgutter'
+    Plugin 'christoomey/vim-tmux-navigator'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'dkarter/bullets.vim'
     Plugin 'FelikZ/ctrlp-py-matcher'
