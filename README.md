@@ -2,36 +2,34 @@
 
 My workspace!
 
-Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles) and [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
+Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles), [jackfranklin/dotfiles](https://github.com/jackfranklin/dotfiles) and [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 
 ## Installation
 
-### Step 1: dotfiles 
+### Step 1: Dotfiles
 
     git clone git://github.com/martijngastkemper/dotfiles ~/.dotfiles
     cd ~/.dotfiles
+    make symlinks
 
 ### Step 2: Brew
 
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew bundle install
+    make install_brew
+    make install_brew_packages
 
-### Step 3: Installation
+### Step 3: ZSH
 
-    node install.js
-    echo $(which zsh) | sudo tee -a /etc/shells > /dev/null
-    chsh -s $(which zsh)
-    ./macos_config.sh
+    make configure_zsh
 
 ### Step 4: Vundle
 
-My Vim setup uses Vundle, so grab that separately:
+    make install_vim_bundle
 
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+### Step 5: Configure MacOS
 
-And run `:VundleInstall` from Vim.
+    make configure_macos
 
-## Settings to change manually or implement later on
+Settings to change manually
 
 *Let Caps Lock be an Escape key*  
 System Preferences -> Keyboard -> Modifier Keys -> Caps Lock -> Esc 
