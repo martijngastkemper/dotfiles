@@ -8,6 +8,7 @@ brew "composer"
 brew "git"
 brew "htop"
 brew "inetutils"
+brew "jq"
 brew "node@8", link: true
 brew "mysql@5.7", link: true
 brew "php@7.1"
