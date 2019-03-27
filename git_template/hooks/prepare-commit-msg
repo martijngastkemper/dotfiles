@@ -15,5 +15,5 @@ COMMIT_SOURCE=$2
 SHA1=$3
 
 /usr/bin/perl -i.bak -pe '
-    print "\n" . `git rev-parse --abbrev-ref HEAD | grep -ioE "ac-[[:digit:]]+" | tr a-z A-Z` 
+    print "\n" . `git rev-parse --abbrev-ref HEAD | grep -ioE "ac-?[[:digit:]]+" | tr a-z A-Z` 
       if /^#/ && $first++ == 0' "$COMMIT_MSG_FILE"
