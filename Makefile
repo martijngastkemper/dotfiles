@@ -15,9 +15,7 @@ configure_zsh:
 
 symlinks:
 	@ln -nsf $(DIR)/ctags ~/.ctags
-	@ln -nsf $(DIR)/git_template ~/.git_template
 	@ln -nsf $(DIR)/gitconfig ~/.gitconfig
-	@ln -nsf $(DIR)/gitignore_global ~/.gitignore_global
 	@ln -nsf $(DIR)/tmux.conf ~/.tmux.conf
 	@ln -nsf $(DIR)/vim ~/.vim
 	@ln -nsf $(DIR)/vimrc ~/.vimrc
