@@ -4,6 +4,28 @@ My workspace!
 
 Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles), [jackfranklin/dotfiles](https://github.com/jackfranklin/dotfiles) and [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 
+## Utility scripts
+
+### `public_port`
+
+When using Docker Compose it's not clear which public ports services expose. Looking into one of the `docker-compose*.yml` files is cumbersome. Use `public_port` to get the public port of a service.
+
+Uses port 80 by default
+
+    $ public_port
+    Private port 80
+    web: 0.0.0.0:10000
+
+Get the port for MySQL
+
+    $ public_port 3306
+    Private port 3306
+    web: 0.0.0.0:20000
+
+### `apply_git_templates`
+
+After changing a hook in `git_templates/` I want to apply these changes to existings checkouts. This scripts copies the files to `.git/` in the project. It asks to confirm overwriting existing files.
+
 ## Installation
 
 ### Step 1: Dotfiles
