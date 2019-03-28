@@ -6,7 +6,7 @@ Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles),
 
 ## Utility scripts
 
-### `public_port`
+### `bin/public_port`
 
 When using Docker Compose it's not clear which public ports services expose. Looking into one of the `docker-compose*.yml` files is cumbersome. Use `public_port` to get the public port of a service.
 
@@ -22,7 +22,7 @@ Get the port for MySQL
     Private port 3306
     web: 0.0.0.0:20000
 
-### `apply_git_templates`
+### `bin/apply_git_templates`
 
 After changing a hook in `git_templates/` I want to apply these changes to existings checkouts. This scripts copies the files to `.git/` in the project. It asks to confirm overwriting existing files.
 
