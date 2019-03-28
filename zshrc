@@ -94,6 +94,7 @@ alias zshconfig="$EDITOR ~/.zshrc.local"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
 alias gl="git pull --rebase"
+alias tx=tmuxinator
 
 function fixup () {
     git commit --fixup=${1:-`git rev-parse HEAD`}

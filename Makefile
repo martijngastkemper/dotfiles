@@ -17,6 +17,7 @@ symlinks:
 	@ln -nsf $(DIR)/ctags ~/.ctags
 	@ln -nsf $(DIR)/gitconfig ~/.gitconfig
 	@ln -nsf $(DIR)/tmux.conf ~/.tmux.conf
+	@ln -nsf $(DIR)/tmuxinator ~/.config/tmuxinator
 	@ln -nsf $(DIR)/vim ~/.vim
 	@ln -nsf $(DIR)/vimrc ~/.vimrc
 	@ln -nsf $(DIR)/zshrc ~/.zshrc

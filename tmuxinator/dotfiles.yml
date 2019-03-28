@@ -1,0 +1,11 @@
+# /Users/martijn/.config/tmuxinator/dotfiles.yml
+
+name: dotfiles
+root: ~/.dotfiles/
+
+windows:
+  - editor:
+      layout: even-horizontal
+      panes:
+        - vim
+        - zsh
