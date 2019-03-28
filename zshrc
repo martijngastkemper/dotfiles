@@ -93,7 +93,6 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-alias e="$EDITOR"
 alias zshconfig="$EDITOR ~/.zshrc.local"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
