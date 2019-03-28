@@ -13,6 +13,9 @@ export PATH="/usr/local/opt/node@8/bin:$PATH"
 # Make Brew Ruby available
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
+# Make dotfile utility scripts available
+export PATH="~/.dotfiles/bin:$PATH"
+
 #Activate Antigen - ZSH plugin manager
 source /usr/local/share/antigen/antigen.zsh
 
