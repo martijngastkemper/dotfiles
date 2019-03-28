@@ -20,7 +20,7 @@ Get the port for MySQL
 
     $ public_port 3306
     Private port 3306
-    web: 0.0.0.0:20000
+    db: 0.0.0.0:20000
 
 ### `bin/apply_git_templates`
 
