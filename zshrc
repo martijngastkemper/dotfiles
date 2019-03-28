@@ -2,19 +2,16 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Add sbin for Composer
-export PATH="/usr/local/sbin:$PATH"
-
-# Make Composer global available in PATH
-export PATH="~/.composer/vendor/bin:$PATH"
+export PATH=/usr/local/sbin:$PATH
 
 # Make Brew Node 8 available
-export PATH="/usr/local/opt/node@8/bin:$PATH"
+export PATH=/usr/local/opt/node@8/bin:$PATH
 
 # Make Brew Ruby available
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH=/usr/local/opt/ruby/bin:$PATH
 
 # Make dotfile utility scripts available
-export PATH="~/.dotfiles/bin:$PATH"
+export PATH=~/.dotfiles/bin:$PATH
 
 #Activate Antigen - ZSH plugin manager
 source /usr/local/share/antigen/antigen.zsh
