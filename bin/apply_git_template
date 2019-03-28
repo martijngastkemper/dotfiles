@@ -1,0 +1,5 @@
+#!/bin/sh
+
+GIT_TEMPLATEDIR=$(git config init.templatedir)
+TEMPLATEDIR="${GIT_TEMPLATEDIR/#\~/$HOME}"
+cp -viR "$TEMPLATEDIR/" .git/ 
