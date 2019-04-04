@@ -28,4 +28,6 @@ install_vim_vundle:
 
 configure_macos:
 	bash macos_config.sh
-	
+
+yarn_globals:
+	yarn global add feedly-cli
