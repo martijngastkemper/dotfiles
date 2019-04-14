@@ -33,7 +33,13 @@
     set statusline=%f\ %y\ %m\ %r\ Line:\ %l/%L\ Col:\ %c\ Buf:\ #%n
     set laststatus=2
     set showcmd
+    
+    " linenumbers
+    set number
+    set relativenumber
 
+    set scrolloff=5
+    
 " }}}}
 
 " Formatting {{{{
@@ -52,6 +58,9 @@
     " quick access to $MYVIMRC
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
     nnoremap <leader>sv :source $MYVIMRC<cr>
+
+    " fast saving
+    nnoremap <leader>w :w!<cr>
 
 " }}}}
 
@@ -72,7 +81,7 @@
     let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
     " Allow dotfiles like .env and .env.template
-    let g:ctrlp_dotfiles = 0
+    let g:ctrlp_dotfiles = 1
 
     " leader key + j to open CtrlP in buffer mode
     noremap <leader>j :CtrlPBuffer<CR>
