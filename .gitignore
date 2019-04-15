@@ -1,2 +1,8 @@
 vim/bundle
 vim/.netrwhist
+
+/gnupg/trustdb.gpg
+/gnupg/pubring.*
+/gnupg/private-keys-v1.d/
+/gnupg/openpgp-revocs.d/
+/gnupg/sshcontrol

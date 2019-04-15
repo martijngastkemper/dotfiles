@@ -16,6 +16,7 @@ configure_zsh:
 symlinks:
 	@ln -nsf $(DIR)/ctags ~/.ctags
 	@ln -nsf $(DIR)/gitconfig ~/.gitconfig
+	@ln -nsf $(DIR)/gnupg/ ~/.gnupg
 	@ln -nsf $(DIR)/tmux.conf ~/.tmux.conf
 	@ln -nsf $(DIR)/tmuxinator ~/.config/tmuxinator
 	@ln -nsf $(DIR)/vim ~/.vim
