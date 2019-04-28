@@ -64,6 +64,14 @@
 
 " }}}}
 
+" Search {{{{
+
+    set incsearch
+    set ignorecase
+    set smartcase
+
+" }}}}
+
 " Misc {{{{
 
     " no swap files
