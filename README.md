@@ -46,6 +46,7 @@ After changing a hook in `git_templates/` I want to apply these changes to exist
 ### Step 4: Vundle
 
     make install_vim_bundle
+    make install_vim_plugins
 
 ### Step 5: Configure MacOS
 
