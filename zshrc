@@ -26,6 +26,7 @@ antigen bundle git
 antigen bundle pj
 antigen bundle tmux
 antigen bundle yarn
+antigen bundle zsh-users/zsh-autosuggestions
 antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
 
 antigen apply
@@ -68,7 +69,8 @@ COMPLETION_WAITING_DOTS="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-# User configuration
+# zsh-users/zsh-autosuggestions
+bindkey '^ ' autosuggest-accept
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
