@@ -74,6 +74,9 @@ bindkey '^ ' autosuggest-accept
 
 export EDITOR='vim'
 
+# PHP Composer
+export COMPOSER_HOME=~/.composer
+
 # SSH
 export SSH_KEY_PATH=~/.ssh/id_rsa
 
