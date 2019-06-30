@@ -29,6 +29,12 @@ install_vim_vundle:
 install_vim_plugins:
 	vim +BundleInstall +qall
 
+install_tmux_plugin_manager:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+install_tmux_plugins:
+	tmux source ~/.tmux.conf
+
 configure_macos:
 	bash macos_config.sh
 
