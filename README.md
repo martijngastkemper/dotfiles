@@ -2,6 +2,8 @@
 
 My workspace!
 
+![Screenshot of my terminal](screenshot.png)
+
 Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles), [jackfranklin/dotfiles](https://github.com/jackfranklin/dotfiles) and [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 
 ## Utility scripts
