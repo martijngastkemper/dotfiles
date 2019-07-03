@@ -3,7 +3,9 @@ VIM_VUNDLE_DIR=~/.vim/bundle/Vundle.vim
 TMUX_TPM_DIR=~/.tmux/plugins/tpm
 
 all:
-	@echo "Run things individually!"
+	@echo "Run things individually!\n"
+	@echo "Available make sources:"
+	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
 install_brew:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

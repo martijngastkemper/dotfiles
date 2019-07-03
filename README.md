@@ -8,6 +8,10 @@ Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles),
 
 ## Utility scripts
 
+### `make`
+
+Lists all the available source. For a fine grained install.
+
 ### `bin/public_port`
 
 When using Docker Compose it's not clear which public ports services expose. Looking into one of the `docker-compose*.yml` files is cumbersome. Use `public_port` to get the public port of a service.
