@@ -1,4 +1,6 @@
 DIR="${HOME}/.dotfiles"
+VIM_VUNDLE_DIR=~/.vim/bundle/Vundle.vim
+TMUX_TPM_DIR=~/.tmux/plugins/tpm
 
 all:
 	@echo "Run things individually!"
@@ -10,30 +12,38 @@ install_brew_packages:
 	brew bundle install
 
 configure_zsh:
+	@ln -nsf $(DIR)/zshrc ~/.zshrc
 	echo $(which zsh) | sudo tee -a /etc/shells > /dev/null
 	chsh -s $(which zsh)
 
 symlinks:
-	@ln -nsf $(DIR)/ctags ~/.ctags
 	@ln -nsf $(DIR)/gitconfig ~/.gitconfig
 	@ln -nsf $(DIR)/gnupg/ ~/.gnupg
-	@ln -nsf $(DIR)/tmux.conf ~/.tmux.conf
-	@ln -nsf $(DIR)/tmuxinator ~/.config/tmuxinator
+
+install_vim_symlinks:
+	@ln -nsf $(DIR)/ctags ~/.ctags
 	@ln -nsf $(DIR)/vim ~/.vim
 	@ln -nsf $(DIR)/vimrc ~/.vimrc
-	@ln -nsf $(DIR)/zshrc ~/.zshrc
-
+	
 install_vim_vundle:
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	if [ ! -d $(VIM_VUNDLE_DIR) ]; then git clone https://github.com/VundleVim/Vundle.vim.git $(VIM_VUNDLE_DIR); fi 
 
 install_vim_plugins:
 	vim +BundleInstall +qall
 
+install_vim: install_vim_symlinks install_vim_vundle install_vim_plugins
+
+install_tmux_symlinks:
+	@ln -nsf $(DIR)/tmux.conf ~/.tmux.conf
+	@ln -nsf $(DIR)/tmuxinator ~/.config/tmuxinator
+
 install_tmux_plugin_manager:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	if [ ! -d $(TMUX_TPM_DIR) ]; then git clone https://github.com/tmux-plugins/tpm $(TMUX_TPM_DIR); fi
 
 install_tmux_plugins:
 	tmux source ~/.tmux.conf
+
+install_tmux: install_tmux_symlinks install_tmux_plugin_manager install_tmux_plugins
 
 configure_macos:
 	bash macos_config.sh

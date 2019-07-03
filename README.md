@@ -41,16 +41,19 @@ After changing a hook in `git_templates/` I want to apply these changes to exist
     make install_brew
     make install_brew_packages
 
-### Step 3: ZSH
+### Step 3: Zsh
 
     make configure_zsh
 
-### Step 4: Vundle
+### Step 4: vim
 
-    make install_vim_bundle
-    make install_vim_plugins
+    make install_vim
 
-### Step 5: Configure MacOS
+### Step 5: tmux
+
+    make install_tmux
+
+### Step 6: Configure MacOS
 
     make configure_macos
 
