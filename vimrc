@@ -40,7 +40,10 @@
     set relativenumber
 
     set scrolloff=5
-    
+
+    " allow backspacing over everything in insert mode
+    set backspace=indent,eol,start
+        
 " }}}}
 
 " Formatting {{{{
