@@ -27,8 +27,9 @@
 
 [rebase]
 
-    autosquash = true
+    autoSquash = true
     abbreviateCommands = true
+    autoStash = true
 
 [core]
 
