@@ -14,7 +14,7 @@ brew "jq"
 brew "nexeck/homebrew-tmuxinator/tmuxinator"
 brew "node@8", link: true
 brew "mysql@5.7", link: true
-brew "php@7.1"
+brew "php@7.2"
 brew "pinentry-mac"
 brew "ruby"
 brew "sqlite"
