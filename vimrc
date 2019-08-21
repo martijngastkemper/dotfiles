@@ -87,7 +87,7 @@
 
     " Ignore some files and folders
     set wildignore+=*.o,*.obj,*.jpg,*.jpeg,*.png,*.gif,*.ser,.git,.idea
-    set wildignore+=vendor,node_modules,public/js/build/prod/* 
+    set wildignore+=node_modules,public/js/build/prod/* 
 
     " Use ctrlp-py-matcher for improved performance 
     let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
