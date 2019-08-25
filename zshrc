@@ -95,6 +95,7 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+alias dstats="docker stats"
 alias gl="git pull --rebase"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
