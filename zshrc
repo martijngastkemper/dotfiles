@@ -99,7 +99,6 @@ alias dstats="docker stats"
 alias gl="git pull --rebase"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
-alias tx=tmuxinator
 alias zshconfig="$EDITOR ~/.zshrc.local"
 
 function fixup () {

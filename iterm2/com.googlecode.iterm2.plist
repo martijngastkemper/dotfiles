@@ -192,13 +192,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>698 257 552 388 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 363 620 392 0 0 1440 877 </string>
+	<string>395 1398 620 392 -255 900 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 74 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>141 296 918 423 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>252 297 570 427 0 0 1440 877 </string>
+	<string>136 1269 570 442 -255 900 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1440 877 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_D06D36E3-D3E9-4B8B-84F2-5E0ADEECF402</key>
@@ -478,7 +478,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>tx start dotfiles</string>
+			<string></string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -917,15 +917,25 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.2</string>
 		<string>3.2.9</string>
+		<string>3.3.1</string>
 		<string>3.3.0</string>
+		<string>3.3.3</string>
 	</array>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{-255, 900}, {1920, 1080}}</string>
+		<key>topLeft</key>
+		<string>{402, 1839}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{-255, 900}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{287, 846}</string>
+		<string>{205, 1912}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -936,7 +946,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>ECEBD1EB-1F25-4BEB-B440-25B6DE1D7EAA</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>1</integer>
+	<integer>9</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1289,6 +1299,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentTab.currentSession.termid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -1362,6 +1380,14 @@
 				<true/>
 				<key>name</key>
 				<string>currentTab.currentSession.commandLine</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>number</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1693,8 +1719,10 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-01T07:01:54Z</date>
+	<date>2019-09-04T07:20:18Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<true/>
@@ -53410,6 +53438,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.0</string>
+	<string>3.3.3</string>
 </dict>
 </plist>
