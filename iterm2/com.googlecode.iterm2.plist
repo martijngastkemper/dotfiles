@@ -198,7 +198,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>141 296 918 423 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>136 1269 570 442 -255 900 1920 1057 </string>
+	<string>391 369 570 442 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1440 877 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_D06D36E3-D3E9-4B8B-84F2-5E0ADEECF402</key>
@@ -478,7 +478,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>tmux</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -933,9 +933,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-255, 900}, {1920, 1080}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{205, 1912}</string>
+		<string>{333, 786}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -946,7 +946,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>ECEBD1EB-1F25-4BEB-B440-25B6DE1D7EAA</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>9</integer>
+	<integer>12</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1719,7 +1719,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-04T07:20:18Z</date>
+	<date>2019-09-08T15:13:00Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
