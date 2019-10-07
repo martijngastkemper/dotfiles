@@ -5,9 +5,6 @@ export GPG_TTY=$(tty)
 # Add sbin for Composer
 export PATH=/usr/local/sbin:$PATH
 
-# Make Brew Node 8 available
-export PATH=/usr/local/opt/node@8/bin:$PATH
-
 # Make Brew Ruby available
 export PATH=/usr/local/opt/ruby/bin:$PATH
 
@@ -27,6 +24,7 @@ antigen bundle composer
 antigen bundle docker
 antigen bundle docker-compose
 antigen bundle git
+antigen bundle lukechilds/zsh-nvm
 antigen bundle pj
 antigen bundle tmux
 antigen bundle yarn
