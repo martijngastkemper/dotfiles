@@ -19,7 +19,6 @@ export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 source /usr/local/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
-antigen bundle arialdomartini/oh-my-git
 antigen bundle composer
 antigen bundle docker
 antigen bundle docker-compose
@@ -29,12 +28,9 @@ antigen bundle pj
 antigen bundle tmux
 antigen bundle yarn
 antigen bundle zsh-users/zsh-autosuggestions
-antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
+antigen theme agnoster
 
 antigen apply
-
-# Clear oh-my-git right prompt, tmux already shows the information
-export RPROMPT=""
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
