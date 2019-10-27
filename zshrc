@@ -15,6 +15,9 @@ export PATH=~/.dotfiles/bin:$PATH
 export PATH="/usr/local/opt/php@7.1/bin:/usr/local/opt/php@7.2/bin:$PATH"
 export PATH="/usr/local/opt/php@7.1/sbin:/usr/local/opt/php@7.2/sbin:$PATH"
 
+# Hide username from statusline
+export DEFAULT_USER=`whoami`
+
 #Activate Antigen - ZSH plugin manager
 source /usr/local/share/antigen/antigen.zsh
 
