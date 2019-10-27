@@ -13,6 +13,12 @@ install_brew:
 install_brew_packages:
 	brew bundle install
 
+install_nvm:
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
+
+configure_bash:
+	@ln -nsf $(DIR)/bash_aliases ~/.bash_aliases
+
 configure_zsh:
 	@ln -nsf $(DIR)/zshrc ~/.zshrc
 	echo $(which zsh) | sudo tee -a /etc/shells > /dev/null
