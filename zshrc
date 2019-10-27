@@ -28,6 +28,7 @@ antigen bundle pj
 antigen bundle tmux
 antigen bundle yarn
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme agnoster
 
 antigen apply
