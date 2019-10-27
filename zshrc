@@ -12,8 +12,8 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH=~/.dotfiles/bin:$PATH
 
 # Add PHP to PATH
-export PATH="/usr/local/opt/php@7.2/bin:$PATH"
-export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+export PATH="/usr/local/opt/php@7.1/bin:/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.1/sbin:/usr/local/opt/php@7.2/sbin:$PATH"
 
 #Activate Antigen - ZSH plugin manager
 source /usr/local/share/antigen/antigen.zsh
