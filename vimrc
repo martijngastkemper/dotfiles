@@ -16,7 +16,6 @@
     Plugin 'FelikZ/ctrlp-py-matcher'
     Plugin 'lumiliet/vim-twig'
     Plugin 'ludovicchabant/vim-gutentags'
-    Plugin 'sahibalejandro/vim-php'
     Plugin 'shawncplus/phpcomplete.vim'
     Plugin 'StanAngeloff/php.vim'
     Plugin 'tpope/vim-surround'
