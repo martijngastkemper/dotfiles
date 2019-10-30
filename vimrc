@@ -15,6 +15,7 @@
     Plugin 'dkarter/bullets.vim'
     Plugin 'FelikZ/ctrlp-py-matcher'
     Plugin 'lumiliet/vim-twig'
+    Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'sahibalejandro/vim-php'
     Plugin 'shawncplus/phpcomplete.vim'
     Plugin 'StanAngeloff/php.vim'
@@ -80,6 +81,12 @@
 
     " no swap files
     set noswapfile
+
+    " Enter opens tag
+    augroup tag_navigation
+        autocmd!
+        autocmd BufRead,BufNewFile * if &l:modifiable | nnoremap <buffer> <CR> :exec("tag ".expand("<cword>"))<CR> | endif
+    augroup END
 
 " }}}}
 
