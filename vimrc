@@ -123,3 +123,10 @@
     set updatetime=100
 
 " }}}}
+
+" Gutentags {{{{
+
+    " Move tags file out of project root
+    let g:gutentags_ctags_tagfile = ".git/tags"
+
+" }}}}
