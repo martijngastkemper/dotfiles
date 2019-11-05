@@ -1,0 +1,2 @@
+" Emulate tpope/vim-surround
+set surround

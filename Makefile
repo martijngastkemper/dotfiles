@@ -32,6 +32,7 @@ install_vim_symlinks:
 	@ln -nsf $(DIR)/ctags ~/.ctags
 	@ln -nsf $(DIR)/vim ~/.vim
 	@ln -nsf $(DIR)/vimrc ~/.vimrc
+	@ln -nsf $(DIR)/ideavimrc ~/.ideavimrc
 	
 install_vim_vundle:
 	if [ ! -d $(VIM_VUNDLE_DIR) ]; then git clone https://github.com/VundleVim/Vundle.vim.git $(VIM_VUNDLE_DIR); fi 
