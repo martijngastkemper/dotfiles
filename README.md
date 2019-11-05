@@ -75,6 +75,16 @@ To load settings to Zsh which aren't global add them to:
 
     vim ~/.zshrc.local
 
+## PhpStorm
+
+My PhpStorm settings are stored in a private repo.
+
+The plugins I use:
+
+- .env files support
+- IdeaVim
+- Makefile support
+
 ## Find domain and key for usage in ``defaults``
 
 It's hard to find the right domaian and key of a preference. To find it use ``diff``
