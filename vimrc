@@ -19,6 +19,7 @@
     Plugin 'shawncplus/phpcomplete.vim'
     Plugin 'StanAngeloff/php.vim'
     Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-repeat'
     
     call vundle#end()
     filetype plugin indent on
