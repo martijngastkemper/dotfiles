@@ -55,6 +55,7 @@
 " }}}}
 
 " Mappings {{{{
+    
     let mapleader = ","
 
     " For when you forget to sudo.. Really Write the file.
@@ -66,6 +67,9 @@
 
     " fast saving
     nnoremap <leader>w :w!<cr>
+
+    " List open buffers and type the id to navigate to it
+    nnoremap § :ls<cr>:b
 
 " }}}}
 
