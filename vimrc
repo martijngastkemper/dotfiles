@@ -18,6 +18,7 @@
     Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'shawncplus/phpcomplete.vim'
     Plugin 'StanAngeloff/php.vim'
+    Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-repeat'
     
@@ -119,6 +120,12 @@
         \ 'gitcommit',
         \ 'scratch'
         \]
+
+" }}}}
+
+" Commentary {{{
+
+    autocmd FileType php setlocal commentstring=//\ %s
 
 " }}}}
 
