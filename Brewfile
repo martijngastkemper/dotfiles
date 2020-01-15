@@ -20,7 +20,7 @@ brew "travis"
 brew "tree"
 brew "vim"
 brew "wget"
-brew "yarn", args: ["without-node"]
+brew "yarn", args: ["ignore-dependencies"]
 brew "zsh"
 cask "1password"
 cask "docker"
