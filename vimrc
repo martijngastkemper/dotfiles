@@ -73,6 +73,9 @@
     " List open buffers and type the id to navigate to it
     nnoremap § :ls<cr>:b
 
+    " yank from the cursor to the end of the line, to be consistent with C and D.
+    nnoremap Y y$
+
 " }}}}
 
 " Search {{{{
