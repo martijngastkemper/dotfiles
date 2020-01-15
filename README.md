@@ -1,5 +1,7 @@
 # Dotfiles
 
+![](https://github.com/martijngastkemper/dotfiles/workflows/Test%20installation/badge.svg)
+
 My workspace!
 
 ![Screenshot of my terminal](screenshot.png)

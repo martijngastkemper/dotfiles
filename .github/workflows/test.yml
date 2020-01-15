@@ -1,0 +1,43 @@
+name: Test installation
+
+on:
+  push:
+  schedule:
+      # Run on the first day of every month
+      - cron:  '0 0 1 * *'
+
+jobs:
+    test_macos:
+        name: on MacOS
+        runs-on: macOS-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Copy workspace to $HOME/.dotfiles
+              run: cp -r $GITHUB_WORKSPACE $HOME/.dotfiles
+            - name: Cache Brew
+              uses: actions/cache@v1
+              with:
+                path: ~/Library/Caches/Homebrew
+                key: ${{ runner.os }}-brew-${{ hashFiles('Brewfile') }}
+            - run: make install_brew
+            - run: make install_brew_packages
+            - run: make install_nvm
+            - run: make configure_bash
+            - run: make symlinks
+            - run: make install_vim
+            - name: Start tmux
+              run: tmux new-session -d
+            - run: make install_tmux
+    test_ubuntu:
+        name: on Ubuntu
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Copy workspace to $HOME/.dotfiles
+              run: cp -r $GITHUB_WORKSPACE $HOME/.dotfiles
+            - run: make install_nvm
+            - run: make configure_bash
+            - run: make symlinks
+            - run: make install_vim
+
+            

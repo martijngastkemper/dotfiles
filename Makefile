@@ -1,6 +1,6 @@
 DIR="${HOME}/.dotfiles"
 VIM_VUNDLE_DIR=~/.vim/bundle/Vundle.vim
-TMUX_TPM_DIR=~/.tmux/plugins/tpm
+TMUX_PLUGIN_MANAGER_DIR=~/.tmux/plugins/tpm
 
 all:
 	@echo "Run things individually!\n"
@@ -35,7 +35,7 @@ install_vim_symlinks:
 	@ln -nsf $(DIR)/ideavimrc ~/.ideavimrc
 	
 install_vim_vundle:
-	if [ ! -d $(VIM_VUNDLE_DIR) ]; then git clone https://github.com/VundleVim/Vundle.vim.git $(VIM_VUNDLE_DIR); fi 
+	if [ ! -d $(VIM_VUNDLE_DIR) ]; then git clone https://github.com/VundleVim/Vundle.vim.git $(VIM_VUNDLE_DIR); fi
 
 install_vim_plugins:
 	vim +BundleInstall +qall
@@ -47,7 +47,7 @@ install_tmux_symlinks:
 	@ln -nsf $(DIR)/tmuxinator ~/.config/tmuxinator
 
 install_tmux_plugin_manager:
-	if [ ! -d $(TMUX_TPM_DIR) ]; then git clone https://github.com/tmux-plugins/tpm $(TMUX_TPM_DIR); fi
+	if [ ! -d $(TMUX_PLUGIN_MANAGER_DIR) ]; then mkdir -p $(TMUX_PLUGIN_MANAGER_DIR) && git clone https://github.com/tmux-plugins/tpm $(TMUX_PLUGIN_MANAGER_DIR); fi
 
 install_tmux_plugins:
 	tmux source ~/.tmux.conf
@@ -55,7 +55,8 @@ install_tmux_plugins:
 install_tmux: install_tmux_symlinks install_tmux_plugin_manager install_tmux_plugins
 
 configure_macos:
-	bash macos_config.sh
+	@sh macos_config.sh;\
+	exit $$?
 
 yarn_globals:
 	yarn global add feedly-cli
