@@ -11,7 +11,7 @@ brew "htop"
 brew "inetutils"
 brew "jq"
 brew "mysql-client@5.7", link: true
-brew "php@7.2"
+brew "php@7.4"
 brew "pinentry-mac"
 brew "ruby"
 brew "sqlite"
