@@ -5,8 +5,11 @@ export GPG_TTY=$(tty)
 # Add sbin for Composer
 export PATH=/usr/local/sbin:$PATH
 
-# Make Brew Ruby available
+# Make Brew ruby available
 export PATH=/usr/local/opt/ruby/bin:$PATH
+
+# Make Brew mysql-client available
+export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 
 # Make dotfile utility scripts available
 export PATH=~/.dotfiles/bin:$PATH
@@ -14,7 +17,7 @@ export PATH=~/.dotfiles/bin:$PATH
 # Hide username from statusline
 export DEFAULT_USER=`whoami`
 
-#Activate Antigen - ZSH plugin manager
+# Activate Antigen - ZSH plugin manager
 source /usr/local/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh

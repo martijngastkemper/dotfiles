@@ -10,7 +10,7 @@ brew "gnupg"
 brew "htop"
 brew "inetutils"
 brew "jq"
-brew "mysql@5.7", link: true
+brew "mysql-client@5.7", link: true
 brew "php@7.2"
 brew "pinentry-mac"
 brew "ruby"
