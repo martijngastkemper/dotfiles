@@ -44,7 +44,6 @@ install_vim: install_vim_symlinks install_vim_vundle install_vim_plugins
 
 install_tmux_symlinks:
 	ln -nsf $(DIR)/tmux.conf ~/.tmux.conf
-	ln -nsf $(DIR)/tmuxinator ~/.config/tmuxinator
 
 install_tmux_plugin_manager:
 	if [ ! -d $(TMUX_PLUGIN_MANAGER_DIR) ]; then mkdir -p $(TMUX_PLUGIN_MANAGER_DIR) && git clone https://github.com/tmux-plugins/tpm $(TMUX_PLUGIN_MANAGER_DIR); fi
