@@ -47,9 +47,15 @@ After changing a hook in `git_templates/` I want to apply these changes to exist
     make install_brew
     make install_brew_packages
 
-### Step 3: Zsh
+### Step 3: Shell
+
+Zsh will be installed by Brew. To activate it run:
 
     make configure_zsh
+
+When Zsh is not available run:
+
+    make configure_bash
 
 ### Step 4: vim
 
@@ -59,7 +65,11 @@ After changing a hook in `git_templates/` I want to apply these changes to exist
 
     make install_tmux
 
-### Step 6: Configure MacOS
+### Step 6: nvm
+
+    make install_nvm
+
+### Step 7: Configure MacOS
 
     make configure_macos
 
