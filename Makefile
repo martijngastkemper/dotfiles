@@ -1,6 +1,7 @@
 DIR="${HOME}/.dotfiles"
 VIM_VUNDLE_DIR=~/.vim/bundle/Vundle.vim
 TMUX_PLUGIN_MANAGER_DIR=~/.tmux/plugins/tpm
+ZSH_PATH=$(shell which zsh)
 
 all:
 	@echo "Run things individually!\n"
@@ -21,8 +22,8 @@ configure_bash:
 
 configure_zsh:
 	ln -nsf $(DIR)/zshrc ~/.zshrc
-	echo $(which zsh) | sudo tee -a /etc/shells > /dev/null
-	chsh -s $(which zsh)
+	echo $(ZSH_PATH) | sudo tee -a /etc/shells > /dev/null
+	chsh -s $(ZSH_PATH)
 
 symlinks:
 	ln -nsf $(DIR)/gitconfig ~/.gitconfig
