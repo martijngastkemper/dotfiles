@@ -14,11 +14,6 @@ jobs:
             - uses: actions/checkout@v2
             - name: Copy workspace to $HOME/.dotfiles
               run: cp -r $GITHUB_WORKSPACE $HOME/.dotfiles
-            - name: Cache Brew
-              uses: actions/cache@v1
-              with:
-                path: ~/Library/Caches/Homebrew
-                key: ${{ runner.os }}-brew-${{ hashFiles('Brewfile') }}
             - run: make install_brew
             - run: make install_brew_packages
             - run: make install_nvm
