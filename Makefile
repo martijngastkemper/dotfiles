@@ -58,7 +58,7 @@ install_tmux_plugin_manager:
 install_tmux_plugins:
 	tmux source ~/.tmux.conf
 
-install_tmux: install_tmux_symlinks install_tmux_plugin_manager install_tmux_plugins
+install_tmux: installed_tmux install_tmux_symlinks install_tmux_plugin_manager install_tmux_plugins
 
 configure_macos:
 	@sh macos_config.sh;\
