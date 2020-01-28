@@ -27,7 +27,9 @@ antigen bundle docker-compose
 antigen bundle git
 antigen bundle lukechilds/zsh-nvm
 antigen bundle pj
-antigen bundle tmux
+if which tmux ; then
+    antigen bundle tmux
+fi
 antigen bundle yarn
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
