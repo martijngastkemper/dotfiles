@@ -4,7 +4,7 @@ TMUX_PLUGIN_MANAGER_DIR=~/.tmux/plugins/tpm
 ZSH_PATH=$(shell which zsh)
 
 all:
-	@echo "Run things individually!\n"
+	@echo "Run actions individually!\n"
 	@echo "Available make sources:"
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
@@ -20,10 +20,16 @@ install_nvm:
 configure_bash:
 	ln -nsf $(DIR)/bash_aliases ~/.bash_aliases
 
-configure_zsh:
+installed_%:
+	@which $* > /dev/null
+
+bin/antigen.zsh:
+	curl -L git.io/antigen > $(DIR)/bin/antigen.zsh
+
+configure_zsh: installed_zsh bin/antigen.zsh
 	ln -nsf $(DIR)/zshrc ~/.zshrc
 	echo $(ZSH_PATH) | sudo tee -a /etc/shells > /dev/null
-	chsh -s $(ZSH_PATH)
+	sudo chsh -s $(ZSH_PATH)
 
 symlinks:
 	ln -nsf $(DIR)/gitconfig ~/.gitconfig

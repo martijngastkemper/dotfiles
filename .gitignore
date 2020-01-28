@@ -7,3 +7,5 @@ vim/.netrwhist
 /gnupg/private-keys-v1.d/
 /gnupg/openpgp-revocs.d/
 /gnupg/sshcontrol
+
+bin/antigen.zsh

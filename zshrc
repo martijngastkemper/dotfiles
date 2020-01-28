@@ -18,7 +18,7 @@ export PATH=~/.dotfiles/bin:$PATH
 export DEFAULT_USER=`whoami`
 
 # Activate Antigen - ZSH plugin manager
-source /usr/local/share/antigen/antigen.zsh
+source ~/.dotfiles/bin/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle composer
