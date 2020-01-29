@@ -16,7 +16,7 @@ brew "ruby"
 brew "sqlite"
 brew "tmux"
 brew "tree"
-brew "universal-ctags"
+brew "universal-ctags", args: ['HEAD']
 brew "vim"
 brew "wget"
 brew "yarn", args: ["ignore-dependencies"]
