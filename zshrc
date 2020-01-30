@@ -27,7 +27,7 @@ antigen bundle docker-compose
 antigen bundle git
 antigen bundle lukechilds/zsh-nvm
 antigen bundle pj
-if which tmux ; then
+if command -v tmux > /dev/null ; then
     antigen bundle tmux
 fi
 antigen bundle yarn
