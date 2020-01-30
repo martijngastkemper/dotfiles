@@ -24,7 +24,7 @@ configure_bash: installed_bash
 	ln -nsf $(DIR)/bash_aliases ~/.bash_aliases
 
 bin/antigen.zsh: installed_curl
-	curl -L git.io/antigen > $(DIR)/bin/antigen.zsh
+	curl -L git.io/antigen-nightly > $(DIR)/bin/antigen.zsh
 
 configure_zsh: installed_zsh bin/antigen.zsh
 	ln -nsf $(DIR)/zshrc ~/.zshrc
