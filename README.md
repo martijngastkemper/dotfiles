@@ -1,8 +1,6 @@
 # Dotfiles
 
-![](https://github.com/martijngastkemper/dotfiles/workflows/Test%20installation/badge.svg)
-
-My workspace!
+[![Github Action test installation badge](https://github.com/martijngastkemper/dotfiles/workflows/Test%20installation/badge.svg)](https://github.com/martijngastkemper/dotfiles/actions)
 
 ![Screenshot of my terminal](screenshot.png)
 
@@ -38,40 +36,43 @@ After changing a hook in `git_templates/` I want to apply these changes to exist
 
 ### Step 1: Dotfiles
 
-    git clone git://github.com/martijngastkemper/dotfiles ~/.dotfiles
-    cd ~/.dotfiles
-    make symlinks
+    $ git clone git://github.com/martijngastkemper/dotfiles ~/.dotfiles
+    $ cd ~/.dotfiles
+    $ make symlinks
 
 ### Step 2: Brew
 
-    make install_brew
-    make install_brew_packages
+    $ make install_brew
+    $ make install_brew_packages
 
 ### Step 3: Shell
 
 Zsh will be installed by Brew. To activate it run:
 
-    make configure_zsh
+    $ make configure_zsh
 
-When Zsh is not available run:
+When Zsh is not available but Bash is:
 
-    make configure_bash
+    $ make configure_bash
 
 ### Step 4: vim
 
-    make configure_vim
+    $ make configure_vim
 
 ### Step 5: tmux
 
-    make configure_tmux
+Start tmux befor configuring it.
+
+    $ tmux new-session -d
+    $ make configure_tmux
 
 ### Step 6: nvm
 
-    make install_nvm
+    $ make install_nvm
 
 ### Step 7: Configure MacOS
 
-    make configure_macos
+    $ make configure_macos
 
 Settings to change manually
 
@@ -85,7 +86,7 @@ System Preferences -> Security & Privacy -> General -> Require password ...
 
 To load settings to Zsh which aren't global add them to:
 
-    vim ~/.zshrc.local
+    $ vim ~/.zshrc.local
 
 ## PhpStorm
 
@@ -101,7 +102,7 @@ The plugins I use:
 
 It's hard to find the right domaian and key of a preference. To find it use ``diff``
 
-    defaults read > before
+    $ defaults read > before
     # make the desired changes to your preferences
-    defaults read > after
-    diff before after
+    $ defaults read > after
+    $ diff before after
