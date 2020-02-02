@@ -47,7 +47,7 @@ install_vim_vundle: installed_git
 install_vim_plugins: installed_vim install_vim_vundle
 	vim +BundleInstall +qall
 
-install_vim: install_vim_symlinks install_vim_vundle install_vim_plugins
+configure_vim: installed_vim install_vim_symlinks install_vim_vundle install_vim_plugins
 
 install_tmux_symlinks:
 	ln -nsf $(DIR)/tmux.conf ~/.tmux.conf
@@ -58,7 +58,7 @@ install_tmux_plugin_manager: installed_git
 install_tmux_plugins:
 	tmux source ~/.tmux.conf
 
-install_tmux: install_tmux_symlinks install_tmux_plugin_manager install_tmux_plugins
+configure_tmux: installed_tmux install_tmux_symlinks install_tmux_plugin_manager install_tmux_plugins
 
 configure_macos:
 	@sh macos_config.sh;\

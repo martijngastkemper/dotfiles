@@ -59,11 +59,11 @@ When Zsh is not available run:
 
 ### Step 4: vim
 
-    make install_vim
+    make configure_vim
 
 ### Step 5: tmux
 
-    make install_tmux
+    make configure_tmux
 
 ### Step 6: nvm
 

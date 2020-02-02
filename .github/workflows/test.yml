@@ -20,10 +20,10 @@ jobs:
             - run: make install_nvm
             - run: make configure_bash
             - run: make symlinks
-            - run: make install_vim
+            - run: make configure_vim
             - name: Start tmux
               run: tmux new-session -d
-            - run: make install_tmux
+            - run: make configure_tmux
     test_ubuntu:
         name: on Ubuntu
         runs-on: ubuntu-latest
@@ -34,6 +34,9 @@ jobs:
             - run: make install_nvm
             - run: make configure_bash
             - run: make symlinks
-            - run: make install_vim
-
+            - run: sudo apt-get install vim tmux
+            - name: Start tmux
+              run: tmux new-session -d
+            - run: make configure_tmux
+            - run: make configure_vim
             
