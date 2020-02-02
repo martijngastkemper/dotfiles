@@ -16,6 +16,7 @@ jobs:
               run: cp -r $GITHUB_WORKSPACE $HOME/.dotfiles
             - run: make install_brew
             - run: make install_brew_packages
+            - run: make configure_zsh
             - run: make install_nvm
             - run: make configure_bash
             - run: make symlinks
