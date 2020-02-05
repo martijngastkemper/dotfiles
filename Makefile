@@ -18,7 +18,7 @@ install_brew_packages: installed_brew
 	brew bundle install
 
 install_nvm: installed_curl
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 
 configure_bash: installed_bash
 	ln -nsf $(DIR)/bash_aliases ~/.bash_aliases
