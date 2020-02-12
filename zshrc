@@ -71,6 +71,7 @@ fi
 alias dstats="docker stats"
 alias gl="git pull --rebase"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
+alias dcr="docker-compose run --rm"
 
 function fixup () {
     git commit --fixup=${1:-`git rev-parse HEAD`}
