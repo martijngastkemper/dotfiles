@@ -21,7 +21,6 @@ export DEFAULT_USER=`whoami`
 source ~/.dotfiles/bin/antigen.zsh
 
 antigen use oh-my-zsh
-antigen bundle composer
 antigen bundle docker
 antigen bundle docker-compose
 antigen bundle git
@@ -30,7 +29,6 @@ antigen bundle pj
 if command -v tmux > /dev/null ; then
     antigen bundle tmux
 fi
-antigen bundle yarn
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme agnoster
@@ -73,7 +71,6 @@ fi
 alias dstats="docker stats"
 alias gl="git pull --rebase"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
-alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 
 function fixup () {
     git commit --fixup=${1:-`git rev-parse HEAD`}
