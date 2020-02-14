@@ -40,8 +40,6 @@ CASE_SENSITIVE="true"
 
 # Give Fish like suggestions a color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
-# Give completion suggestions
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
