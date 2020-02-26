@@ -12,8 +12,10 @@ check_run() {
     fi
 }
 
-check_run package.json "yarn install"
-check_run composer.lock "composer install"
 check_run bower.json "bower install"
+check_run composer.json "composer install"
+check_run composer.lock "composer install"
+check_run docker-compose.*yml "docker-compose build"
 check_run env.template "update your environment variables"
-check_run docker-compose.*yml "rebuild Docker images"
+check_run package.json "yarn install"
+check_run yarn.lock "yarn install"
