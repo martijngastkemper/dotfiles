@@ -13,6 +13,7 @@
     Plugin 'christoomey/vim-tmux-navigator'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'dkarter/bullets.vim'
+    Plugin 'editorconfig/editorconfig-vim'
     Plugin 'FelikZ/ctrlp-py-matcher'
     Plugin 'lumiliet/vim-twig'
     Plugin 'ludovicchabant/vim-gutentags'
