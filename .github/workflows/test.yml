@@ -24,6 +24,10 @@ jobs:
             - name: Start tmux
               run: tmux new-session -d
             - run: make configure_tmux
+            - name: Slack Notification
+              uses: rtCamp/action-slack-notify@v2.0.0
+              env:
+                SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
     test_ubuntu:
         name: on Ubuntu
         runs-on: ubuntu-latest
@@ -39,4 +43,8 @@ jobs:
               run: tmux new-session -d
             - run: make configure_tmux
             - run: make configure_vim
-            
+            - name: Slack Notification
+              uses: rtCamp/action-slack-notify@v2.0.0
+              env:
+                SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
