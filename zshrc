@@ -14,6 +14,10 @@ export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 # Make dotfile utility scripts available
 export PATH=~/.dotfiles/bin:$PATH
 
+# PHP Composer configuration
+export COMPOSER_HOME=~/.composer
+export PATH=$COMPOSER_HOME/vendor/bin:$PATH
+
 # Hide username from statusline
 export DEFAULT_USER=`whoami`
 
@@ -49,9 +53,6 @@ bindkey '^ ' autosuggest-accept
 
 export EDITOR='vim'
 
-# PHP Composer
-export COMPOSER_HOME=~/.composer
-
 # SSH
 export SSH_KEY_PATH=~/.ssh/id_rsa
 
@@ -78,7 +79,7 @@ function fixup () {
 # Configure pj (project jump) plugin
 export PROJECT_PATHS=(~/Sites)
 
-# When .zshrc.local exists load it to make device specific settings available 
+# When .zshrc.local exists load it to make device specific settings available
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi

@@ -23,14 +23,14 @@
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-repeat'
-    
+
     call vundle#end()
     filetype plugin indent on
 
 " }}}}
 
 " GUI {{{{{
-    
+
     " Enable syntax highlighting
     syntax on
 
@@ -38,7 +38,7 @@
     set statusline=%f\ %y\ %m\ %r\ Line:\ %l/%L\ Col:\ %c\ Buf:\ #%n
     set laststatus=2
     set showcmd
-    
+
     " linenumbers
     set number
     set relativenumber
@@ -58,7 +58,7 @@
 " }}}}
 
 " Mappings {{{{
-    
+
     let mapleader = ","
 
     " For when you forget to sudo.. Really Write the file.
@@ -106,9 +106,9 @@
 
     " Ignore some files and folders
     set wildignore+=*.o,*.obj,*.jpg,*.jpeg,*.png,*.gif,*.ser,.git,.idea
-    set wildignore+=node_modules,public/js/build/prod/* 
+    set wildignore+=node_modules,public/js/build/prod/*
 
-    " Use ctrlp-py-matcher for improved performance 
+    " Use ctrlp-py-matcher for improved performance
     let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
     " Allow dotfiles like .env and .env.template

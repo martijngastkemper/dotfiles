@@ -1,5 +1,5 @@
 [user]
-    
+
     useConfigOnly = true
     name = Martijn Gastkemper
 
@@ -37,6 +37,7 @@
 [core]
 
     excludesfile = ~/.dotfiles/gitignore_global
+    attributesfile = ~/.dotfiles/gitattributes
 
 [branch]
 
@@ -46,3 +47,8 @@
 
     gpgsign = true
     verbose = true
+
+[merge "composer_json"]
+    name = composer JSON file merge driver
+    driver = composer-git-merge-driver %O %A %B %L %P
+    recursive = binary

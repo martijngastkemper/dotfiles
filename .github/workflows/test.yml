@@ -24,6 +24,8 @@ jobs:
             - name: Start tmux
               run: tmux new-session -d
             - run: make configure_tmux
+            - run: make install_composer
+            - run: make install_composer_git_merge_driver
     test_ubuntu:
         name: on Ubuntu
         runs-on: ubuntu-latest
@@ -39,6 +41,8 @@ jobs:
               run: tmux new-session -d
             - run: make configure_tmux
             - run: make configure_vim
+            - run: make install_composer
+            - run: make install_composer_git_merge_driver
             - name: Slack Notification
               uses: rtCamp/action-slack-notify@v2.0.0
               env:

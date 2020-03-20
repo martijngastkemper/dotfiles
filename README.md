@@ -70,16 +70,26 @@ Start tmux befor configuring it.
 
     $ make install_nvm
 
-### Step 7: Configure MacOS
+### Step 7: Composer
+
+Install Composer globally:
+
+    $ make install_composer
+
+A mechanism to more effectively merge `composer.json` and `composer.lock` files. The Git configuration requires this packages if it has to merge one of the files.
+
+    $ make install_composer_git_merge_driver
+
+### Step 8: Configure MacOS
 
     $ make configure_macos
 
 Settings to change manually
 
-*Let Caps Lock be an Escape key*  
-System Preferences -> Keyboard -> Modifier Keys -> Caps Lock -> Esc 
+*Let Caps Lock be an Escape key*
+System Preferences -> Keyboard -> Modifier Keys -> Caps Lock -> Esc
 
-*Lock computer immediately*  
+*Lock computer immediately*
 System Preferences -> Security & Privacy -> General -> Require password ...
 
 ## Override Zsh settings
