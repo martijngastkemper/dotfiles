@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/usr/local/bin/tmux source-file ~/.tmux-themes/dark.conf
+

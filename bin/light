@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/local/bin/tmux source-file ~/.tmux-themes/light.conf
