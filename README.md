@@ -12,6 +12,18 @@ Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles),
 
 Lists all the available source. For a fine grained install.
 
+### `bin/apply_git_templates`
+
+After changing a hook in `git_templates/` I want to apply these changes to existings checkouts. This scripts copies the files to `.git/` in the project. It asks to confirm overwriting existing files.
+
+### `bin/dark`
+
+Which tmux and vim to dark mode.
+
+### `bin/light`
+
+Which tmux and vim to light mode.
+
 ### `bin/public_port`
 
 When using Docker Compose it's not clear which public ports services expose. Looking into one of the `docker-compose*.yml` files is cumbersome. Use `public_port` to get the public port of a service.
@@ -27,10 +39,6 @@ Get the port for MySQL
     $ public_port 3306
     Private port 3306
     db: 0.0.0.0:20000
-
-### `bin/apply_git_templates`
-
-After changing a hook in `git_templates/` I want to apply these changes to existings checkouts. This scripts copies the files to `.git/` in the project. It asks to confirm overwriting existing files.
 
 ## Installation
 

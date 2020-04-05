@@ -47,7 +47,12 @@
 
     " allow backspacing over everything in insert mode
     set backspace=indent,eol,start
-        
+
+    " Set background when starting based on TMUX_THEME
+    function! Chomp(string)
+        return substitute(a:string, '\n\+$', '', '')
+    endfunction
+
 " }}}}
 
 " Formatting {{{{
