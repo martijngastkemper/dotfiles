@@ -12,7 +12,10 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 
 # Make dotfile utility scripts available
-export PATH=~/.dotfiles/bin:$PATH
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
+# Make yarn and yarn global available
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # PHP Composer configuration
 export COMPOSER_HOME=~/.composer
@@ -83,3 +86,4 @@ export PROJECT_PATHS=(~/Sites)
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
+

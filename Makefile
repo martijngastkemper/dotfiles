@@ -98,5 +98,5 @@ configure_macos:
 	exit $$?
 
 .PHONY = yarn_globals
-yarn_globals:
+yarn_globals: installed_yarn
 	yarn global add feedly-cli

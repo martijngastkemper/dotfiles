@@ -18,7 +18,6 @@ brew "tree"
 brew "universal-ctags", args: ['HEAD']
 brew "vim"
 brew "wget"
-brew "yarn", args: ["ignore-dependencies"]
 brew "zsh"
 cask "1password"
 cask "docker"
