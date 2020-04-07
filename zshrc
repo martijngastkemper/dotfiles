@@ -79,6 +79,10 @@ function fixup () {
     git commit --fixup=${1:-`git rev-parse HEAD`}
 }
 
+function idea() {
+    open -na "PhpStorm.app" --args "$1:A"
+}
+
 # Configure pj (project jump) plugin
 export PROJECT_PATHS=(~/Sites)
 
