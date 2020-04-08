@@ -9,3 +9,5 @@ vim/.netrwhist
 /gnupg/sshcontrol
 
 bin/antigen.zsh
+bin/revolver
+bin/zunit

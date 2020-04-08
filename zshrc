@@ -11,7 +11,7 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 # Make Brew mysql-client available
 export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 
-# Make dotfile utility scripts available
+# Make dotfile binaries available
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
 # Make yarn and yarn global available
@@ -75,13 +75,8 @@ alias gl="git pull --rebase"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
 alias dcr="docker-compose run --rm"
 
-function fixup () {
-    git commit --fixup=${1:-`git rev-parse HEAD`}
-}
-
-function idea() {
-    open -na "PhpStorm.app" --args "$1:A"
-}
+source fixup.zsh
+source idea.zsh
 
 # Configure pj (project jump) plugin
 export PROJECT_PATHS=(~/Sites)

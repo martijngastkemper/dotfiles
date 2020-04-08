@@ -1,0 +1,55 @@
+#!/usr/bin/env zunit
+
+@setup {
+  load ../fixup.zsh
+
+  function git {
+    if [[ "$@" == "rev-parse HEAD" ]]; then
+      echo "HEAD"
+      return 0
+    elif [[ "$@" == "rev-parse -q --verify pass" ]]; then
+      return 0
+    elif [[ "$@" == "rev-parse -q --verify --no-verify" ]]; then
+      return 1
+    else
+      echo "git $@"
+      return 0
+    fi
+  }
+}
+
+@test 'test fixup without arguments' {
+
+  run fixup
+
+  assert $state equals 0
+  assert $output contains "--fixup=HEAD"
+}
+
+@test 'test fixup with git rev a first argument' {
+
+  run fixup pass
+
+  assert $state equals 0
+  assert $output matches '\-\-fixup=pass$'
+
+}
+
+@test 'test fixup with git arguments' {
+
+  run fixup --no-verify
+
+  assert $state equals 0
+  assert $output contains '--fixup=HEAD'
+  assert $output contains '--no-verify'
+
+}
+
+@test 'test fixup with rev and git arguments' {
+
+  run fixup pass --some-arg
+
+  assert $state equals 0
+  assert $output matches '\-\-fixup=pass \-\-some\-arg$'
+
+}

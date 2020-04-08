@@ -101,3 +101,9 @@ configure_macos:
 .PHONY = yarn_globals
 yarn_globals: installed_yarn
 	yarn global add feedly-cli
+
+.PHONY = install_zunit
+install_zunit: installed_curl
+	curl -L https://raw.githubusercontent.com/molovo/revolver/master/revolver > bin/revolver
+	curl -L https://github.com/molovo/zunit/releases/download/v0.8.2/zunit > bin/zunit
+	chmod +x bin/revolver bin/zunit
