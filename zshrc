@@ -1,3 +1,4 @@
+BASEDIR="$HOME/.dotfiles"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export GPG_TTY=$(tty)
@@ -12,7 +13,7 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 
 # Make dotfile binaries available
-export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$BASEDIR/bin:$PATH"
 
 # Make yarn and yarn global available
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -25,7 +26,7 @@ export PATH=$COMPOSER_HOME/vendor/bin:$PATH
 export DEFAULT_USER=`whoami`
 
 # Activate Antigen - ZSH plugin manager
-source ~/.dotfiles/bin/antigen.zsh
+source $BASEDIR/bin/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle docker
@@ -75,8 +76,8 @@ alias gl="git pull --rebase"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
 alias dcr="docker-compose run --rm"
 
-source fixup.zsh
-source idea.zsh
+source $BASEDIR/fixup.zsh
+source $BASEDIR/idea.zsh
 
 # Configure pj (project jump) plugin
 export PROJECT_PATHS=(~/Sites)
