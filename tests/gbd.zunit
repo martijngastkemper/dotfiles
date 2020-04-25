@@ -1,0 +1,38 @@
+#!/usr/bin/env zunit
+
+@setup {
+
+  load ../gbd.zsh
+
+  function git {
+    if [[ "$@" == "branch --delete allow" ]]; then
+      return "Branch allow removed"
+      return 0
+    elif [[ "$@" == "branch --delete deny" ]]; then
+      return "Branch deny can't be removed"
+      return 1
+    fi
+  }
+
+}
+
+@test 'test gbd removing allowed branch' {
+
+  run gbd allow
+echo $output
+  assert $state equals 0
+  assert $output contains "Branch allow removed"
+
+}
+
+@test 'test gbd removing denied branch' {
+
+  function read () {
+    exit 1
+  }
+
+  run gbd deny
+
+  assert $state equals 1
+
+}
