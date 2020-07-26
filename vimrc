@@ -147,5 +147,6 @@
 
     " Move tags file out of project root
     let g:gutentags_ctags_tagfile = ".git/tags"
+    let g:gutentags_ctags_extra_args = ["--tag-relative"]
 
 " }}}}
