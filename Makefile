@@ -19,6 +19,7 @@ install_brew: installed_ruby
 
 .PHONY = install_brew_packages
 install_brew_packages: installed_brew
+	brew update
 	brew bundle install
 
 .PHONY = install_composer
