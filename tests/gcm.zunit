@@ -1,0 +1,68 @@
+#!/usr/bin/env zunit
+
+@setup {
+
+  load ../gcm.zsh
+
+  cd `mktemp -d`
+
+  git init --initial-branch="main" .
+
+  git config user.email zunit@martijngastkemper.nl
+  git config commit.gpgsign false
+  touch file.txt
+
+  git add file.txt
+  git commit --allow-empty --no-verify --message="test commit"
+
+}
+
+@teardown {
+
+  cd -
+
+}
+
+@test 'test gcm switching from branch to main' {
+
+  git switch --create "test"
+
+  run gcm
+
+  assert $state equals 0
+  assert `git branch --show-current` same_as "main"
+
+}
+
+@test 'test gcm when already on main' {
+
+  run gcm
+
+  assert $state equals 0
+  assert `git branch --show-current` same_as "main"
+
+}
+
+@test 'test gcm when both main and master branch exists' {
+
+  git branch master
+
+  run gcm
+
+  assert $state equals 0
+  assert `git branch --show-current` same_as "main"
+
+}
+
+@test 'test gcm when only master branch exists' {
+
+  git switch --create "test"
+  git branch --create "master"
+  git branch -D "main"
+
+  run gcm
+
+  assert $state equals 0
+  assert `git branch --show-current` same_as "master"
+
+}

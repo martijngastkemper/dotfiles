@@ -77,6 +77,8 @@ alias gstl="git stash list --format='%gd (%cr): %gs'"
 alias dcr="docker-compose run --rm"
 
 source $BASEDIR/fixup.zsh
+unalias gcm 2>/dev/null
+source $BASEDIR/gcm.zsh
 source $BASEDIR/idea.zsh
 
 # Configure pj (project jump) plugin
