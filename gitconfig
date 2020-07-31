@@ -7,6 +7,8 @@
 
     templatedir = ~/.dotfiles/git_template
 
+    defaultBranch = main
+
 [alias]
 
     # Locally exclude file without adding it to .gitignore
