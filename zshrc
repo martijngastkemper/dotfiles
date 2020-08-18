@@ -73,6 +73,7 @@ fi
 
 alias dstats="docker stats"
 alias gl="git pull --rebase"
+alias gstpa="git stash --patch"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
 alias dcr="docker-compose run --rm"
 
