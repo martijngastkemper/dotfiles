@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# Usage: bash list-ports.sh PRIVATE_PORT
+# Usage: sh public_port PRIVATE_PORT
 # PRIVATE_PORT default 80
 
 privatePort=${1-80}
-services=`docker-compose ps --service --filter "status=running" 2> /dev/null`
+services=$( docker-compose ps --service --filter "status=running" 2> /dev/null )
 
 if [ -z "$services" ]
 then
@@ -12,14 +12,15 @@ then
     exit 1
 fi
 
-echo Private port $privatePort
+echo Private port "$privatePort"
 
 for service in $services
 do
-    port=`docker-compose port $service $privatePort 2> /dev/null`
-
+    port=$( docker-compose port "$service" "$privatePort" 2> /dev/null )
+s
+    # shellcheck disable=SC2181
     if [ $? -eq 0 ] && [ -n "$port" ]
     then
-        echo $service: $port
+        echo "$service": "$port"
     fi
 done

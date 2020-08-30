@@ -2,12 +2,9 @@
 
 COMMIT_MSG_FILE=$1
 COMMIT_SOURCE=$2
-SHA1=$3
 
-if [ "$COMMIT_SOURCE" == "merge" ]; then
-   exit
-fi 
+[ "$COMMIT_SOURCE" = "merge" ] && exit;
 
 /usr/bin/perl -i.bak -pe '
-    print "\n" . `git rev-parse --abbrev-ref HEAD | grep -ioE "ac-?[[:digit:]]+" | tr a-z A-Z` 
+    print "\n" . `git rev-parse --abbrev-ref HEAD | grep -ioE "ac-?[[:digit:]]+" | tr a-z A-Z`
       if /^#/ && /^AC/ && $first++ == 0' "$COMMIT_MSG_FILE"
