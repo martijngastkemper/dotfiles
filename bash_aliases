@@ -1,3 +1,6 @@
+#!/usr/bin/env sh
+# shellcheck source=/dev/null
+
 export LC_ALL=en_GB.utf8
 export EDITOR='vim'
 

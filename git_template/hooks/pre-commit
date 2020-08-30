@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# Execute PHP linting tools
-# Checks wether ./vendor/bin/phpcs is available before executing
-
 PROJECT=$(pwd)
-FILES=`git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\\\.php$`
+FILES=$(git diff --cached --name-only --diff-filter=ACMR HEAD "*.php"| sed 's| |\\ |g')
 
 [ -z "$FILES" ] && exit 0
 
@@ -12,8 +9,8 @@ echo "Checking PHP Lint..."
 
 for FILE in $FILES
 do
-  php -l -d display_errors=0 $PROJECT/$FILE
-  if [ $? != 0 ]
+
+  if php -l -d display_errors=0 "$PROJECT"/"$FILE";
   then
       echo "Fix the error before commit."
       exit 1
@@ -31,11 +28,4 @@ then
 fi
 
 echo "Running Code Sniffer..."
-./vendor/bin/phpcs --standard=$STANDARDS_FILE --colors --encoding=utf-8 -n -p $FILES
-if [ $? != 0 ]
-then
-  echo "Fix the error before commit."
-  exit 1
-fi
-
-exit $?
+./vendor/bin/phpcs --standard=$STANDARDS_FILE --colors --encoding=utf-8 -n -p "$FILES"
