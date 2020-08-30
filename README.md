@@ -2,6 +2,8 @@
 
 [![Github Action test installation badge](https://github.com/martijngastkemper/dotfiles/workflows/Test%20installation/badge.svg)](https://github.com/martijngastkemper/dotfiles/actions)
 
+[![Github Action linting badge](https://github.com/martijngastkemper/dotfiles/workflows/Linting/badge.svg)](https://github.com/martijngastkemper/dotfiles/actions)
+
 ![Screenshot of my terminal](screenshot.png)
 
 Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles), [jackfranklin/dotfiles](https://github.com/jackfranklin/dotfiles) and [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
