@@ -15,7 +15,11 @@
     debug  = "!set -x; GIT_TRACE=2 GIT_CURL_VERBOSE=2 GIT_TRACE_PERFORMANCE=2 GIT_TRACE_PACK_ACCESS=2 GIT_TRACE_PACKET=2 GIT_TRACE_PACKFILE=2 GIT_TRACE_SETUP=2 GIT_TRACE_SHALLOW=2 git"
 
     # Locally exclude file without adding it to .gitignore
-    exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
+    exclude = "!f() { \
+      for file in "$@"; do \
+        echo "$file" >> .git/info/exclude; \
+      done; \
+    }; f"
 
     # Create a feature branch
     feature = "!f() { git checkout -b 'feature/'$(git config user.name | cut -d' ' -f1 | awk '{print tolower($0)}')'-'$1; }; f"
