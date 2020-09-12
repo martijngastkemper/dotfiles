@@ -94,6 +94,9 @@
     " no swap files
     set noswapfile
 
+    " Allow switching from unsaved buffer to another buffer
+    set hidden
+
     " Enter opens tag
     augroup tag_navigation
         autocmd!
