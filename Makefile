@@ -61,7 +61,6 @@ symlinks:
 install_vim_symlinks:
 	ln -nsf $(DIR)/ctags ~/.ctags
 	ln -nsf $(DIR)/vim ~/.vim
-	ln -nsf $(DIR)/vimrc ~/.vimrc
 	ln -nsf $(DIR)/ideavimrc ~/.ideavimrc
 
 .PHONY = install_vim_vundle
