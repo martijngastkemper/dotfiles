@@ -25,7 +25,7 @@ install_brew_packages: installed_brew
 .PHONY = install_composer
 install_composer: installed_php
 	sh $(DIR)/bin/install-composer.sh
-	sudo mv composer.phar /usr/local/bin/composer
+	mv composer.phar $(DIR)/bin/composer
 
 .PHONY = install_composer_git_merge_driver
 install_composer_git_merge_driver: installed_composer

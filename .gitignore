@@ -8,6 +8,9 @@ vim/.netrwhist
 /gnupg/openpgp-revocs.d/
 /gnupg/sshcontrol
 
-bin/antigen.zsh
-bin/revolver
-bin/zunit
+bin/
+!bin/apply_git_template
+!bin/dark
+!bin/install_composer.sh
+!bin/light
+!bin/public_port
