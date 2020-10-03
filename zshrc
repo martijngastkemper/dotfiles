@@ -19,6 +19,7 @@ export PATH="$BASEDIR/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # PHP Composer configuration
+export COMPOSER_MEMORY_LIMIT=-1
 export COMPOSER_HOME=~/.composer
 export PATH=$COMPOSER_HOME/vendor/bin:$PATH
 
