@@ -23,3 +23,6 @@ indent_style = tab
 
 [vimrc]
 indent_size = 4
+
+[gitconfig]
+indent_size = 4
