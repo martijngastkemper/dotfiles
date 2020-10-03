@@ -86,6 +86,9 @@ source $BASEDIR/idea.zsh
 # Configure pj (project jump) plugin
 export PROJECT_PATHS=(~/Sites)
 
+export VAGRANT_CWD=~/Homestead
+alias homestead=vagrant
+
 # When .zshrc.local exists load it to make device specific settings available
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
