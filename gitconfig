@@ -35,7 +35,7 @@
     }; f"
 
     # Get the main branch (main or master)
-    main = "! git rev-parse -q --verify --symbolic master || git rev-parse -q --verify --symbolic main;"
+    main = "! git rev-parse -q --verify --symbolic main || git rev-parse -q --verify --symbolic master;"
 
     # Interactive rebase from local branch eg. git rbi master
     rbi = "! git rebase --interactive `git merge-base ${1:-origin/$(git main)} HEAD`"
