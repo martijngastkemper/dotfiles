@@ -44,6 +44,7 @@ Get the port for MySQL
 
 ### Step 1: Dotfiles
 
+    $ # install homebrew: https://brew.sh
     $ git clone git://github.com/martijngastkemper/dotfiles ~/.dotfiles
     $ cd ~/.dotfiles
     $ make symlinks
