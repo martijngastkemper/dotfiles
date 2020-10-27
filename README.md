@@ -45,7 +45,7 @@ Get the port for MySQL
 ### Step 1: Dotfiles
 
     $ git clone git://github.com/martijngastkemper/dotfiles ~/.dotfiles
-    $ #when git is not available install brew (brew.sh), this will install git on MacOS
+    $ # when git is not available install brew (brew.sh), this will install git on MacOS
     $ cd ~/.dotfiles
     $ make symlinks
 
@@ -100,6 +100,20 @@ System Preferences -> Keyboard -> Modifier Keys -> Caps Lock -> Esc
 
 *Lock computer immediately*
 System Preferences -> Security & Privacy -> General -> Require password ...
+
+### Step 9: GPG
+
+Prevent "unsafe persmissions on homedir" error:
+
+```
+chmod 700 ~/.dotfiles/gnupg
+```
+
+Get the GPG keys from 1Password and import them:
+
+```
+gpg --import /location/of/the/gpg/key.file
+```
 
 ## Override Zsh settings
 
