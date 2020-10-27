@@ -44,8 +44,8 @@ Get the port for MySQL
 
 ### Step 1: Dotfiles
 
-    $ # install homebrew: https://brew.sh
     $ git clone git://github.com/martijngastkemper/dotfiles ~/.dotfiles
+    $ #when git is not available install brew (brew.sh), this will install git on MacOS
     $ cd ~/.dotfiles
     $ make symlinks
 
@@ -70,7 +70,7 @@ When Zsh is not available but Bash is:
 
 ### Step 5: tmux
 
-Start tmux befor configuring it.
+Start tmux before configuring it.
 
     $ tmux new-session -d
     $ make configure_tmux
