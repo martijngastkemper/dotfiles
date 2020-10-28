@@ -72,11 +72,13 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+alias composer1="composer self-update --1"
+alias composer2="composer self-update --2"
+alias dcr="docker-compose run --rm"
 alias dstats="docker stats"
 alias gl="git pull --rebase"
 alias gstpa="git stash --patch"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
-alias dcr="docker-compose run --rm"
 
 source $BASEDIR/fixup.zsh
 unalias gcm 2>/dev/null
