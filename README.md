@@ -130,6 +130,7 @@ The plugins I use:
 - .env files support
 - IdeaVim
 - Makefile support
+- Prettier
 
 ## Find domain and key for usage in ``defaults``
 
