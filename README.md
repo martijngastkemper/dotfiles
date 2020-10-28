@@ -75,19 +75,23 @@ Start tmux before configuring it.
     $ tmux new-session -d
     $ make configure_tmux
 
-### Step 6: nvm
+### Step 6: Node
 
     $ make install_nvm
+    $ nvm install 12
+    $ make install_yarn
 
 ### Step 7: Composer
 
-Install Composer globally:
+Install Composer 2* globally:
 
     $ make install_composer
 
 A mechanism to more effectively merge `composer.json` and `composer.lock` files. The Git configuration requires this packages if it has to merge one of the files.
 
     $ make install_composer_git_merge_driver
+
+* Switch between Composer versions with `composer1` and `composer2`.
 
 ### Step 8: Configure MacOS
 
