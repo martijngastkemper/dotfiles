@@ -9,7 +9,7 @@ on:
 jobs:
     test_macos:
         name: on MacOS
-        runs-on: macOS-latest
+        runs-on: macos-10.15
         steps:
             - uses: actions/checkout@v2
             - name: Copy workspace to $HOME/.dotfiles
