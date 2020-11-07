@@ -105,6 +105,13 @@ System Preferences -> Keyboard -> Modifier Keys -> Caps Lock -> Esc
 *Lock computer immediately*
 System Preferences -> Security & Privacy -> General -> Require password ...
 
+Add a cronjob to switch between light and dark mode automatically based on the mode MacOS has selected.
+
+    $ crontab -l > tmp_crontab
+    $ echo "* * * * * sh ~/.dotfiles/macos_switch_theme.sh > /tmp/stdout.cron.log 2> /tmp/stderr.cron.log" >> tmp_crontab
+    $ crontab tmp_crontab
+    $ rm tmp_crontab
+
 ### Step 9: GPG
 
 Prevent "unsafe persmissions on homedir" error:
