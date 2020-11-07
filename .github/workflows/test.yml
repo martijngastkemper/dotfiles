@@ -18,7 +18,6 @@ jobs:
               run: |
                 rm /usr/local/bin/aws
                 rm /usr/local/bin/aws_completer
-                ls -l /usr/local/bin/aws*
             - run: make install_brew
             - run: make install_brew_packages
             - run: make configure_zsh
