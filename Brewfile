@@ -12,6 +12,7 @@ brew "mysql-client@5.7", link: true
 brew "php@7.4"
 brew "pinentry-mac"
 brew "ruby"
+brew "shellcheck"
 brew "sqlite"
 brew "tmux"
 brew "tree"
