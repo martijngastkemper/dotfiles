@@ -1,2 +1,9 @@
 composer.json merge=composer_json
 composer.lock merge=composer_json
+
+*.css diff=css
+*.md diff=markdown
+*.php diff=php
+*.scss diff=css
+
+*.phar -diff
