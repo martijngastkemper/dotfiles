@@ -23,7 +23,7 @@
 
     # Create a feature branch
     feature = "!f() { \
-      git checkout -b 'feature/'$(git firstname)'-'$1; \
+      git checkout -b 'feature/martijn.g-'$1; \
     }; f"
 
     # Return lowercase first part of git user.name
