@@ -84,6 +84,8 @@ alias gstpa="git stash --patch"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
 alias php7="brew unlink php && brew link php@7.4"
 alias php8="brew unlink php@7.4 && brew link php"
+alias dcup="docker compose up"
+alias clear_aws_profile="export AWS_PROFILE="
 
 source $BASEDIR/fixup.zsh
 unalias gcm 2>/dev/null
