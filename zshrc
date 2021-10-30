@@ -26,9 +26,6 @@ export PATH=$COMPOSER_HOME/vendor/bin:$PATH
 # Hide username from statusline
 export DEFAULT_USER=`whoami`
 
-# Garp3 configuration
-export APPLICATION_ENV=development
-
 # Activate Antigen - ZSH plugin manager
 source $BASEDIR/bin/antigen.zsh
 
