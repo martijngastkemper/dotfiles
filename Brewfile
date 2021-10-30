@@ -15,6 +15,7 @@ brew "ruby"
 brew "shellcheck"
 brew "sqlite"
 brew "tmux"
+brew "trash"
 brew "tree"
 brew "universal-ctags", args: ['HEAD']
 brew "vim"
