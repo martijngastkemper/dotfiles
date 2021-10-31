@@ -7,7 +7,7 @@ export GPG_TTY=$(tty)
 export PATH=/usr/local/sbin:$PATH
 
 # Make Brew ruby available
-export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/opt/ruby@2.7/bin/:/usr/local/opt/ruby/bin:$PATH
 
 # Make Brew mysql-client available
 export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
@@ -99,4 +99,3 @@ alias homestead=vagrant
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
-
