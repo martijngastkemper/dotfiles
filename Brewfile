@@ -10,6 +10,7 @@ brew "inetutils"
 brew "jq"
 brew "mysql-client@5.7", link: true
 brew "php@7.4"
+brew "php@8.0"
 brew "pinentry-mac"
 brew "ruby@2.7"
 brew "shellcheck"
