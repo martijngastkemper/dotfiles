@@ -84,7 +84,6 @@ alias php8="brew unlink php@7.4 php && brew link php@8.0"
 alias php80="brew unlink php@7.4 php && brew link php@8.0"
 alias php81="brew unlink php@7.4 php@8.0 && brew link php"
 alias dcup="docker compose up"
-alias clear_aws_profile="export AWS_PROFILE="
 
 source $BASEDIR/fixup.zsh
 unalias gcm 2>/dev/null
