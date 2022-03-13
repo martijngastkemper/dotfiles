@@ -11,6 +11,7 @@ brew "jq"
 brew "mysql-client@5.7", link: true
 brew "php@7.4"
 brew "php@8.0"
+brew "php"
 brew "pinentry-mac"
 brew "ruby@2.7"
 brew "shellcheck"
