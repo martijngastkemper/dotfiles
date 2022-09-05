@@ -72,7 +72,9 @@ fi
 alias composer1="composer self-update --1"
 alias composer2="composer self-update --2"
 alias dcr="docker-compose run --rm"
+alias dcup="docker compose up"
 alias dstats="docker stats"
+alias gb="git branch --sort=committerdate"
 alias gl="git pull --rebase"
 alias gstpa="git stash --patch"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
@@ -80,7 +82,9 @@ alias php7="brew unlink php@8.0 php && brew link php@7.4"
 alias php8="brew unlink php@7.4 php && brew link php@8.0"
 alias php80="brew unlink php@7.4 php && brew link php@8.0"
 alias php81="brew unlink php@7.4 php@8.0 && brew link php"
-alias dcup="docker compose up"
+alias tfi="terraform init"
+alias tfa="terraform fmt; terraform apply"
+alias tfp="terraform fmt; terraform plan"
 
 source $BASEDIR/fixup.zsh
 unalias gcm 2>/dev/null
