@@ -51,8 +51,9 @@
 
 [core]
 
-    excludesfile = ~/.dotfiles/gitignore_global
     attributesfile = ~/.dotfiles/gitattributes
+    excludesfile = ~/.dotfiles/gitignore_global
+    ignorecase = false
 
 [branch]
 
