@@ -12,17 +12,17 @@ jobs:
 
       - name: Install ZSH on MacOS
         env:
-          HOMEBREW_NO_INSTALL_CLEANUP: ""
+          HOMEBREW_NO_INSTALL_CLEANUP: true
         run: |
           make install_brew
           brew install zsh
-          make configure_zsh
 
       - name: Copy workspace to $HOME/.dotfiles
         run: cp -r "$GITHUB_WORKSPACE" "$HOME/.dotfiles"
       - name: Run zunit
         run: |
           cd "$HOME/.dotfiles"
+          make configure_zsh
           make install_zunit
           export PATH="$HOME/.dotfiles/bin:$PATH"
           zunit --verbose
