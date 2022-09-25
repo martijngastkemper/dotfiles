@@ -11,6 +11,18 @@ jobs:
     name: on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Install ZSH on Ubuntu
+        if: startsWith(matrix.os, 'ubuntu')
+        run: |
+          sudo apt-get update
+          sudo apt-get --assume-yes --no-install-recommends install zsh
+
+      - name: Install ZSH on MacOS
+        if: startsWith(matrix.os, 'macos')
+        run: |
+          make install_brew
+          brew install zsh
+
       - uses: actions/checkout@v3
       - name: Copy workspace to $HOME/.dotfiles
         run: cp -r "$GITHUB_WORKSPACE" "$HOME/.dotfiles"
