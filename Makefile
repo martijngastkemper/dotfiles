@@ -44,6 +44,7 @@ configure_bash: installed_bash
 	ln -nsf $(DIR)/bash_aliases ~/.bash_aliases
 
 bin/antigen.zsh: installed_curl
+	touch $(DIR)/bin/antigen.zsh
 	curl -L git.io/antigen-nightly > $(DIR)/bin/antigen.zsh
 
 .PHONY = configure_zsh
