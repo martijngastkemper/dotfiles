@@ -11,6 +11,8 @@ jobs:
     name: on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
+      - uses: actions/checkout@v3
+        
       - name: Install ZSH on Ubuntu
         if: startsWith(matrix.os, 'ubuntu')
         run: |
@@ -23,7 +25,6 @@ jobs:
           make install_brew
           brew install zsh
 
-      - uses: actions/checkout@v3
       - name: Copy workspace to $HOME/.dotfiles
         run: cp -r "$GITHUB_WORKSPACE" "$HOME/.dotfiles"
       - name: Run zunit
