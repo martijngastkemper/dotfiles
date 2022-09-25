@@ -16,6 +16,7 @@ jobs:
         run: |
           make install_brew
           brew install zsh
+          make configure_zsh
 
       - name: Copy workspace to $HOME/.dotfiles
         run: cp -r "$GITHUB_WORKSPACE" "$HOME/.dotfiles"
