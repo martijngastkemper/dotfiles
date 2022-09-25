@@ -1,0 +1,22 @@
+name: Unit tests
+
+on:
+  push:
+
+jobs:
+  zunit:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    name: on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Copy workspace to $HOME/.dotfiles
+        run: cp -r "$GITHUB_WORKSPACE" "$HOME/.dotfiles"
+      - name: Run zunit
+        run: |
+          cd "$HOME/.dotfiles"
+          make install_zunit
+          export PATH="$HOME/.dotfiles/bin:$PATH"
+          zunit --verbose
