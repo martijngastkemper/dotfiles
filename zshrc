@@ -69,6 +69,7 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+alias artisan="php artisan"
 alias composer1="composer self-update --1"
 alias composer2="composer self-update --2"
 alias dcr="docker-compose run --rm"
