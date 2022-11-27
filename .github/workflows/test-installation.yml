@@ -32,6 +32,12 @@ jobs:
             - run: make configure_tmux
             - run: make install_composer
             - run: make install_composer_git_merge_driver
+            - name: Run zunit
+              run: |
+                cd $HOME/.dotfiles
+                make install_zunit
+                export PATH="$HOME/.dotfiles/bin:$PATH"
+                zunit --verbose
 
     test_ubuntu:
         name: on Ubuntu
@@ -51,14 +57,4 @@ jobs:
             - run: make configure_vim
             - run: make install_composer
             - run: make install_composer_git_merge_driver
-
-    notify:
-        name: Notify
-        runs-on: ubuntu-latest
-        needs: [test_macos, test_ubuntu]
-        steps:
-            - name: Slack Notification
-              uses: rtCamp/action-slack-notify@v2.0.0
-              env:
-                SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
