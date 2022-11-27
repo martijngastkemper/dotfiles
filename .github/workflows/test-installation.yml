@@ -34,7 +34,7 @@ jobs:
             - run: make install_composer_git_merge_driver
             - name: Run zunit
               run: |
-                cd $HOME/.dotfiles
+                cd "$HOME/.dotfiles"
                 make install_zunit
                 export PATH="$HOME/.dotfiles/bin:$PATH"
                 zunit --verbose
