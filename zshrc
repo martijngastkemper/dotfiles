@@ -12,9 +12,6 @@ export PATH=/usr/local/opt/ruby@2.7/bin/:/usr/local/opt/ruby/bin:$PATH
 # Make dotfile binaries available
 export PATH="$BASEDIR/bin:$PATH"
 
-# Make yarn and yarn global available
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # PHP Composer configuration
 export COMPOSER_MEMORY_LIMIT=-1
 export COMPOSER_HOME=~/.composer
