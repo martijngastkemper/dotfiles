@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # The following is based on https://gist.github.com/sindresorhus/7996717
-changed_files=$( git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD )
+changed_files=$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)
 
 check_run() {
     if echo "$changed_files" | grep --quiet "$1";
@@ -11,10 +11,13 @@ check_run() {
     fi
 }
 
-check_run bower.json "bower install"
-check_run composer.json "composer install"
-check_run composer.lock "composer install"
-check_run docker-compose.*yml "docker-compose build"
+check_run bower.json "run bower install"
+check_run composer.json "run composer install"
+check_run composer.lock "run composer install"
+check_run docker-compose.*yml "run docker-compose build"
+check_run .env.example "update your environment variables"
 check_run env.template "update your environment variables"
-check_run package.json "yarn install"
-check_run yarn.lock "yarn install"
+check_run package.json "run yarn install"
+check_run package-lock.lock "run npm install"
+check_run pnpm-lock.yaml "run pnpm install"
+check_run yarn.lock "run yarn install"
