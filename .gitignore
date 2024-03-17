@@ -11,6 +11,7 @@ vim/.netrwhist
 bin/
 !bin/apply_git_template
 !bin/dark
+!bin/git-churn
 !bin/install_composer.sh
 !bin/light
 !bin/public_port
