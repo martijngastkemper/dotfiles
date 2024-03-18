@@ -13,12 +13,8 @@ all:
 installed_%:
 	@which $* > /dev/null
 
-.PHONY = install_brew
-install_brew: installed_ruby
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 .PHONY = install_brew_packages
-install_brew_packages: installed_brew
+install_brew_packages:
 	brew update
 	brew bundle install
 

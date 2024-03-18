@@ -44,14 +44,15 @@ Get the port for MySQL
 
 ### Step 1: Dotfiles
 
-    $ git clone git://github.com/martijngastkemper/dotfiles ~/.dotfiles
+    $ git clone git@github.com/martijngastkemper/dotfiles.git ~/.dotfiles
     $ # when git is not available install brew (brew.sh), this will install git on MacOS
     $ cd ~/.dotfiles
     $ make symlinks
 
 ### Step 2: Brew
 
-    $ make install_brew
+Follow the installation instructions on [brew.sh](https://brew.sh).
+
     $ make install_brew_packages
 
 ### Step 3: Shell
@@ -78,7 +79,7 @@ Start tmux before configuring it.
 ### Step 6: Node
 
     $ make install_nvm
-    $ nvm install 12
+    $ nvm install 20
     $ make install_yarn
 
 ### Step 7: Composer
@@ -142,6 +143,7 @@ The plugins I use:
 - IdeaVim
 - Makefile support
 - Prettier
+- Terraform and HCL
 
 ## Find domain and key for usage in ``defaults``
 
