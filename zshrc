@@ -83,12 +83,12 @@ alias tf="terraform"
 alias tfi="terraform import"
 alias tfa="terraform fmt; terraform apply"
 alias tfp="terraform fmt; terraform plan"
-alias disable_xdebug74="mv /usr/local/etc/php/7.4/conf.d/ext-xdebug.ini /usr/local/etc/php/7.4/conf.d/ext-xdebug.ini.disabled"
-alias disable_xdebug80="mv /usr/local/etc/php/8.0/conf.d/ext-xdebug.ini /usr/local/etc/php/8.0/conf.d/ext-xdebug.ini.disabled"
-alias disable_xdebug81="mv /usr/local/etc/php/8.1/conf.d/ext-xdebug.ini /usr/local/etc/php/8.1/conf.d/ext-xdebug.ini.disabled"
-alias enable_xdebug74="mv /usr/local/etc/php/7.4/conf.d/ext-xdebug.ini.disabled /usr/local/etc/php/7.4/conf.d/ext-xdebug.ini"
-alias enable_xdebug80="mv /usr/local/etc/php/8.0/conf.d/ext-xdebug.ini.disabled /usr/local/etc/php/8.0/conf.d/ext-xdebug.ini"
-alias enable_xdebug81="mv /usr/local/etc/php/8.1/conf.d/ext-xdebug.ini.disabled /usr/local/etc/php/8.1/conf.d/ext-xdebug.ini"
+alias disable_xdebug74="mv `brew --prefix`/etc/php/7.4/conf.d/ext-xdebug.ini `brew --prefix`/etc/php/7.4/conf.d/ext-xdebug.ini.disabled"
+alias disable_xdebug80="mv `brew --prefix`/etc/php/8.0/conf.d/ext-xdebug.ini `brew --prefix`/etc/php/8.0/conf.d/ext-xdebug.ini.disabled"
+alias disable_xdebug81="mv `brew --prefix`/etc/php/8.1/conf.d/ext-xdebug.ini `brew --prefix`/etc/php/8.1/conf.d/ext-xdebug.ini.disabled"
+alias enable_xdebug74="mv `brew --prefix`/etc/php/7.4/conf.d/ext-xdebug.ini.disabled `brew --prefix`/etc/php/7.4/conf.d/ext-xdebug.ini"
+alias enable_xdebug80="mv `brew --prefix`/etc/php/8.0/conf.d/ext-xdebug.ini.disabled `brew --prefix`/etc/php/8.0/conf.d/ext-xdebug.ini"
+alias enable_xdebug81="mv `brew --prefix`/etc/php/8.1/conf.d/ext-xdebug.ini.disabled `brew --prefix`/etc/php/8.1/conf.d/ext-xdebug.ini"
 
 source $BASEDIR/fixup.zsh
 unalias gcm 2>/dev/null
