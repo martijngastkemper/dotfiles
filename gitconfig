@@ -1,14 +1,3 @@
-[user]
-
-    useConfigOnly = true
-    name = Martijn Gastkemper
-
-[init]
-
-    templatedir = ~/.dotfiles/git_template
-
-    defaultBranch = main
-
 [alias]
 
     # Debug git aliases (source: https://stackoverflow.com/a/39616600/2182703)
@@ -43,18 +32,6 @@
     # List remote branches
     branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
 
-[rebase]
-
-    autoSquash = true
-    abbreviateCommands = true
-    autoStash = true
-
-[core]
-
-    attributesfile = ~/.dotfiles/gitattributes
-    excludesfile = ~/.dotfiles/gitignore_global
-    ignorecase = false
-
 [branch]
 
     autosetupmerge = always
@@ -64,12 +41,36 @@
     gpgsign = true
     verbose = true
 
+[core]
+
+    attributesfile = ~/.dotfiles/gitattributes
+    excludesfile = ~/.dotfiles/gitignore_global
+    ignorecase = false
+
+[init]
+
+    defaultBranch = main
+    templatedir = ~/.dotfiles/git_template
+
+[merge "composer_json"]
+
+    driver = composer-git-merge-driver %O %A %B %L %P
+    name = composer JSON file merge driver
+    recursive = binary
+
+[rebase]
+
+    abbreviateCommands = true
+    autoSquash = true
+    autoStash = true
+
 [rerere]
 
     # Store how merge conflicts where resolved.
     enable = true
 
-[merge "composer_json"]
-    name = composer JSON file merge driver
-    driver = composer-git-merge-driver %O %A %B %L %P
-    recursive = binary
+[user]
+
+    name = Martijn Gastkemper
+    useConfigOnly = true
+
