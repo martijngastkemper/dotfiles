@@ -24,8 +24,6 @@ export DEFAULT_USER=`whoami`
 source $BASEDIR/bin/antigen.zsh
 
 antigen use oh-my-zsh
-antigen bundle docker
-antigen bundle docker-compose
 antigen bundle git
 antigen bundle lukechilds/zsh-nvm
 antigen bundle pj
@@ -67,9 +65,6 @@ fi
 # For a full list of active aliases, run `alias`.
 
 alias artisan="php artisan"
-alias dcr="docker-compose run --rm"
-alias dcup="docker compose up"
-alias dstats="docker stats"
 alias gb="git branch --sort=committerdate"
 alias gl="git pull --rebase"
 alias gstpa="git stash --patch"
