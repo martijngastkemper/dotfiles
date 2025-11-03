@@ -34,7 +34,7 @@
 
 [branch]
 
-    autosetupmerge = always
+    autoSetupMerge = simple
     sort = -committerdate
 
 [column]
