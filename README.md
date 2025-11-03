@@ -61,7 +61,7 @@ Zsh will be installed by Brew. To activate it run:
 
     $ make configure_zsh
 
-When Zsh is not available but Bash is:
+Also configure bash, so when ZSH isn't available or you have to use Bash some convenient settings are at your hands:
 
     $ make configure_bash
 
@@ -101,10 +101,10 @@ A mechanism to more effectively merge `composer.json` and `composer.lock` files.
 Settings to change manually
 
 *Let Caps Lock be an Escape key*
-System Preferences -> Keyboard -> Modifier Keys -> Caps Lock -> Esc
+System Settings -> Keyboard -> Keyboard Shortcuts -> Modifier Keys -> Caps Lock -> Esc
 
 *Lock computer immediately*
-System Preferences -> Security & Privacy -> General -> Require password ...
+System Settings -> Lock Screen -> Require password after screen saver...
 
 Add a cronjob to switch between light and dark mode automatically based on the mode MacOS has selected.
 
