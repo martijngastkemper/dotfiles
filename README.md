@@ -44,8 +44,7 @@ Get the port for MySQL
 
 ### Step 1: Dotfiles
 
-    $ cd ~
-    $ git clone git@github.com/martijngastkemper/dotfiles.git ~/.dotfiles
+    $ git clone git@github.com:martijngastkemper/dotfiles.git ~/.dotfiles
     $ # when git is not available install brew (https://brew.sh), this will install git on MacOS
     $ cd ~/.dotfiles
     $ make symlinks
