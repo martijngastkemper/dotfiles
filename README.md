@@ -55,7 +55,29 @@ Follow the installation instructions on [brew.sh](https://brew.sh).
 
     $ make install_brew_packages
 
-### Step 3: Shell
+### Step 3: Setup 1Password
+
+1Password should be installed by Brew. Open it, login and open preferences:
+
+General:
+- Disable "Keep 1Password in the menu bar"
+- Enable "Start at login"
+- Disable "Autofill"
+
+Appearance:
+- Set "Density" to "Compact"
+- Disable "Categories" and "Tags"
+
+Security:
+- Enable "Hold Option to toggle revealed fields"
+
+Developer:
+
+- Enable "Show 1Password Developer experience"
+- Enable "Use the SSH Agent"
+- Set "Open SSH URLs with" to "iTerm2"
+
+### Step 4: Shell
 
 Zsh will be installed by Brew. To activate it run:
 
@@ -65,24 +87,24 @@ Also configure bash, so when ZSH isn't available or you have to use Bash some co
 
     $ make configure_bash
 
-### Step 4: vim
+### Step 5: vim
 
     $ make configure_vim
 
-### Step 5: tmux
+### Step 6: tmux
 
 Start tmux before configuring it.
 
     $ tmux new-session -d
     $ make configure_tmux
 
-### Step 6: Node
+### Step 7: Node
 
     $ make install_nvm
     $ nvm install 20
     $ make install_yarn
 
-### Step 7: Composer
+### Step 8: Composer
 
 Install Composer 2* globally:
 
@@ -94,7 +116,7 @@ A mechanism to more effectively merge `composer.json` and `composer.lock` files.
 
 * Switch between Composer versions with `composer1` and `composer2`.
 
-### Step 8: Configure MacOS
+### Step 9: Configure MacOS
 
     $ make configure_macos
 
@@ -113,7 +135,7 @@ Add a cronjob to switch between light and dark mode automatically based on the m
     $ crontab tmp_crontab
     $ rm tmp_crontab
 
-### Step 9: GPG
+### Step 10: GPG
 
 Prevent "unsafe persmissions on homedir" error:
 
