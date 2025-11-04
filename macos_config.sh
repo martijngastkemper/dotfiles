@@ -46,7 +46,7 @@ defaults write com.apple.dock autohide -bool true
 defaults write NSGlobalDomain com.apple.trackpad.scaling -int 3
 
 # #################################################################################
-# Keyboard 
+# Keyboard
 # #################################################################################
 
 # Increase cursor speed
@@ -72,7 +72,7 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 apps="Dock SystemUIServer"
 
-if test "$TERM_PROGRAM" "iTerm.app"; then
+if [ "$TERM_PROGRAM" == "iTerm.app" ]; then
     echo "iTerm profile has been changes, restart iTerm"
 else
     apps="$apps iTerm2"

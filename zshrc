@@ -6,9 +6,6 @@ export GPG_TTY=$(tty)
 # Add sbin for Composer
 export PATH=/usr/local/sbin:$PATH
 
-# Make Brew ruby available
-export PATH=/usr/local/opt/ruby@2.7/bin/:/usr/local/opt/ruby/bin:$PATH
-
 # Make dotfile binaries available
 export PATH="$BASEDIR/bin:$PATH"
 
