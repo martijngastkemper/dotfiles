@@ -72,7 +72,7 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 apps="Dock SystemUIServer"
 
-if [ "$TERM_PROGRAM" == "iTerm.app" ]; then
+if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
     echo "iTerm profile has been changes, restart iTerm"
 else
     apps="$apps iTerm2"
