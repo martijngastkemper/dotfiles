@@ -44,6 +44,7 @@ defaults write com.apple.dock autohide -bool true
 
 # Increase tracking speed
 defaults write NSGlobalDomain com.apple.trackpad.scaling -int 3
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # #################################################################################
 # Keyboard
