@@ -1,8 +1,5 @@
 [alias]
 
-    # Debug git aliases (source: https://stackoverflow.com/a/39616600/2182703)
-    debug  = "!set -x; GIT_TRACE=2 GIT_CURL_VERBOSE=2 GIT_TRACE_PERFORMANCE=2 GIT_TRACE_PACK_ACCESS=2 GIT_TRACE_PACKET=2 GIT_TRACE_PACKFILE=2 GIT_TRACE_SETUP=2 GIT_TRACE_SHALLOW=2 git"
-
     # Locally exclude file without adding it to .gitignore
     exclude = "!f() { \
       for file in "$@"; do \
