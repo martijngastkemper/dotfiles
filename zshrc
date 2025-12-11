@@ -1,7 +1,6 @@
 BASEDIR="$HOME/.dotfiles"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export GPG_TTY=$(tty)
 
 # Add sbin for Composer
 export PATH=/usr/local/sbin:$PATH

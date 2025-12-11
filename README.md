@@ -135,20 +135,6 @@ Add a cronjob to switch between light and dark mode automatically based on the m
     $ crontab tmp_crontab
     $ rm tmp_crontab
 
-### Step 10: GPG
-
-Prevent "unsafe persmissions on homedir" error:
-
-```
-chmod 700 ~/.dotfiles/gnupg
-```
-
-Get the GPG keys from 1Password and import them:
-
-```
-gpg --import /location/of/the/gpg/key.file
-```
-
 ## Override Zsh settings
 
 To load settings to Zsh which aren't global add them to:
