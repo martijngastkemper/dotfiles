@@ -52,7 +52,6 @@ configure_zsh: installed_zsh bin/antigen.zsh
 .PHONY = symlinks
 symlinks:
 	ln -nsf $(DIR)/gitconfig ~/.gitconfig
-	ln -nsf $(DIR)/gnupg/ ~/.gnupg
 
 .PHONY = install_vim_symlinks
 install_vim_symlinks:
