@@ -18,11 +18,11 @@ After changing a hook in `git_templates/` I want to apply these changes to exist
 
 ### `bin/dark`
 
-Which tmux and vim to dark mode.
+Switch tmux and vim to dark mode.
 
 ### `bin/light`
 
-Which tmux and vim to light mode.
+Switch tmux and vim to light mode.
 
 ### `bin/public_port`
 
