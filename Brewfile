@@ -26,7 +26,6 @@ brew "pyenv"
 cask "rectangle"
 brew "shellcheck"
 cask "signal"
-cask "slack"
 brew "sqlite"
 brew "tmux"
 brew "universal-ctags", args: ['HEAD']
