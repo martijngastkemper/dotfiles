@@ -116,7 +116,11 @@ A mechanism to more effectively merge `composer.json` and `composer.lock` files.
 
 * Switch between Composer versions with `composer1` and `composer2`.
 
-### Step 9: Configure MacOS
+### Step 9: Configure git
+
+  make configure_git
+
+### Step 10: Configure MacOS
 
     $ make configure_macos
 

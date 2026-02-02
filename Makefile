@@ -39,6 +39,10 @@ install_yarn: installed_curl
 configure_bash: installed_bash
 	ln -nsf $(DIR)/bash_aliases ~/.bash_aliases
 
+.PHONY = configure_git
+symlinks:
+	ln -nsf $(DIR)/gitconfig ~/.gitconfig
+
 bin/antigen.zsh: installed_curl
 	touch $(DIR)/bin/antigen.zsh
 	curl -L git.io/antigen-nightly > $(DIR)/bin/antigen.zsh
@@ -48,10 +52,6 @@ configure_zsh: installed_zsh bin/antigen.zsh
 	ln -nsf $(DIR)/zshrc ~/.zshrc
 	echo $(ZSH_PATH) | sudo tee -a /etc/shells > /dev/null
 	sudo chsh -s $(ZSH_PATH)
-
-.PHONY = symlinks
-symlinks:
-	ln -nsf $(DIR)/gitconfig ~/.gitconfig
 
 .PHONY = install_vim_symlinks
 install_vim_symlinks:
