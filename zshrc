@@ -89,7 +89,7 @@ source $BASEDIR/gcm.zsh
 source $BASEDIR/idea.zsh
 
 # Configure pj (project jump) plugin
-export PROJECT_PATHS=(~/Sites)
+export PROJECT_PATHS=(~/Projects)
 
 export VAGRANT_CWD=~/Homestead
 alias homestead=vagrant
