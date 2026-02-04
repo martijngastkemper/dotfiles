@@ -20,8 +20,8 @@
       [ $# -ne 2 ] && echo 'Two arguments required!' >&2 || git checkout -b "hotfix/$(git firstname)-$1" $2; \
     }; f"
 
-    # Get the main branch (main or master)
-    main = "! git rev-parse -q --verify --symbolic main || git rev-parse -q --verify --symbolic master;"
+    # Get the release/main/master branch, the check is in that order
+    main = "! git rev-parse -q --verify --symbolic release || git rev-parse -q --verify --symbolic main || git rev-parse -q --verify --symbolic master;"
 
     # Interactive rebase from local branch eg. git rbi master
     rbi = "! git rebase --interactive `git merge-base ${1:-origin/$(git main)} HEAD`"
