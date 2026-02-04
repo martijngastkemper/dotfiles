@@ -48,6 +48,8 @@
     attributesfile = ~/.dotfiles/gitattributes
     excludesfile = ~/.dotfiles/gitignore_global
     ignorecase = false
+    autocrlf = false
+    eol = lf
 
 [diff]
 
