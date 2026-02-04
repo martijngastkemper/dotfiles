@@ -107,10 +107,10 @@
     name = Martijn Gastkemper
     useConfigOnly = true
 
-[includeIf "gitdir:~/\.dotfiles/"]
-    path = ~/.dotfiles/gitconfig.github
+[include]
+    path = ~/.dotfiles/gitconfig.personal
 
-[includeIf "gitdir:~/Projects/"]
-    path = ~/.dotfiles/gitconfig.bitbucket
+[includeIf "hasconfig:remote.*.url:git@bitbucket.org:StudyDriveAdmin/**"]
+    path = ~/.dotfiles/gitconfig.meinestadt
 
 
