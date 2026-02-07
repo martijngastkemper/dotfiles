@@ -110,11 +110,9 @@ Install Composer 2* globally:
 
     $ make install_composer
 
-A mechanism to more effectively merge `composer.json` and `composer.lock` files. The Git configuration requires this packages if it has to merge one of the files.
+A mechanism to more effectively merge `composer.json` and `composer.lock` files.
 
     $ make install_composer_git_merge_driver
-
-* Switch between Composer versions with `composer1` and `composer2`.
 
 ### Step 9: Configure git
 
@@ -141,13 +139,11 @@ Add a cronjob to switch between light and dark mode automatically based on the m
 
 ## Override Zsh settings
 
-To load settings to Zsh which aren't global add them to:
+To load settings to Zsh which aren't global, add them to:
 
     $ vim ~/.zshrc.local
 
 ## PhpStorm
-
-My PhpStorm settings are stored in a private repo.
 
 The plugins I use:
 
