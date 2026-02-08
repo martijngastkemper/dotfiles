@@ -46,15 +46,6 @@ bindkey '^ ' autosuggest-accept
 
 export EDITOR='vim'
 
-# SSH
-export SSH_KEY_PATH=~/.ssh/id_rsa
-
-if [ -f $SSH_KEY_PATH ]; then
-    ssh-add -K $SSH_KEY_PATH > /dev/null 2>&1
-else
-    echo "Add private and public key to $SSH_KEY_PATH and $SSH_KEY_PATH.pub"
-fi
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
