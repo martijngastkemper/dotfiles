@@ -31,6 +31,10 @@ install_composer_git_merge_driver: installed_composer
 install_nvm: installed_curl
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 
+.PHONY = install_qmd
+install_qmd: installed_bun installed_sqllite
+	bun install -g https://github.com/tobi/qmd
+
 .PHONY = install_yarn
 install_yarn: installed_curl
 	curl -o- -L https://yarnpkg.com/install.sh | bash

@@ -8,6 +8,9 @@ export PATH=/usr/local/sbin:$PATH
 # Make dotfile binaries available
 export PATH="$BASEDIR/bin:$PATH"
 
+# Make bun binaries available
+export PATH="$HOME/.bun/bin:$PATH"
+
 # PHP Composer configuration
 export COMPOSER_MEMORY_LIMIT=-1
 export COMPOSER_HOME=~/.composer
