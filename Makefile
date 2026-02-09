@@ -45,8 +45,9 @@ configure_bash: installed_bash
 
 .PHONY = configure_git
 symlinks:
+	ln -nsf $(DIR)/claude/CLAUDE_personally.md ~/.claude/CLAUDE.md
+	ln -nsf $(DIR)/claude/settings.json ~/.claude/settings.json
 	ln -nsf $(DIR)/gitconfig ~/.gitconfig
-	ln -nsf $(DIR)/CLAUDE_personal.md ~/.claude/CLAUDE.md
 
 bin/antigen.zsh: installed_curl
 	touch $(DIR)/bin/antigen.zsh
