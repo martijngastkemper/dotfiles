@@ -130,12 +130,9 @@ System Settings -> Keyboard -> Keyboard Shortcuts -> Modifier Keys -> Caps Lock 
 *Lock computer immediately*
 System Settings -> Lock Screen -> Require password after screen saver...
 
-Add a cronjob to switch between light and dark mode automatically based on the mode MacOS has selected.
+Switch between light and dark tmux theme automatically when macOS appearance changes:
 
-    $ crontab -l > tmp_crontab
-    $ echo "* * * * * sh ~/.dotfiles/macos_switch_theme.sh > /tmp/stdout.cron.log 2> /tmp/stderr.cron.log" >> tmp_crontab
-    $ crontab tmp_crontab
-    $ rm tmp_crontab
+    $ make configure_theme_switcher
 
 ## Override Zsh settings
 

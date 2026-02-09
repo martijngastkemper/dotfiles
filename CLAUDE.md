@@ -51,7 +51,7 @@ Three custom functions are loaded by zshrc:
 
 ### Theme Switching
 - **Dynamic light/dark mode**: bin/dark and bin/light switch tmux and vim themes
-- **Automated switching**: macos_switch_theme.sh can be run via cron to sync with macOS appearance
+- **Automated switching**: A launchd LaunchAgent runs macos_switch_theme.sh every 60 seconds to sync tmux theme with macOS appearance
 
 ### Utility Scripts (in bin/)
 - **apply_git_template**: Apply git_template hooks to existing repos

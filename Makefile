@@ -92,6 +92,11 @@ install_tmux_plugins:
 .PHONY = configure_tmux
 configure_tmux: installed_tmux install_tmux_symlinks install_tmux_plugin_manager install_tmux_plugins
 
+.PHONY = configure_theme_switcher
+configure_theme_switcher:
+	ln -nsf $(DIR)/com.martijngastkemper.theme-switcher.plist ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
+	launchctl load ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
+
 .PHONY = configure_macos
 configure_macos:
 	@sh macos_config.sh;\
