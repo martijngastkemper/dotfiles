@@ -182,11 +182,11 @@ The plugins I use:
 
 ## Find domain and key for usage in ``defaults``
 
-It's hard to find the right domaian and key of a preference. To find it use ``diff``
+It's hard to find the right domain and key of a preference. To find it, use ``diff`` showing some extra lines of context:
 
 ```bash
 defaults read > before
 # make the desired changes to your preferences
 defaults read > after
-diff before after
+diff -C3 before after
 ```
