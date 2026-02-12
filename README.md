@@ -30,30 +30,38 @@ When using Docker Compose it's not clear which public ports services expose. Loo
 
 Uses port 80 by default
 
-    $ public_port
-    Private port 80
-    web: 0.0.0.0:10000
+```bash
+public_port
+# Private port 80
+# web: 0.0.0.0:10000
+```
 
 Get the port for MySQL
 
-    $ public_port 3306
-    Private port 3306
-    db: 0.0.0.0:20000
+```bash
+public_port 3306
+# Private port 3306
+# db: 0.0.0.0:20000
+```
 
 ## Installation
 
 ### Step 1: Dotfiles
 
-    $ git clone git@github.com:martijngastkemper/dotfiles.git ~/.dotfiles
-    $ # when git is not available install brew (https://brew.sh), this will install git on MacOS
-    $ cd ~/.dotfiles
-    $ make symlinks
+```bash
+git clone git@github.com:martijngastkemper/dotfiles.git ~/.dotfiles
+# when git is not available install brew (https://brew.sh), this will install git on MacOS
+cd ~/.dotfiles
+make symlinks
+```
 
 ### Step 2: Brew
 
 Follow the installation instructions on [brew.sh](https://brew.sh).
 
-    $ make install_brew_packages
+```bash
+make install_brew_packages
+```
 
 ### Step 3: Setup 1Password
 
@@ -81,46 +89,64 @@ Developer:
 
 Zsh will be installed by Brew. To activate it run:
 
-    $ make configure_zsh
+```bash
+make configure_zsh
+```
 
 Also configure bash, so when ZSH isn't available or you have to use Bash some convenient settings are at your hands:
 
-    $ make configure_bash
+```bash
+make configure_bash
+```
 
 ### Step 5: vim
 
-    $ make configure_vim
+```bash
+make configure_vim
+```
 
 ### Step 6: tmux
 
 Start tmux before configuring it.
 
-    $ tmux new-session -d
-    $ make configure_tmux
+```bash
+tmux new-session -d
+make configure_tmux
+```
 
 ### Step 7: Node
 
-    $ make install_nvm
-    $ nvm install 20
-    $ make install_yarn
+```bash
+make install_nvm
+nvm install 20
+make install_yarn
+```
 
 ### Step 8: Composer
 
 Install Composer 2* globally:
 
-    $ make install_composer
+```bash
+make install_composer
+```
 
 A mechanism to more effectively merge `composer.json` and `composer.lock` files.
 
-    $ make install_composer_git_merge_driver
+```bash
+make install_composer_git_merge_driver
+```
 
 ### Step 9: Configure git
 
-  make configure_git
+```bash
+make configure_git
+```
 
 ### Step 10: Configure MacOS
 
-    $ make configure_macos
+```bash
+make configure_macos
+```
 
 Settings to change manually
 
@@ -132,13 +158,17 @@ System Settings -> Lock Screen -> Require password after screen saver...
 
 Switch between light and dark tmux theme automatically when macOS appearance changes:
 
-    $ make configure_theme_switcher
+```bash
+make configure_theme_switcher
+```
 
 ## Override Zsh settings
 
 To load settings to Zsh which aren't global, add them to:
 
-    $ vim ~/.zshrc.local
+```bash
+vim ~/.zshrc.local
+```
 
 ## PhpStorm
 
@@ -154,7 +184,9 @@ The plugins I use:
 
 It's hard to find the right domaian and key of a preference. To find it use ``diff``
 
-    $ defaults read > before
-    # make the desired changes to your preferences
-    $ defaults read > after
-    $ diff before after
+```bash
+defaults read > before
+# make the desired changes to your preferences
+defaults read > after
+diff before after
+```
