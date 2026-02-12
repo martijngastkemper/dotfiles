@@ -60,6 +60,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # Change date time appearance in menu bar
 defaults write com.apple.menuextra.clock DateFormat "d MMM  HH:mm:ss"
+defaults write com.apple.menuextra.clock ShowSeconds -int 1
 
 # #################################################################################
 # iTerm2
