@@ -18,6 +18,7 @@ export PATH=$COMPOSER_HOME/vendor/bin:$PATH
 
 # Configure Brew
 export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_BUNDLE_FILE=~/.dotfiles/Brewfile
 
 # Hide username from statusline
 export DEFAULT_USER=`whoami`
