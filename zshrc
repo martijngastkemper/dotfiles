@@ -16,6 +16,9 @@ export COMPOSER_MEMORY_LIMIT=-1
 export COMPOSER_HOME=~/.composer
 export PATH=$COMPOSER_HOME/vendor/bin:$PATH
 
+# Configure Brew
+export HOMEBREW_NO_ENV_HINTS=1
+
 # Hide username from statusline
 export DEFAULT_USER=`whoami`
 
