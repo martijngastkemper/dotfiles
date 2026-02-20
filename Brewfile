@@ -34,6 +34,7 @@ brew "saml2aws"
 brew "shellcheck"
 cask "signal"
 brew "sqlite"
+cask "timescribe"
 brew "tmux"
 brew "universal-ctags", args: ['HEAD']
 brew "vim"
