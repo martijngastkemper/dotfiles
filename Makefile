@@ -46,6 +46,7 @@ configure_bash: installed_bash
 .PHONY = configure_git
 symlinks:
 	ln -nsf $(DIR)/claude/CLAUDE_personal.md ~/.claude/CLAUDE.md
+	ln -nsf $(DIR)/claude/skills ~/.claude/skills
 	ln -nsf $(DIR)/claude/settings.json ~/.claude/settings.json
 	ln -nsf $(DIR)/gitconfig ~/.gitconfig
 
