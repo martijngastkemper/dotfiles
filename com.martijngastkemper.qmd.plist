@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>com.martijngastkemper.theme-switcher</string>
+	<string>com.martijngastkemper.qmd</string>
 	<key>ProgramArguments</key>
 	<array>
- 		<string>/bin/sh</string>
+  	<string>/bin/sh</string>
 		<string>-c</string>
-		<string>sh ~/.dotfiles/macos_switch_theme.sh</string>
+		<string>export PATH="$HOME/.nvm/versions/node/$(ls ~/.nvm/versions/node | sort -V | tail -1)/bin:$PATH" &amp;&amp; ~/.bun/bin/qmd mcp --http</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
-	<key>StartInterval</key>
-	<integer>60</integer>
+	<key>KeepAlive</key>
+	<true/>
 	<key>StandardOutPath</key>
-	<string>/tmp/theme-switcher.stdout.log</string>
+	<string>/tmp/qmd.stdout.log</string>
 	<key>StandardErrorPath</key>
-	<string>/tmp/theme-switcher.stderr.log</string>
+	<string>/tmp/qmd.stderr.log</string>
 </dict>
 </plist>

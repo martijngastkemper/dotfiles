@@ -32,8 +32,8 @@ install_nvm: installed_curl
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 
 .PHONY = install_qmd
-install_qmd: installed_bun installed_sqllite
-	bun install -g https://github.com/tobi/qmd
+install_qmd: installed_bun installed_sqlite3
+	bun install -g @tobilu/qmd
 
 .PHONY = install_yarn
 install_yarn: installed_curl
@@ -96,7 +96,14 @@ configure_tmux: installed_tmux install_tmux_symlinks install_tmux_plugin_manager
 .PHONY = configure_theme_switcher
 configure_theme_switcher:
 	ln -nsf $(DIR)/com.martijngastkemper.theme-switcher.plist ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
+	launchctl unload ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
 	launchctl load ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
+
+.PHONY = configure_qmd
+configure_qmd: install_qmd installed_node
+	ln -nsf $(DIR)/com.martijngastkemper.qmd.plist ~/Library/LaunchAgents/com.martijngastkemper.qmd.plist
+	launchctl unload ~/Library/LaunchAgents/com.martijngastkemper.qmd.plist
+	launchctl load ~/Library/LaunchAgents/com.martijngastkemper.qmd.plist
 
 .PHONY = configure_macos
 configure_macos:

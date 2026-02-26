@@ -162,6 +162,12 @@ Switch between light and dark tmux theme automatically when macOS appearance cha
 make configure_theme_switcher
 ```
 
+Run QMD MCP server as a background service (HTTP on port 8181):
+
+```bash
+make configure_qmd
+```
+
 ## Override Zsh settings
 
 To load settings to Zsh which aren't global, add them to:
