@@ -11,7 +11,7 @@ all:
 
 .PHONY = installed_%
 installed_%:
-	@which $* > /dev/null
+	@which $* > /dev/null 2>&1 && echo "✓ $* is installed" || (echo "✗ $* is not installed" && exit 1)
 
 .PHONY = install_brew_packages
 install_brew_packages:
