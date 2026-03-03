@@ -11,4 +11,4 @@ Coding preferences:
 
 - Execute shell script files with `sh`, so a chmod +x is not necessary.
 - Use PHP arrays for lists (vector). Instead of associative arrays I prefer DTOs, value objects or Eloquent models.
-- Sort list of variables alphabetically.
+- Sort alphabetically when possible, e.g. variables, packages, dependencies, parameters etc.

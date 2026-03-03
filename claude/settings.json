@@ -20,5 +20,8 @@
     "type": "command",
     "command": "~/.dotfiles/claude/statusline.sh"
   },
-  "model": "opus"
+  "enabledPlugins": {
+    "php-lsp@claude-plugins-official": true,
+    "laravel-simplifier@laravel": true
+  }
 }
