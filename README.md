@@ -166,6 +166,7 @@ Run QMD MCP server as a background service (HTTP on port 8181):
 
 ```bash
 make configure_qmd
+```
 
 ### Step 11: Python
 
