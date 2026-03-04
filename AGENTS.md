@@ -72,3 +72,4 @@ Three custom functions are loaded by zshrc:
 - Case-sensitive completion and auto-correction are enabled in Zsh
 - PROJECT_PATHS for `pj` plugin is set to ~/Projects
 - 1Password CLI and SSH agent must be configured manually after brew installation
+- Brew bundle is the preferred way to install software
