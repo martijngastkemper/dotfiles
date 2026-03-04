@@ -136,13 +136,7 @@ A mechanism to more effectively merge `composer.json` and `composer.lock` files.
 make install_composer_git_merge_driver
 ```
 
-### Step 9: Configure git
-
-```bash
-make configure_git
-```
-
-### Step 10: Configure MacOS
+### Step 9: Configure MacOS
 
 ```bash
 make configure_macos
@@ -168,7 +162,7 @@ Run QMD MCP server as a background service (HTTP on port 8181):
 make configure_qmd
 ```
 
-### Step 11: Python
+### Step 10: Python
 
 Install Python 3 and make the `python` and `pip` binaries available:
 

@@ -48,7 +48,7 @@ install_yarn: installed_curl
 configure_bash: installed_bash
 	ln -nsf $(DIR)/bash_aliases ~/.bash_aliases
 
-.PHONY = configure_git
+.PHONY = symlinks
 symlinks:
 	ln -nsf $(DIR)/claude/CLAUDE_personal.md ~/.claude/CLAUDE.md
 	ln -nsf $(DIR)/claude/skills ~/.claude/skills
