@@ -166,6 +166,13 @@ Run QMD MCP server as a background service (HTTP on port 8181):
 
 ```bash
 make configure_qmd
+
+### Step 11: Python
+
+Install Python 3 and make the `python` and `pip` binaries available:
+
+```bash
+make install_python
 ```
 
 ## Override Zsh settings

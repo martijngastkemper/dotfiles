@@ -14,7 +14,7 @@ installed_%:
 	@which $* > /dev/null 2>&1 && echo "✓ $* is installed" || (echo "✗ $* is not installed" && exit 1)
 
 .PHONY = install_brew_packages
-install_brew_packages:
+install_brew_packages: installed_brew
 	brew update
 	brew bundle install
 
@@ -30,6 +30,11 @@ install_composer_git_merge_driver: installed_composer
 .PHONY = install_nvm
 install_nvm: installed_curl
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+
+.PHONY = install_python
+install_python: installed_pyenv
+	pyenv install 3
+	pyenv global 3
 
 .PHONY = install_qmd
 install_qmd: installed_bun installed_sqlite3
