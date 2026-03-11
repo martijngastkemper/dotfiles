@@ -1,9 +1,0 @@
-#!/bin/bash
-
-PROJECT=$(pwd)
-PHP_FILES=$(git diff --cached --name-only --diff-filter=ACMR HEAD "*.php"| sed 's| |\\ |g')
-
-[ -z "$PHP_FILES" ] && exit 0
-
-echo "$PROJECT"
-exit 0
