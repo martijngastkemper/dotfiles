@@ -23,6 +23,9 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Disable Resume system-wide
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
+# Force list view in all Finder windows
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
 # #################################################################################
 # Dock / Dashboard
 # #################################################################################
