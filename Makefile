@@ -50,9 +50,9 @@ configure_bash: installed_bash
 
 .PHONY = symlinks
 symlinks:
-	ln -nsf $(DIR)/claude/CLAUDE_personal.md ~/.claude/CLAUDE.md
-	ln -nsf $(DIR)/claude/skills ~/.claude/skills
-	ln -nsf $(DIR)/claude/settings.json ~/.claude/settings.json
+	mkdir -p ~/.agents
+	ln -nsf $(DIR)/agents/AGENTS_personal.md ~/.agents/AGENTS.md
+	ln -nsf $(DIR)/agents/skills ~/.agents/skills
 	ln -nsf $(DIR)/gitconfig ~/.gitconfig
 
 bin/antigen.zsh: installed_curl
