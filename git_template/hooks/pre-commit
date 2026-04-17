@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Ensure 1Password is running so commit signing doesn't fail
+# and the commit message isn't lost.
+if ! pgrep -xq "1Password"; then
+    echo "Error: 1Password is not running. Start it before committing so commit signing works." >&2
+    exit 1
+fi
