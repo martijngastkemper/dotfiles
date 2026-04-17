@@ -1,5 +1,81 @@
 #!/bin/bash
 
-GIT_TEMPLATEDIR=$(git config init.templatedir)
+set -euo pipefail
+
+# Must be run from the root of a git repository
+if [[ ! -d .git ]]; then
+    echo "Error: .git directory not found. Run this from the root of a git repository." >&2
+    exit 1
+fi
+
+GIT_TEMPLATEDIR=$(git config init.templatedir || true)
+if [[ -z "$GIT_TEMPLATEDIR" ]]; then
+    echo "Error: git config init.templatedir is not set." >&2
+    exit 1
+fi
 TEMPLATEDIR="${GIT_TEMPLATEDIR/#\~/$HOME}"
-cp -viR "$TEMPLATEDIR/" .git/
+
+if [[ ! -d "$TEMPLATEDIR" ]]; then
+    echo "Error: Template directory not found: $TEMPLATEDIR" >&2
+    exit 1
+fi
+
+# Prompt for yes/no, reading directly from the terminal so it works
+# inside a `while read` loop fed by process substitution.
+confirm() {
+    local prompt="$1"
+    local reply
+    read -p "$prompt (y/n) " -n 1 -r reply < /dev/tty
+    echo
+    [[ $reply =~ ^[Yy]$ ]]
+}
+
+echo "=== Checking for changes ==="
+
+# Process files in template directory: add new ones, diff & update changed ones
+while IFS= read -r -d '' src_file; do
+    rel_path="${src_file#"$TEMPLATEDIR"/}"
+    dst_file=".git/$rel_path"
+
+    if [[ -f "$dst_file" ]]; then
+        if ! diff -q "$src_file" "$dst_file" > /dev/null 2>&1; then
+            echo ""
+            echo "File changed: $rel_path"
+            diff -u "$dst_file" "$src_file" || true
+            echo
+            if confirm "Apply changes to $rel_path?"; then
+                cp -v "$src_file" "$dst_file"
+            fi
+        fi
+    else
+        echo ""
+        echo "New file: $rel_path"
+        if confirm "Add $rel_path?"; then
+            mkdir -p "$(dirname "$dst_file")"
+            cp -v "$src_file" "$dst_file"
+        fi
+    fi
+done < <(find "$TEMPLATEDIR" -type f -print0)
+
+# Check for files to remove (only in hooks folder)
+if [[ -d .git/hooks ]]; then
+    while IFS= read -r -d '' dst_file; do
+        rel_path="${dst_file#.git/}"
+        src_file="$TEMPLATEDIR/$rel_path"
+
+        if [[ ! -f "$src_file" ]]; then
+            echo ""
+            echo "File removed from template: $rel_path"
+            echo "--- current content of $dst_file ---"
+            cat "$dst_file"
+            echo "--- end of content ---"
+            echo
+            if confirm "Remove $rel_path?"; then
+                rm -v "$dst_file"
+            fi
+        fi
+    done < <(find .git/hooks -type f -print0)
+fi
+
+echo ""
+echo "=== Done ==="
