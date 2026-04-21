@@ -18,6 +18,7 @@ export PATH=$COMPOSER_HOME/vendor/bin:$PATH
 
 # Configure Brew
 export HOMEBREW_NO_ENV_HINTS=1
+export PATH="/opt/homebrew/sbin:/opt/homebrew/bin:$PATH"
 export HOMEBREW_BUNDLE_FILE=~/.dotfiles/Brewfile
 
 # Hide username from statusline
