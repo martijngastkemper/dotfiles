@@ -8,5 +8,6 @@ Coding preferences:
 - Use callable notation to reference class methods never the Laravel action syntax.
 - Use Rule objects for validation to prevent string concatenation.
 - Use simplified FQNs
+- Event names should be a verb in past tense that represents an action, not a state.
 
 When you encounter strange patterns suggest me to add it to an AGENTS.md file.
