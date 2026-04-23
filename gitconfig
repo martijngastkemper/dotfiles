@@ -1,5 +1,4 @@
 [alias]
-
     # Locally exclude file without adding it to .gitignore
     exclude = "!f() { \
       for file in "$@"; do \
@@ -30,21 +29,17 @@
     branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
 
 [branch]
-
     autoSetupMerge = simple
     sort = -committerdate
 
 [column]
-
     ui = auto
 
 [commit]
-
     gpgsign = true
     verbose = true
 
 [core]
-
     attributesfile = ~/.dotfiles/gitattributes
     excludesfile = ~/.dotfiles/gitignore_global
     ignorecase = false
@@ -52,60 +47,49 @@
     eol = lf
 
 [diff]
-
     algorithm = histogram
     mnemonicPrefix = true
     renames = true
 
 [fetch]
-
     prune = true
     pruneTags = true
     all = true
 
 [gpg]
-
     format = ssh
 
 [gpg "ssh"]
-
     program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [init]
-
     defaultBranch = main
     templatedir = ~/.dotfiles/git_template
 
 [merge "composer_json"]
-
     driver = composer-git-merge-driver %O %A %B %L %P
     name = composer JSON file merge driver
     recursive = binary
 
 [push]
-
     default = simple
     autoSetupRemote = true
     followTags = true
 
 [rebase]
-
     abbreviateCommands = true
     autoSquash = true
     autoStash = true
 
 [rerere]
-
     autoUpdate = true
     # Store how merge conflicts where resolved.
     enable = true
 
 [tag]
-
     sort = -version:refname
 
 [user]
-
     name = Martijn Gastkemper
     useConfigOnly = true
 
