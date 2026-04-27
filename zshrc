@@ -17,9 +17,9 @@ export COMPOSER_HOME=~/.composer
 export PATH=$COMPOSER_HOME/vendor/bin:$PATH
 
 # Configure Brew
+export HOMEBREW_BUNDLE_FILE=~/.dotfiles/Brewfile
 export HOMEBREW_NO_ENV_HINTS=1
 export PATH="/opt/homebrew/sbin:/opt/homebrew/bin:$PATH"
-export HOMEBREW_BUNDLE_FILE=~/.dotfiles/Brewfile
 
 # Hide username from statusline
 export DEFAULT_USER=`whoami`
@@ -101,6 +101,7 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
