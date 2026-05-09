@@ -1,4 +1,3 @@
-DIR="${HOME}/.dotfiles"
 VIM_VUNDLE_DIR=~/.vim/bundle/Vundle.vim
 TMUX_PLUGIN_MANAGER_DIR=~/.tmux/plugins/tpm
 ZSH_PATH=$(shell which zsh)
@@ -20,8 +19,8 @@ install_brew_packages: installed_brew
 
 .PHONY = install_composer
 install_composer: installed_php
-	sh $(DIR)/bin/install-composer.sh
-	mv composer.phar $(DIR)/bin/composer
+	sh $(CURDIR)/bin/install-composer.sh
+	mv composer.phar $(CURDIR)/bin/composer
 
 .PHONY = install_composer_git_merge_driver
 install_composer_git_merge_driver: installed_composer
@@ -42,30 +41,33 @@ install_yarn: installed_curl
 
 .PHONY = configure_bash
 configure_bash: installed_bash
-	ln -nsf $(DIR)/bash_aliases ~/.bash_aliases
+	ln -nsf $(CURDIR)/bash_aliases ~/.bash_aliases
 
 .PHONY = symlinks
 symlinks:
+	# When the repo isn't checkout in ~/.dotfiles, create a symlink to it. This allows me to hard code ~/.dotfiles in
+	# config files. E.g. in gitconfig.
+	if [ ! -d ~/.dotfiles ]; then ln -nsf $(CURDIR) ~/.dotfiles; fi
 	mkdir -p ~/.agents
-	ln -nsf $(DIR)/agents/AGENTS_personal.md ~/.agents/AGENTS.md
-	ln -nsf $(DIR)/agents/skills ~/.agents/skills
-	ln -nsf $(DIR)/gitconfig ~/.gitconfig
+	ln -nsf $(CURDIR)/agents/AGENTS_personal.md ~/.agents/AGENTS.md
+	ln -nsf $(CURDIR)/agents/skills ~/.agents/skills
+	ln -nsf $(CURDIR)/gitconfig ~/.gitconfig
 
 bin/antigen.zsh: installed_curl
-	touch $(DIR)/bin/antigen.zsh
-	curl -L git.io/antigen-nightly > $(DIR)/bin/antigen.zsh
+	touch $(CURDIR)/bin/antigen.zsh
+	curl -L git.io/antigen-nightly > $(CURDIR)/bin/antigen.zsh
 
 .PHONY = configure_zsh
 configure_zsh: installed_zsh bin/antigen.zsh
-	ln -nsf $(DIR)/zshrc ~/.zshrc
+	ln -nsf $(CURDIR)/zshrc ~/.zshrc
 	echo $(ZSH_PATH) | sudo tee -a /etc/shells > /dev/null
 	sudo chsh -s $(ZSH_PATH)
 
 .PHONY = install_vim_symlinks
 install_vim_symlinks:
-	ln -nsf $(DIR)/ctags ~/.ctags
-	ln -nsf $(DIR)/vim ~/.vim
-	ln -nsf $(DIR)/ideavimrc ~/.ideavimrc
+	ln -nsf $(CURDIR)/ctags ~/.ctags
+	ln -nsf $(CURDIR)/vim ~/.vim
+	ln -nsf $(CURDIR)/ideavimrc ~/.ideavimrc
 
 .PHONY = install_vim_vundle
 install_vim_vundle: installed_git
@@ -80,8 +82,8 @@ configure_vim: installed_vim install_vim_symlinks install_vim_vundle install_vim
 
 .PHONY = install_tmux_symlinks
 install_tmux_symlinks:
-	ln -nsf $(DIR)/tmux.conf ~/.tmux.conf
-	ln -nsf $(DIR)/tmux-themes ~/.tmux-themes
+	ln -nsf $(CURDIR)/tmux.conf ~/.tmux.conf
+	ln -nsf $(CURDIR)/tmux-themes ~/.tmux-themes
 
 .PHONY = install_tmux_plugin_manager
 install_tmux_plugin_manager: installed_git
@@ -96,7 +98,7 @@ configure_tmux: installed_tmux install_tmux_symlinks install_tmux_plugin_manager
 
 .PHONY = configure_theme_switcher
 configure_theme_switcher:
-	ln -nsf $(DIR)/com.martijngastkemper.theme-switcher.plist ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
+	ln -nsf $(CURDIR)/com.martijngastkemper.theme-switcher.plist ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
 	launchctl unload ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
 	launchctl load ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
 

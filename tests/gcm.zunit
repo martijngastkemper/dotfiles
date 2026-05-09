@@ -4,16 +4,18 @@
 
   load ../gcm.zsh
 
+  # Configure git
+  make symlinks
+  git config --global commit.gpgsign false
+
+  # Create repository
   cd `mktemp -d`
+  git init
 
-  git init --initial-branch="main" .
-
-  git config user.email zunit@martijngastkemper.nl
-  git config commit.gpgsign false
+  # Add a file
   touch file.txt
-
   git add file.txt
-  git commit --allow-empty --no-verify --message="test commit"
+  git commit --no-verify --message="test commit"
 
 }
 
