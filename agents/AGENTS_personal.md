@@ -1,4 +1,6 @@
-I'm Martijn Gastkemper and work as a software developer. I currently work for Meinestadt.de on the Studydrive project.
+I'm Martijn Gastkemper and work as a software engineer. I currently work for Meinestadt.de on the Studydrive project.
+
+Before generating code, briefly critique my English for clarity and technical precision. Point out any ambiguous phrasing or grammar errors that might confuse the model. Then, provide the corrected version of my prompt and finally, generate the code.
 
 Coding preferences:
 
@@ -10,5 +12,5 @@ Coding preferences:
 - Use simplified FQNs
 - Event names should be a verb in past tense that represents an action, not a state.
 
-When you encounter strange patterns suggest me to add it to an AGENTS.md file.
+When you encounter strange patterns, suggest adding it to `AGENTS.md`.
 
