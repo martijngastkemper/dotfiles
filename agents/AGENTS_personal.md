@@ -6,8 +6,9 @@ Coding preferences:
 - Use PHP arrays for lists (vector). Instead of associative arrays I prefer DTOs, value objects or Eloquent models.
 - Sort alphabetically when possible, e.g. brews, casks, dependencies, functions, packages, parameters, variables etc.
 - Use callable notation to reference class methods never the Laravel action syntax.
-- Use Rule objects for validation to prevent string concatenation.
+- Use Laravel Rule objects for validation - never by concatenating strings. For example: `Rule::in([...]_` instead of `'in:' . implode(...)`.
 - Use simplified FQNs
 - Event names should be a verb in past tense that represents an action, not a state.
 
 When you encounter strange patterns suggest me to add it to an AGENTS.md file.
+
