@@ -6,19 +6,6 @@
       done; \
     }; f"
 
-    # Create a feature branch
-    feature = "!f() { \
-      git checkout -b 'feature/martijn.g-'$1; \
-    }; f"
-
-    # Return lowercase first part of git user.name
-    firstname = "! git config user.name | cut -d' ' -f1 | awk '{print tolower($0)}';"
-
-    # Create a hotfix branch
-    hotfix = "!f() { \
-      [ $# -ne 2 ] && echo 'Two arguments required!' >&2 || git checkout -b "hotfix/$(git firstname)-$1" $2; \
-    }; f"
-
     # Get the release/main/master branch, the check is in that order
     main = "! git rev-parse -q --verify --symbolic release || git rev-parse -q --verify --symbolic main || git rev-parse -q --verify --symbolic master;"
 
