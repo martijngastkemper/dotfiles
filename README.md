@@ -156,12 +156,6 @@ Switch between light and dark tmux theme automatically when macOS appearance cha
 make configure_theme_switcher
 ```
 
-Run QMD MCP server as a background service (HTTP on port 8181):
-
-```bash
-make configure_qmd
-```
-
 ### Step 10: Python
 
 Install Python 3 and make the `python` and `pip` binaries available:

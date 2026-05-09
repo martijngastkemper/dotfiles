@@ -36,10 +36,6 @@ install_python: installed_pyenv
 	pyenv install 3
 	pyenv global 3
 
-.PHONY = install_qmd
-install_qmd: installed_bun installed_sqlite3
-	bun install -g @tobilu/qmd
-
 .PHONY = install_yarn
 install_yarn: installed_curl
 	curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -103,12 +99,6 @@ configure_theme_switcher:
 	ln -nsf $(DIR)/com.martijngastkemper.theme-switcher.plist ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
 	launchctl unload ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
 	launchctl load ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
-
-.PHONY = configure_qmd
-configure_qmd: install_qmd installed_node
-	ln -nsf $(DIR)/com.martijngastkemper.qmd.plist ~/Library/LaunchAgents/com.martijngastkemper.qmd.plist
-	launchctl unload ~/Library/LaunchAgents/com.martijngastkemper.qmd.plist
-	launchctl load ~/Library/LaunchAgents/com.martijngastkemper.qmd.plist
 
 .PHONY = configure_macos
 configure_macos:
