@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Check if opencode is outdated
+if brew outdated opencode | grep -q opencode; then
+  # Show AppleScript notification with Install button
+  user_choice=$(osascript <<EOD
+display dialog "A new version of OpenCode is available. Do you want to install the update now?" buttons {"Cancel", "Install"} default button "Install" with title "OpenCode Update Available"
+EOD
+  )
+  if echo "$user_choice" | grep -q "Install"; then
+    # Try to upgrade opencode
+    if ! brew upgrade opencode; then
+      osascript -e 'display notification "OpenCode update failed. Try manually by calling \"brew upgrade opencode\"." with title "OpenCode Update"'
+      exit 1
+    fi
+    osascript -e 'display notification "OpenCode was updated successfully." with title "OpenCode Update"'
+  fi
+else
+  # No update available, do nothing
+  exit 0
+fi

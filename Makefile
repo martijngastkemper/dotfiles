@@ -30,6 +30,12 @@ install_composer_git_merge_driver: installed_composer
 install_nvm: installed_curl
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 
+.PHONY = install_opencode_update_agent
+install_opencode_update_agent:
+	cp $(CURDIR)/com.martijngastkemper.opencode-update.plist ~/Library/LaunchAgents/
+	launchctl unload ~/Library/LaunchAgents/com.martijngastkemper.opencode-update.plist || true
+	launchctl load ~/Library/LaunchAgents/com.martijngastkemper.opencode-update.plist
+
 .PHONY = install_python
 install_python: installed_pyenv
 	pyenv install 3
@@ -99,11 +105,11 @@ configure_tmux: installed_tmux install_tmux_symlinks install_tmux_plugin_manager
 .PHONY = configure_theme_switcher
 configure_theme_switcher:
 	ln -nsf $(CURDIR)/com.martijngastkemper.theme-switcher.plist ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
-	launchctl unload ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
+	launchctl unload ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist || true
 	launchctl load ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
 
 .PHONY = configure_macos
-configure_macos:
+configure_macos: configure_theme_switcher install_opencode_update_agent
 	@sh macos_config.sh;\
 	exit $$?
 
