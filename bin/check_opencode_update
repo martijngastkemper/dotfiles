@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Ensure Homebrew is on PATH (launchd jobs don't inherit the interactive shell PATH)
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
 # Check if opencode is outdated
 if brew outdated opencode | grep -q opencode; then
   # Show AppleScript notification with Install button
