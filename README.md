@@ -12,9 +12,22 @@ Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles),
 
 Lists all the available source. For a fine grained install.
 
-### `bin/apply_git_templates`
+### `bin/apply_git_template`
 
-After changing a hook in `git_templates/` I want to apply these changes to existings checkouts. This scripts copies the files to `.git/` in the project. It asks to confirm overwriting existing files.
+Sync hooks (and any other files in `git_template/`) into an existing
+git repository's `.git/` directory.
+
+Git's template directory is only consulted when a repository is created
+(`git init` / `git clone`), so changes to `git_template/hooks/*` don't
+propagate to repos that already exist. Run this script from the root
+of such a repo to bring it up to date:
+
+```bash
+cd path/to/repo
+apply_git_template
+```
+
+All changes are opt-in per file, so it's safe to run repeatedly.
 
 ### `bin/dark`
 
@@ -135,6 +148,10 @@ A mechanism to more effectively merge `composer.json` and `composer.lock` files.
 ```bash
 make install_composer_git_merge_driver
 ```
+
+The pre-commit hook in `git_template/hooks/pre-commit` runs `composer validate`
+whenever `composer.json` or `composer.lock` is staged, so composer must be
+installed to commit in PHP repos.
 
 ### Step 9: Configure MacOS
 
