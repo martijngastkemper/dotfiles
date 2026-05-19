@@ -143,7 +143,7 @@ Install Composer 2* globally:
 make install_composer
 ```
 
-A mechanism to more effectively merge `composer.json` and `composer.lock` files.
+A mechanism to more effectively merge `composer.json` and `composer.lock` files: [github.com/balbuf/composer-git-merge-driver](https://github.com/balbuf/composer-git-merge-driver)
 
 ```bash
 make install_composer_git_merge_driver
