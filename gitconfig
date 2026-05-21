@@ -86,4 +86,7 @@
 [includeIf "hasconfig:remote.*.url:git@bitbucket.org:StudyDriveAdmin/**"]
     path = ~/.dotfiles/gitconfig.meinestadt
 
+[includeIf "hasconfig:remote.*.url:git@git.meinestadt.de:ms/**"]
+    path = ~/.dotfiles/gitconfig.meinestadt
+
 
