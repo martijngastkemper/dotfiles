@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/opt/homebrew/bin/tmux source-file ~/.tmux-themes/dark.conf
+/opt/homebrew/bin/tmux source-file ~/.dotfiles/tmux-themes/dark.conf
 
