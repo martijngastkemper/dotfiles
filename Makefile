@@ -89,7 +89,6 @@ configure_vim: installed_vim install_vim_symlinks install_vim_vundle install_vim
 .PHONY = install_tmux_symlinks
 install_tmux_symlinks:
 	ln -nsf $(CURDIR)/tmux.conf ~/.tmux.conf
-	ln -nsf $(CURDIR)/tmux-themes ~/.tmux-themes
 
 .PHONY = install_tmux_plugin_manager
 install_tmux_plugin_manager: installed_git
