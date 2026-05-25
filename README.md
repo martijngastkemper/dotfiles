@@ -135,13 +135,7 @@ nvm install 20
 make install_yarn
 ```
 
-### Step 8: Composer
-
-Install Composer 2* globally:
-
-```bash
-make install_composer
-```
+### Step 8: Merge Composer dependencies
 
 A mechanism to more effectively merge `composer.json` and `composer.lock` files: [github.com/balbuf/composer-git-merge-driver](https://github.com/balbuf/composer-git-merge-driver)
 

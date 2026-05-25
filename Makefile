@@ -17,11 +17,6 @@ install_brew_packages: installed_brew
 	brew update
 	brew bundle install
 
-.PHONY = install_composer
-install_composer: installed_php
-	sh $(CURDIR)/bin/install-composer.sh
-	mv composer.phar $(CURDIR)/bin/composer
-
 .PHONY = install_composer_git_merge_driver
 install_composer_git_merge_driver: installed_composer
 	composer global require balbuf/composer-git-merge-driver
