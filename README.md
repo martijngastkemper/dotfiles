@@ -10,7 +10,7 @@ Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles),
 
 ### `make`
 
-Lists all the available source. For a fine grained install.
+Lists all the available sources. For a fine-grained installation.
 
 ### `bin/apply_git_template`
 
@@ -78,7 +78,7 @@ make install_brew_packages
 
 ### Step 3: Setup 1Password
 
-1Password should be installed by Brew. Open it, login and open preferences:
+Brew should install 1Password. Open it, login and update the following preferences:
 
 General:
 - Disable "Keep 1Password in the menu bar"
@@ -100,13 +100,13 @@ Developer:
 
 ### Step 4: Shell
 
-Zsh will be installed by Brew. To activate it run:
+Brew will install Zsh. To activate it execute:
 
 ```bash
 make configure_zsh
 ```
 
-Also configure bash, so when ZSH isn't available or you have to use Bash some convenient settings are at your hands:
+Also, configure bash, so when ZSH isn't available, or you have to use Bash, or a non-interactive shell uses Bash, some convenient settings are at hand:
 
 ```bash
 make configure_bash
@@ -153,7 +153,7 @@ installed to commit in PHP repos.
 make configure_macos
 ```
 
-Settings to change manually
+Settings to change manually, because I couldn't find a way to automate them:
 
 *Let Caps Lock be an Escape key*
 System Settings -> Keyboard -> Keyboard Shortcuts -> Modifier Keys -> Caps Lock -> Esc
