@@ -23,7 +23,7 @@ install_composer_git_merge_driver: installed_composer
 
 .PHONY = install_nvm
 install_nvm: installed_curl
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 
 .PHONY = install_opencode_update_agent
 install_opencode_update_agent:
