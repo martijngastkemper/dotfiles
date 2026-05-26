@@ -1,4 +1,4 @@
 #!/bin/sh
 
-brew unlink php@7.4 php@8.0 php@8.1 php@8.2 php@8.4 php 2>/dev/null
+brew unlink php@7.4 php@8.0 php@8.1 php@8.2 php@8.4 php@8.5 php@8.6 2>/dev/null
 brew link php@8.3
