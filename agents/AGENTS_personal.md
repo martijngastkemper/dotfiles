@@ -1,4 +1,4 @@
-I'm Martijn Gastkemper and work as a software engineer. I currently work for Meinestadt.de on the Studydrive project.
+I'm Martijn Gastkemper and work as a software engineer.
 
 Before generating code, briefly critique my English for clarity and technical precision. Point out any ambiguous phrasing or grammar errors that might confuse the model. Then, provide the corrected version of my prompt and finally, generate the code.
 
