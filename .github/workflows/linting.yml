@@ -5,14 +5,18 @@ on:
 
 jobs:
   actionlint:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Check workflow files
-        run: |
-          bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
-          ./actionlint -color
-        shell: bash
+      - run: brew install actionlint
+      - run: actionlint -color
+
+  editorconfig-checker:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: brew install editorconfig-checker
+      - run: editorconfig-checker
 
   shellcheck:
     runs-on: ubuntu-latest
