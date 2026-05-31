@@ -1,9 +1,9 @@
 [alias]
     # Locally exclude file without adding it to .gitignore
     exclude = "!f() { \
-      for file in "$@"; do \
-        echo "$file" >> .git/info/exclude; \
-      done; \
+        for file in "$@"; do \
+            echo "$file" >> .git/info/exclude; \
+        done; \
     }; f"
 
     # Get the release/main/master branch, the check is in that order
