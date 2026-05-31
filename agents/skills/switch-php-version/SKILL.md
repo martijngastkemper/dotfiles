@@ -11,7 +11,8 @@ To switch PHP versions on your system, run one of the following commands. These 
 - `php82` for PHP 8.2
 - `php83` for PHP 8.3
 - `php84` for PHP 8.4
-- `php85` for PHP 8.5 (links Homebrew's default `php` formula)
+- `php85` for PHP 8.5
+- `php86` for PHP 8.6
 
 When a `composer.json` file is present in the root of the repository you are working in, look for the PHP version in the `require` section (e.g. `"php": "^8.2"` → run `php82`).
 
