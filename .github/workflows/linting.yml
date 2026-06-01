@@ -8,6 +8,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
+      - run: make installed_brew
       - run: brew install actionlint
       - run: actionlint -color
 
@@ -15,6 +16,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
+      - run: make installed_brew
       - run: brew install editorconfig-checker
       - run: editorconfig-checker
 
@@ -22,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - run: make installed_shellcheck
       - run: shellcheck -- bin/* *.sh git_template/hooks/* bash_aliases
 
   skills-lint:
@@ -32,10 +35,11 @@ jobs:
       - run: skills-lint --quiet
 
   zunit:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
-      - run: sudo apt install -y zsh
+      - run: make installed_brew
+      - run: brew install zsh
       - run: make install_zunit
       - run: |
           # Make zunit and revolver available in the PATH
