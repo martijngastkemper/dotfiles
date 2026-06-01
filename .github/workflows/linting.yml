@@ -31,6 +31,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Cache token counts
+        id: token-counts
+        uses: actions/cache@v5
+        with:
+          path: .skills-lint-cache/tokens.json
+          key: token-counts
       - run: make install_skills_lint
       - run: skills-lint --quiet
 
