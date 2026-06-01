@@ -1,3 +1,4 @@
+.skills-lint-cache/
 vim/bundle/**
 !vim/bundle/.gitkeep
 vim/.netrwhist

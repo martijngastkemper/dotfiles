@@ -36,6 +36,10 @@ install_python: installed_pyenv
 	pyenv install 3
 	pyenv global 3
 
+.PHONY = install_skills-linmt
+install_skills_lint: installed_npm
+	npm install -g @haasstefan/skills-lint
+
 .PHONY = install_yarn
 install_yarn: installed_curl
 	curl -o- -L https://yarnpkg.com/install.sh | bash
