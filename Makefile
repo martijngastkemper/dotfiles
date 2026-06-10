@@ -55,7 +55,9 @@ symlinks:
 	if [ ! -d ~/.dotfiles ]; then ln -nsf $(CURDIR) ~/.dotfiles; fi
 	mkdir -p ~/.agents
 	ln -nsf $(CURDIR)/agents/AGENTS_personal.md ~/.agents/AGENTS.md
+	ln -nsf $(CURDIR)/agents/opencode.jsonc ~/.config/opencode/opencode.jsonc
 	ln -nsf $(CURDIR)/agents/skills ~/.agents/skills
+	ln -nsf $(CURDIR)/agents/tui.jsonc ~/.config/opencode/tui.jsonc
 	ln -nsf $(CURDIR)/gitconfig ~/.gitconfig
 
 bin/antigen.zsh: installed_curl
