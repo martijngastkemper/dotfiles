@@ -1,7 +1,7 @@
-tap "anomalyco/tap"
-tap "hashicorp/tap"
-tap "shivammathur/php"
-tap "universal-ctags/universal-ctags"
+tap "anomalyco/tap", trusted: true
+tap "hashicorp/tap", trusted: true
+tap "shivammathur/php", trusted: true
+tap "universal-ctags/universal-ctags", trusted: true
 brew "actionlint"
 brew "awscli"
 cask "caffeine"
