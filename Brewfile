@@ -18,7 +18,7 @@ brew "imagemagick"
 brew "inetutils"
 cask "iterm2"
 brew "jq"
-brew "mysql@8.4"
+brew "mysql@8.4", restart_service: true, link: true
 brew "mkcert"
 cask "ngrok/ngrok/ngrok"
 brew "anomalyco/tap/opencode"
