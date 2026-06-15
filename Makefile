@@ -113,9 +113,3 @@ configure_theme_switcher:
 configure_macos: configure_theme_switcher install_opencode_update_agent
 	@sh macos_config.sh;\
 	exit $$?
-
-.PHONY = install_zunit
-install_zunit: installed_curl
-	curl -L https://raw.githubusercontent.com/molovo/revolver/master/revolver > bin/revolver
-	curl -L https://github.com/molovo/zunit/releases/download/v0.8.2/zunit > bin/zunit
-	chmod +x bin/revolver bin/zunit

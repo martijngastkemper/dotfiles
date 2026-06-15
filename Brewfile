@@ -1,5 +1,6 @@
 tap "anomalyco/tap", trusted: true
 tap "hashicorp/tap", trusted: true
+tap "zunit-zsh/zunit", trusted: true
 tap "shivammathur/php", trusted: true
 tap "universal-ctags/universal-ctags", trusted: true
 brew "actionlint"
@@ -20,6 +21,7 @@ cask "iterm2"
 brew "jq"
 brew "mysql@8.4", restart_service: true, link: true
 brew "mkcert"
+brew "zunit-zsh/zunit/zunit"
 cask "ngrok/ngrok/ngrok"
 brew "anomalyco/tap/opencode"
 brew "shivammathur/php/php@7.4"
