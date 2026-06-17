@@ -2,7 +2,6 @@ tap "anomalyco/tap", trusted: true
 tap "hashicorp/tap", trusted: true
 tap "zunit-zsh/zunit", trusted: true
 tap "shivammathur/php", trusted: true
-tap "universal-ctags/universal-ctags", trusted: true
 brew "actionlint"
 brew "awscli"
 cask "caffeine"
@@ -55,7 +54,7 @@ unless Dir.exist?("/Applications/TimeScribe.app")
   cask "timescribe"
 end
 brew "tmux"
-brew "universal-ctags", args: ['HEAD']
+brew "universal-ctags"
 brew "vim"
 brew "wget"
 unless Dir.exist?("/Applications/WhatsApp.php")
