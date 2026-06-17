@@ -43,7 +43,7 @@
     syntax on
 
     " status line
-    set statusline=%f\ %y\ %m\ %r\ Line:\ %l/%L\ Col:\ %c\ Buf:\ #%n
+    set statusline=%f\ %y\ %m\ %r\ Line:\ %l/%L\ Col:\ %c\ Buf:\ #%n\ %{gutentags#statusline()}
     set laststatus=2
     set showcmd
 
@@ -137,13 +137,5 @@
 
     " Update after 100ms instead of the default 4000ms
     set updatetime=100
-
-" }}}}
-
-" Gutentags {{{{
-
-    " Move tags file out of project root
-    let g:gutentags_ctags_tagfile = "vim_gutentags_tagfile"
-    let g:gutentags_ctags_extra_args = ["--tag-relative"]
 
 " }}}}
