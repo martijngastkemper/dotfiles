@@ -4,6 +4,12 @@ function idea() {
   else
     project="$1:A"
   fi
-  open -na "PhpStorm.app" --args "$project"
+
+  if test ! -d "$project"; then
+    echo "Path $project does not exists"
+    return 1
+  fi
+
+  open -na "PhpStorm.app" --args "$project" || (test -e "$project/README.md" && vim "$project/README.md" || vim "$project" )
 }
 

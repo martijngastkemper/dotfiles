@@ -4,13 +4,13 @@
 
   load ../idea.zsh
 
-  function open {
-    echo "open $@"
-  }
-
 }
 
 @test 'test idea without arguments' {
+
+  function open {
+    echo "open $@"
+  }
 
   run idea
 
@@ -21,6 +21,10 @@
 
 @test 'test idea with relative path' {
 
+  function open {
+    echo "open $@"
+  }
+
   run idea "bin"
 
   assert $state equals 0
@@ -30,5 +34,14 @@
 
   assert $state equals 0
   assert $output contains $(pwd)"/bin"
+
+}
+
+@test 'test non existing path' {
+
+  run idea "non-existing"
+
+  assert $state equals 1
+  assert $output contains "does not exists"
 
 }
