@@ -8,17 +8,25 @@ brew "awscli"
 cask "caffeine"
 cask "claude-code"
 brew "composer"
-cask "docker-desktop"
+unless Dir.exist?("/Applications/Docker.app")
+  cask "docker-desktop"
+end
 brew "editorconfig-checker"
-cask "elgato-control-center"
+unless Dir.exist?("/Applications/Elgato Control Center.app")
+  cask "elgato-control-center"
+end
 cask "font-menlo-for-powerline"
 brew "git"
 brew "go"
-cask "google-chrome"
+unless Dir.exist?("/Applications/Google Chrome.app")
+  cask "google-chrome"
+end
 brew "hashicorp/tap/terraform"
 brew "imagemagick"
 brew "inetutils"
-cask "iterm2"
+unless Dir.exist?("/Applications/iTerm.app")
+  cask "iterm2"
+end
 brew "jq"
 brew "mysql@8.4", restart_service: true, link: true
 brew "mkcert"
@@ -34,17 +42,27 @@ brew "shivammathur/php/php@8.4"
 brew "shivammathur/php/php@8.5"
 brew "shivammathur/php/php@8.6"
 brew "pyenv"
-cask "rectangle"
+unless Dir.exist?("/Applications/Rectangle.app")
+  cask "rectangle"
+end
 brew "saml2aws"
 brew "shellcheck"
-cask "signal"
+unless Dir.exist?("/Applications/Signal.app")
+  cask "signal"
+end
 brew "sqlite"
-cask "timescribe"
+unless Dir.exist?("/Applications/TimeScribe.app")
+  cask "timescribe"
+end
 brew "tmux"
 brew "universal-ctags", args: ['HEAD']
 brew "vim"
 brew "wget"
-cask "whatsapp"
+unless Dir.exist?("/Applications/WhatsApp.php")
+  cask "whatsapp"
+end
 brew "zsh"
-cask "1password"
-cask "1password-cli"
+unless Dir.exist?("/Applications/1Password.app")
+  cask "1password"
+  cask "1password-cli"
+end
