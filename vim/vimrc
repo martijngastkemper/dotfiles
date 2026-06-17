@@ -117,9 +117,6 @@
     " Allow dotfiles like .env and .env.template
     let g:ctrlp_dotfiles = 1
 
-    " leader key + j to open CtrlP in buffer mode
-    noremap <leader>j :CtrlPBuffer<CR>
-
 " }}}}
 
 " Bullets.vim {{{{
