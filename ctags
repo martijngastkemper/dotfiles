@@ -1,7 +1,0 @@
---exclude=node_modules
---exclude=.git
---exclude=tags
-
---regex-php=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i
-
---php-kinds=cift

@@ -73,7 +73,6 @@ configure_zsh: installed_zsh bin/antigen.zsh
 
 .PHONY = install_vim_symlinks
 install_vim_symlinks:
-	ln -nsf $(CURDIR)/ctags ~/.ctags
 	ln -nsf $(CURDIR)/vim ~/.vim
 	ln -nsf $(CURDIR)/ideavimrc ~/.ideavimrc
 
