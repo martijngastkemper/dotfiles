@@ -32,7 +32,7 @@
 " Gutentags {{{{
 
     let g:gutentags_cache_dir = "~/.cache/vim/tags"
-    let g:gutentags_ctags_extra_args = ["--tag-relative", "-R", "--fields=+aimlS", "--languages=php", "--output-format=e-ctags"]
+    let g:gutentags_ctags_extra_args = ["--tag-relative", "--recurse", "--fields=+aimlS", "--languages=php", "--output-format=e-ctags"]
     let g:gutentags_modules=['ctags'] " This line must called before gutentags#statusline "
 
 " }}}}
