@@ -29,6 +29,14 @@
 
 " }}}}
 
+" Gutentags {{{{
+
+    let g:gutentags_cache_dir = "~/.cache/vim/tags"
+    let g:gutentags_ctags_extra_args = ["--tag-relative"]
+    let g:gutentags_modules=['ctags'] " This line must called before gutentags#statusline "
+
+" }}}}
+
 " GUI {{{{{
 
     " Enable syntax highlighting
@@ -135,7 +143,7 @@
 " Gutentags {{{{
 
     " Move tags file out of project root
-    let g:gutentags_ctags_tagfile = ".git/tags"
+    let g:gutentags_ctags_tagfile = "vim_gutentags_tagfile"
     let g:gutentags_ctags_extra_args = ["--tag-relative"]
 
 " }}}}
