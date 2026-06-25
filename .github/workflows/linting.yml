@@ -46,6 +46,7 @@ jobs:
       - uses: actions/checkout@v6
       - run: make installed_brew
       - run: brew install zsh
+      - run: brew trust molovo/revolver
       - run: brew tap molovo/revolver
       - run: brew install zunit-zsh/zunit/zunit
       - run: |
