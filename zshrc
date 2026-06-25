@@ -30,7 +30,6 @@ source $BASEDIR/bin/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle git
-antigen bundle lukechilds/zsh-nvm
 antigen bundle pj
 if command -v tmux > /dev/null ; then
     antigen bundle tmux
