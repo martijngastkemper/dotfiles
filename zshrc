@@ -61,7 +61,6 @@ export EDITOR='vim'
 # For a full list of active aliases, run `alias`.
 
 alias artisan="php artisan"
-alias gb="git branch --sort=committerdate"
 alias gl="git pull --rebase"
 alias gstpa="git stash --patch"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
@@ -71,20 +70,11 @@ alias tfa="terraform fmt; terraform apply"
 alias tfp="terraform fmt; terraform plan"
 
 source $BASEDIR/fixup.zsh
-unalias gcm 2>/dev/null
 source $BASEDIR/gcm.zsh
 source $BASEDIR/idea.zsh
 
 # Configure pj (project jump) plugin
 export PROJECT_PATHS=(~/Projects)
-
-export VAGRANT_CWD=~/Homestead
-alias homestead=vagrant
-
-# When .zshrc.local exists load it to make device specific settings available
-if [ -f ~/.zshrc.local ]; then
-    source ~/.zshrc.local
-fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
