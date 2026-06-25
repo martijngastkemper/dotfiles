@@ -28,6 +28,9 @@ export DEFAULT_USER=`whoami`
 # Activate Antigen - ZSH plugin manager
 source $BASEDIR/bin/antigen.zsh
 
+# Start tmux when a session starts
+ZSH_TMUX_AUTOSTART=true
+
 antigen use oh-my-zsh
 antigen bundle git
 if command -v tmux > /dev/null ; then
