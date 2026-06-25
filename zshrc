@@ -30,7 +30,6 @@ source $BASEDIR/bin/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle git
-antigen bundle pj
 if command -v tmux > /dev/null ; then
     antigen bundle tmux
 fi
@@ -71,9 +70,6 @@ alias tfp="terraform fmt; terraform plan"
 source $BASEDIR/fixup.zsh
 source $BASEDIR/gcm.zsh
 source $BASEDIR/idea.zsh
-
-# Configure pj (project jump) plugin
-export PROJECT_PATHS=(~/Projects)
 
 export NVM_DIR="$HOME/.nvm"
 nvm() {
