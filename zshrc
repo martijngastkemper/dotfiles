@@ -62,9 +62,11 @@ export EDITOR='vim'
 # For a full list of active aliases, run `alias`.
 
 alias artisan="php artisan"
+alias cp="cp -i"
 alias gl="git pull --rebase"
 alias gstpa="git stash --patch"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
+alias mv="mv -i"
 alias tf="terraform"
 alias tfi="terraform import"
 alias tfa="terraform fmt; terraform apply"
