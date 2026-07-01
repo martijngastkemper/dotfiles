@@ -1,0 +1,4 @@
+--langdef=squirrel
+--langmap=squirrel:.nut
+--regex-squirrel=/^[ \t]*function[ \t]+([a-zA-Z0-9_]+)/\1/f,function,functions/
+--regex-squirrel=/^[ \t]*class[ \t]+([a-zA-Z0-9_]+)/\1/c,class,classes/
