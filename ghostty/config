@@ -1,0 +1,6 @@
+font-family = "MenloForPowerline"
+font-size = 16
+
+theme = dark:dark,light:light
+
+config-file = ?~/.config/ghostty/local

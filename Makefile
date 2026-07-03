@@ -110,6 +110,12 @@ configure_theme_switcher:
 	launchctl unload ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist || true
 	launchctl load ~/Library/LaunchAgents/com.martijngastkemper.theme-switcher.plist
 
+.PHONY = configure_ghostty
+configure_ghostty:
+	mkdir -p ~/.config/ghostty
+	ln -nsf $(CURDIR)/ghostty/config ~/.config/ghostty/config
+	ln -nsf $(CURDIR)/ghostty/themes ~/.config/ghostty/themes
+
 .PHONY = configure_macos
 configure_macos: configure_theme_switcher install_opencode_update_agent
 	@sh macos_config.sh;\

@@ -42,6 +42,26 @@
     " Enable syntax highlighting
     syntax on
 
+    " Enable true color (Ghostty supports it)
+    set termguicolors
+
+    " Auto-switch background based on tmux theme (set by dark/light scripts)
+    if $TMUX_THEME == "light"
+        set background=light
+    else
+        set background=dark
+    endif
+
+    " Readable on both white and near-black backgrounds
+    highlight LineNr guifg=#808080 ctermfg=244
+    highlight Comment guifg=#808080 ctermfg=244
+    highlight Statement guifg=#cc8844 ctermfg=179
+    highlight Type guifg=#55aa55 ctermfg=71
+    highlight PreProc guifg=#9955cc ctermfg=98
+    highlight Identifier guifg=#5599cc ctermfg=68
+    highlight Special guifg=#55aaaa ctermfg=73
+    highlight Constant guifg=#cc5555 ctermfg=167
+
     " status line
     set statusline=%f\ %y\ %m\ %r\ Line:\ %l/%L\ Col:\ %c\ Buf:\ #%n\ %{gutentags#statusline()}
     set laststatus=2

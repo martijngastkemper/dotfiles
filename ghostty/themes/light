@@ -1,0 +1,21 @@
+background = white
+foreground = #1a1a1a
+selection-background = lightgray
+selection-foreground = #1a1a1a
+
+palette = 0=#1a1a1a
+palette = 1=#d1383d
+palette = 2=#3d9a57
+palette = 3=#b0851f
+palette = 4=#3b7dd8
+palette = 5=#d68c27
+palette = 6=#318795
+palette = 7=whitesmoke
+palette = 8=gray
+palette = 9=#d1383d
+palette = 10=#3d9a57
+palette = 11=#b0851f
+palette = 12=#3b7dd8
+palette = 13=#d68c27
+palette = 14=#318795
+palette = 15=white
