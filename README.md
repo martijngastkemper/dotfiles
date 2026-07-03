@@ -1,16 +1,16 @@
 # Dotfiles
 
-[![Github Action linting badge](https://github.com/martijngastkemper/dotfiles/workflows/Linting/badge.svg)](https://github.com/martijngastkemper/dotfiles/actions)
+[![GitHub Actions linting badge](https://github.com/martijngastkemper/dotfiles/workflows/Linting/badge.svg)](https://github.com/martijngastkemper/dotfiles/actions)
 
 ![Screenshot of my terminal](screenshot.png)
 
-Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles), [jackfranklin/dotfiles](https://github.com/jackfranklin/dotfiles) and [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
+Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles), [jackfranklin/dotfiles](https://github.com/jackfranklin/dotfiles), and [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles).
 
 ## Utility scripts
 
 ### `make`
 
-Lists all the available sources. For a fine-grained installation.
+Lists all the available sources for a fine-grained installation.
 
 ### `bin/apply_git_template`
 
@@ -39,9 +39,9 @@ Switch tmux and vim to light mode.
 
 ### `bin/public_port`
 
-When using Docker Compose it's not clear which public ports services expose. Looking into one of the `docker-compose*.yml` files is cumbersome. Use `public_port` to get the public port of a service.
+When using Docker Compose, it's not clear which public ports services expose. Looking into one of the `docker-compose*.yml` files is cumbersome. Use `public_port` to get the public port of a service.
 
-Uses port 80 by default
+Uses port 80 by default.
 
 ```bash
 public_port
@@ -63,7 +63,7 @@ public_port 3306
 
 ```bash
 git clone git@github.com:martijngastkemper/dotfiles.git ~/.dotfiles
-# when git is not available install brew (https://brew.sh), this will install git on MacOS
+# When git is not available, install brew (https://brew.sh). This will install git on macOS
 cd ~/.dotfiles
 make symlinks
 ```
@@ -78,7 +78,7 @@ make install_brew_packages
 
 ### Step 3: Setup 1Password
 
-Brew should install 1Password. Open it, login and update the following preferences:
+Brew should install 1Password. Open it, log in, and update the following preferences:
 
 General:
 - Disable "Keep 1Password in the menu bar"
@@ -100,13 +100,13 @@ Developer:
 
 ### Step 4: Shell
 
-Brew will install Zsh. To activate it execute:
+Brew will install Zsh. To activate it, execute:
 
 ```bash
 make configure_zsh
 ```
 
-Also, configure bash, so when ZSH isn't available, or you have to use Bash, or a non-interactive shell uses Bash, some convenient settings are at hand:
+Also configure bash so that convenient settings are available when Zsh isn't available, when you have to use Bash, or when a non-interactive shell uses Bash:
 
 ```bash
 make configure_bash
@@ -144,10 +144,10 @@ make install_composer_git_merge_driver
 ```
 
 The pre-commit hook in `git_template/hooks/pre-commit` runs `composer validate`
-whenever `composer.json` or `composer.lock` is staged, so composer must be
+whenever `composer.json` or `composer.lock` is staged, so Composer must be
 installed to commit in PHP repos.
 
-### Step 9: Configure MacOS
+### Step 9: Configure macOS
 
 ```bash
 make configure_macos
@@ -158,7 +158,7 @@ Settings to change manually, because I couldn't find a way to automate them:
 *Let Caps Lock be an Escape key*
 System Settings -> Keyboard -> Keyboard Shortcuts -> Modifier Keys -> Caps Lock -> Esc
 
-*Lock computer immediately*
+*Lock the computer immediately*
 System Settings -> Lock Screen -> Require password after screen saver...
 
 Switch between light and dark tmux theme automatically when macOS appearance changes:
@@ -175,14 +175,6 @@ Install Python 3 and make the `python` and `pip` binaries available:
 make install_python
 ```
 
-## Override Zsh settings
-
-To load settings to Zsh which aren't global, add them to:
-
-```bash
-vim ~/.zshrc.local
-```
-
 ## PhpStorm
 
 The plugins I use:
@@ -193,9 +185,9 @@ The plugins I use:
 - Prettier
 - Terraform and HCL
 
-## Find domain and key for usage in ``defaults``
+## Find domain and key for usage in `defaults`
 
-It's hard to find the right domain and key of a preference. To find it, use ``diff`` showing some extra lines of context:
+It's hard to find the right domain and key of a preference. To find it, use `diff` showing some extra lines of context:
 
 ```bash
 defaults read > before
