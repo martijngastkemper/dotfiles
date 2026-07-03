@@ -1,4 +1,18 @@
 --langdef=squirrel
 --langmap=squirrel:.nut
---regex-squirrel=/^[ \t]*function[ \t]+([a-zA-Z0-9_]+)/\1/f,function,functions/
---regex-squirrel=/^[ \t]*class[ \t]+([a-zA-Z0-9_]+)/\1/c,class,classes/
+
+# 1. Define explicit structural kinds
+--kinddef-squirrel=c,class,classes
+--kinddef-squirrel=f,function,functions
+
+# 2. Push class name onto the tracking scope stack
+--regex-squirrel=/^[ \t]*class[ \t]+([a-zA-Z0-9_]+)[ \t]*\{?/\1/c,class/{scope=push}
+
+# 3. Match functions inside classes, binding them to the parent scope
+--regex-squirrel=/^[ \t]*(local[ \t]+)?function[ \t]+([a-zA-Z0-9_]+)/\2/f,function/{scope=ref}
+
+# 4. Match shorthand methods like execute(...) {
+--regex-squirrel=/^[ \t]*([a-zA-Z0-9_]+)[ \t]*\([^)]*\)[ \t]*\{/\1/f,function/{scope=ref}
+
+# 5. Cleanly pop the stack on a closing brace WITHOUT creating a dummy text tag
+--regex-squirrel=/^\}//f,function/{placeholder}{scope=pop}
