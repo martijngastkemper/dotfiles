@@ -26,9 +26,6 @@ end
 brew "hashicorp/tap/terraform"
 brew "imagemagick"
 brew "inetutils"
-unless Dir.exist?("/Applications/iTerm.app")
-  cask "iterm2"
-end
 brew "jq"
 brew "mysql@8.4", restart_service: true, link: true
 brew "mkcert"
