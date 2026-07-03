@@ -15,6 +15,9 @@ unless Dir.exist?("/Applications/Elgato Control Center.app")
   cask "elgato-control-center"
 end
 cask "font-menlo-for-powerline"
+unless Dir.exist?("/Applications/Ghostty.app")
+  cask "ghostty"
+end
 brew "git"
 brew "go"
 unless Dir.exist?("/Applications/Google Chrome.app")
