@@ -56,6 +56,7 @@ symlinks:
 	mkdir -p ~/.agents
 	mkdir -p ~/.config/opencode
 	ln -nsf $(CURDIR)/agents/AGENTS_personal.md ~/.agents/AGENTS.md
+	ln -nsf $(CURDIR)/agents/command ~/.config/opencode/command
 	ln -nsf $(CURDIR)/agents/opencode.jsonc ~/.config/opencode/opencode.jsonc
 	ln -nsf $(CURDIR)/agents/skills ~/.agents/skills
 	ln -nsf $(CURDIR)/agents/tui.jsonc ~/.config/opencode/tui.jsonc
