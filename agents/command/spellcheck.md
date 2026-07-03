@@ -1,7 +1,8 @@
 ---
-description: Spellchecker
+description: Spell checker
 agent: explore
 model: opencode/deepseek-v4-flash-free
+mode: primary
 ---
 
 1. Determine the language and print it.

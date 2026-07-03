@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if command -v opencode >/dev/null 2>&1 && [[ -f "$1" ]]; then
+    # Remove comment lines (#) and everything from diff --git onward
+    cleaned=$(awk '/^diff --git/ { found = 1 } !/^#/ && !found { print }' "$1")
+    if [[ -n "$cleaned" ]]; then
+        first_line=$(echo "$cleaned" | head -1)
+        case "$first_line" in
+            fixup!*|squash!*|amend!*) exit 0 ;;
+        esac
+        echo "$cleaned" | opencode run --command=spellcheck
+    fi
+fi
