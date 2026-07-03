@@ -9,3 +9,7 @@ When writing or editing bash scripts (including git hooks under `git_template/ho
 ## Vim bundles
 
 Do not edit files under `vim/bundle/` — those are third-party plugins managed by Vundle. Any local changes will be overwritten when the plugin is updated, so they are not sustainable.
+
+## Ghostty config
+
+Do not add Ghostty config options that just match the default — omit them instead.
