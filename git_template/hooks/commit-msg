@@ -8,6 +8,6 @@ if command -v opencode >/dev/null 2>&1 && [[ -f "$1" ]]; then
         case "$first_line" in
             fixup!*|squash!*|amend!*) exit 0 ;;
         esac
-        echo "$cleaned" | opencode run --command=spellcheck
+        echo "$cleaned" | opencode run --command=spellcheck --title="Spellcheck commit $(date)"
     fi
 fi
