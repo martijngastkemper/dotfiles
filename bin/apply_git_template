@@ -38,13 +38,23 @@ while IFS= read -r -d '' src_file; do
     dst_file=".git/$rel_path"
 
     if [[ -f "$dst_file" ]]; then
-        if ! diff -q "$src_file" "$dst_file" > /dev/null 2>&1; then
+        content_match=false
+        mode_match=false
+        diff -q "$src_file" "$dst_file" > /dev/null 2>&1 && content_match=true
+        [[ $(stat -f %Lp "$src_file") == $(stat -f %Lp "$dst_file") ]] && mode_match=true
+
+        if ! $content_match || ! $mode_match; then
             echo ""
             echo "File changed: $rel_path"
-            diff -u "$dst_file" "$src_file" || true
+            if ! $content_match; then
+                diff -u "$dst_file" "$src_file" || true
+            fi
+            if ! $mode_match; then
+                echo "Permissions: $(stat -f %Lp "$dst_file") -> $(stat -f %Lp "$src_file")"
+            fi
             echo
             if confirm "Apply changes to $rel_path?"; then
-                cp -v "$src_file" "$dst_file"
+                cp -vp "$src_file" "$dst_file"
             fi
         fi
     else
@@ -52,7 +62,7 @@ while IFS= read -r -d '' src_file; do
         echo "New file: $rel_path"
         if confirm "Add $rel_path?"; then
             mkdir -p "$(dirname "$dst_file")"
-            cp -v "$src_file" "$dst_file"
+            cp -vp "$src_file" "$dst_file"
         fi
     fi
 done < <(find "$TEMPLATEDIR" -type f -print0)
