@@ -29,7 +29,6 @@ brew "inetutils"
 brew "jq"
 brew "mysql@8.4", restart_service: true, link: true
 brew "mkcert"
-brew "zunit-zsh/zunit/zunit"
 cask "ngrok/ngrok/ngrok"
 brew "anomalyco/tap/opencode"
 brew "shivammathur/php/php@7.4"
@@ -61,6 +60,7 @@ unless Dir.exist?("/Applications/WhatsApp.php")
   cask "whatsapp"
 end
 brew "zsh"
+brew "zunit-zsh/zunit/zunit"
 unless Dir.exist?("/Applications/1Password.app")
   cask "1password"
   cask "1password-cli"
