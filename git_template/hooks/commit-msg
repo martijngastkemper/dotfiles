@@ -8,6 +8,9 @@ if command -v opencode >/dev/null 2>&1 && [[ -f "$1" ]]; then
         case "$first_line" in
             fixup!*|squash!*|amend!*) exit 0 ;;
         esac
-        echo "$cleaned" | opencode run --command=spellcheck --title="Spellcheck commit $(date)"
+
+        # Unset Git environment variables so OpenCode runs in a clean environment and doesn't pollute the active commit index
+        unset "$(git rev-parse --local-env-vars 2>/dev/null)"
+        echo "$cleaned" | opencode run --command=spellcheck --title="Spellcheck commit $(date)" --model="opencode/deepseek-v4-flash-free"
     fi
 fi
