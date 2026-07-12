@@ -19,6 +19,8 @@ unless Dir.exist?("/Applications/Ghostty.app")
   cask "ghostty"
 end
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 brew "go"
 unless Dir.exist?("/Applications/Google Chrome.app")
   cask "google-chrome"
