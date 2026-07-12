@@ -32,9 +32,17 @@
     ignorecase = false
     autocrlf = false
     eol = lf
+    pager = delta
+
+[delta]
+    hyperlinks = true
+    navigate = true  # use n and N to move between diff sections
+    side-by-side = true
+    true-color = always
 
 [diff]
     algorithm = histogram
+    colorMoved = true
     mnemonicPrefix = true
     renames = true
 
@@ -52,6 +60,12 @@
 [init]
     defaultBranch = main
     templatedir = ~/.dotfiles/git_template
+
+[interactive]
+    diffFilter = delta --color-only
+
+[merge]
+    conflictStyle = zdiff3
 
 [merge "composer_json"]
     driver = composer-git-merge-driver %O %A %B %L %P
