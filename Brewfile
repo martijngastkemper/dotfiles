@@ -33,6 +33,7 @@ brew "mysql@8.4", restart_service: true, link: true
 brew "mkcert"
 cask "ngrok/ngrok/ngrok"
 brew "anomalyco/tap/opencode"
+brew "ollama"
 brew "shivammathur/php/php@7.4"
 brew "shivammathur/php/php@8.0"
 brew "shivammathur/php/php@8.1"
