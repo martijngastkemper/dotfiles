@@ -3,37 +3,55 @@ name: Linting
 on:
   push:
 
+permissions: {}
+
 jobs:
   actionlint:
     runs-on: macos-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
       - run: make installed_brew
       - run: brew install actionlint
       - run: actionlint -color
 
   editorconfig-checker:
     runs-on: macos-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
       - run: make installed_brew
       - run: brew install editorconfig-checker
       - run: editorconfig-checker
 
   shellcheck:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
       - run: make installed_shellcheck
       - run: shellcheck -- bin/* *.sh git_template/hooks/* bash_aliases
 
   skills-lint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
       - name: Cache token counts
         id: token-counts
-        uses: actions/cache@v6
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
           path: .skills-lint-cache/tokens.json
           key: token-counts
@@ -42,16 +60,24 @@ jobs:
 
   zizmor:
     runs-on: macos-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
       - run: make installed_brew
       - run: brew install zizmor
       - run: zizmor .
 
   zunit:
     runs-on: macos-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
       - run: make installed_brew
       - run: brew install zsh
       - run: brew trust molovo/revolver
