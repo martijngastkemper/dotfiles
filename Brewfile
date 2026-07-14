@@ -62,6 +62,8 @@ brew "wget"
 unless Dir.exist?("/Applications/WhatsApp.php")
   cask "whatsapp"
 end
+# Find security issues in GitHub Actions setups
+brew "zizmor"
 brew "zsh"
 brew "zunit-zsh/zunit/zunit"
 unless Dir.exist?("/Applications/1Password.app")

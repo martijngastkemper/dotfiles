@@ -40,6 +40,14 @@ jobs:
       - run: make install_skills_lint
       - run: skills-lint --quiet
 
+  zizmor:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: make installed_brew
+      - run: brew install zizmor
+      - run: zizmor .
+
   zunit:
     runs-on: macos-latest
     steps:
