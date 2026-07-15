@@ -16,6 +16,9 @@ export COMPOSER_MEMORY_LIMIT=-1
 export COMPOSER_HOME=~/.composer
 export PATH=$COMPOSER_HOME/vendor/bin:$PATH
 
+# Make Go binaries available
+export PATH="`go env GOPATH`/bin:$PATH"
+
 # Configure Brew
 export HOMEBREW_BUNDLE_CASK_SKIP="docker-desktop elgato-control-center google-chrome ghostty signal whatsapp 1password 1password-cli" # Skip self updating apps
 export HOMEBREW_BUNDLE_FILE=~/.dotfiles/Brewfile
