@@ -1,5 +1,6 @@
 tap "anomalyco/tap", trusted: true # for OpenCode
 tap "hashicorp/tap", trusted: true # for Terraform
+tap "ngrok/ngrok", trusted: true
 tap "zunit-zsh/zunit", trusted: true
 tap "shivammathur/php", trusted: true
 brew "actionlint"
