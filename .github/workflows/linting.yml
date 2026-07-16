@@ -41,6 +41,18 @@ jobs:
       - run: make installed_shellcheck
       - run: shellcheck --severity=warning -- bin/* *.sh git_template/hooks/* bash_aliases
 
+  shfmt:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
+      - run: go install mvdan.cc/sh/v3/cmd/shfmt@2f3f5e36d9b0f8f14c998d50aa20a28832205ae8
+      - run: |
+          "$(go env GOPATH)/bin/shfmt" --diff -- bin/* git_template/hooks/* bash_aliases
+
   skills-lint:
     runs-on: ubuntu-latest
     permissions:
