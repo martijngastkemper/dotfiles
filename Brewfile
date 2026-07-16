@@ -6,6 +6,7 @@ tap "shivammathur/php", trusted: true
 brew "actionlint"
 brew "awscli"
 cask "caffeine"
+go "github.com/checkmake/checkmake/cmd/checkmake"
 cask "claude-code"
 brew "composer"
 unless Dir.exist?("/Applications/Docker.app")
