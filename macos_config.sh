@@ -7,7 +7,11 @@ osascript -e 'tell application "System Preferences" to quit'
 
 # Become root
 sudo -v
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
 
 # #################################################################################
 # General UI/UX
@@ -78,13 +82,13 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 apps="Dock SystemUIServer"
 
 if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
-    echo "iTerm profile has been changes, restart iTerm"
+  echo "iTerm profile has been changes, restart iTerm"
 else
-    apps="$apps iTerm2"
+  apps="$apps iTerm2"
 fi
 
 for app in $apps; do
-    killall "${app}" > /dev/null 2>&1
+  killall "${app}" >/dev/null 2>&1
 done
 
 echo "Logout and login to apply all changes!"
