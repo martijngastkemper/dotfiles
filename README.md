@@ -4,7 +4,9 @@
 
 ![Screenshot of my terminal](screenshot.png)
 
-Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles), [jackfranklin/dotfiles](https://github.com/jackfranklin/dotfiles), and [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles).
+Inspired by [harmenjanssen/dotfiles](https://github.com/harmenjanssen/dotfiles)
+, [jackfranklin/dotfiles](https://github.com/jackfranklin/dotfiles), and
+[mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles).
 
 ## Utility scripts
 
@@ -39,7 +41,9 @@ Switch tmux and vim to light mode.
 
 ### `bin/public_port`
 
-When using Docker Compose, it's not clear which public ports services expose. Looking into one of the `docker-compose*.yml` files is cumbersome. Use `public_port` to get the public port of a service.
+When using Docker Compose, it's not clear which public ports services expose.
+Looking into one of the `docker-compose*.yml` files is cumbersome. Use
+`public_port` to get the public port of a service.
 
 Uses port 80 by default.
 
@@ -63,7 +67,8 @@ public_port 3306
 
 ```bash
 git clone git@github.com:martijngastkemper/dotfiles.git ~/.dotfiles
-# When git is not available, install brew (https://brew.sh). This will install git on macOS
+# When git is not available, install brew (https://brew.sh).
+# This will install git on macOS
 cd ~/.dotfiles
 make symlinks
 ```
@@ -81,15 +86,18 @@ make install_brew_packages
 Brew should install 1Password. Open it, log in, and update the following preferences:
 
 General:
+
 - Disable "Keep 1Password in the menu bar"
 - Enable "Start at login"
 - Disable "Autofill"
 
 Appearance:
+
 - Set "Density" to "Compact"
 - Disable "Categories" and "Tags"
 
 Security:
+
 - Enable "Hold Option to toggle revealed fields"
 
 Developer:
@@ -106,7 +114,9 @@ Brew will install Zsh. To activate it, execute:
 make configure_zsh
 ```
 
-Also configure bash so that convenient settings are available when Zsh isn't available, when you have to use Bash, or when a non-interactive shell uses Bash:
+Also configure bash so that convenient settings are available when Zsh isn't
+available, when you have to use Bash, or when a non-interactive shell uses
+Bash:
 
 ```bash
 make configure_bash
@@ -137,7 +147,8 @@ make install_yarn
 
 ### Step 8: Merge Composer dependencies
 
-A mechanism to more effectively merge `composer.json` and `composer.lock` files: [github.com/balbuf/composer-git-merge-driver](https://github.com/balbuf/composer-git-merge-driver)
+A mechanism to more effectively merge `composer.json` and `composer.lock` files
+: [github.com/balbuf/composer-git-merge-driver](https://github.com/balbuf/composer-git-merge-driver)
 
 ```bash
 make install_composer_git_merge_driver
@@ -156,7 +167,8 @@ make configure_macos
 Settings to change manually, because I couldn't find a way to automate them:
 
 *Let Caps Lock be an Escape key*
-System Settings -> Keyboard -> Keyboard Shortcuts -> Modifier Keys -> Caps Lock -> Esc
+System Settings -> Keyboard -> Keyboard Shortcuts -> Modifier Keys ->
+Caps Lock -> Esc
 
 *Lock the computer immediately*
 System Settings -> Lock Screen -> Require password after screen saver...
@@ -187,7 +199,8 @@ The plugins I use:
 
 ## Find domain and key for usage in `defaults`
 
-It's hard to find the right domain and key of a preference. To find it, use `diff` showing some extra lines of context:
+It's hard to find the right domain and key of a preference. To find it, use
+`diff` showing some extra lines of context:
 
 ```bash
 defaults read > before
