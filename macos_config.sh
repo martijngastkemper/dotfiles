@@ -69,23 +69,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 defaults write com.apple.menuextra.clock DateFormat "d MMM  HH:mm:ss"
 defaults write com.apple.menuextra.clock ShowSeconds -int 1
 
-# #################################################################################
-# iTerm2
-# #################################################################################
-
-# Specify the preferences directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string ~/.dotfiles/iterm2
-
-# Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-
 apps="Dock SystemUIServer"
-
-if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
-  echo "iTerm profile has been changes, restart iTerm"
-else
-  apps="$apps iTerm2"
-fi
 
 for app in $apps; do
   killall "${app}" >/dev/null 2>&1
