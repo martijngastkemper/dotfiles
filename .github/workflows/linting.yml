@@ -113,7 +113,8 @@ jobs:
       - run: brew trust molovo/revolver
       - run: brew tap molovo/revolver
       - run: brew install zunit-zsh/zunit/zunit
-      - run: |
+      - name: Run zunit
+        run: |
           # Make zunit and revolver available in the PATH
           export PATH="./bin:$PATH"
           # Fix for revolver to make it work in a non interactive shell
