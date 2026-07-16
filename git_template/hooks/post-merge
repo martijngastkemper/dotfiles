@@ -4,11 +4,10 @@
 changed_files=$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)
 
 check_run() {
-    if echo "$changed_files" | grep --quiet "$1";
-    then
-        echo ""
-        echo " 👉  $1 changed! You may want to $2!"
-    fi
+  if echo "$changed_files" | grep --quiet "$1"; then
+    echo ""
+    echo " 👉  $1 changed! You may want to $2!"
+  fi
 }
 
 check_run bower.json "run bower install"

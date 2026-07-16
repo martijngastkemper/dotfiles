@@ -6,7 +6,8 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 # Check if opencode is outdated
 if brew outdated opencode | grep -q opencode; then
   # Show AppleScript notification with Install button
-  user_choice=$(osascript <<EOD
+  user_choice=$(
+    osascript <<EOD
 display dialog "A new version of OpenCode is available. Do you want to install the update now?" buttons {"Cancel", "Install"} default button "Install" with title "OpenCode Update Available"
 EOD
   )
