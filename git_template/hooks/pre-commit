@@ -3,30 +3,30 @@
 # Ensure 1Password is running so commit signing doesn't fail
 # and the commit message isn't lost.
 if ! pgrep -xq "1Password"; then
-    echo "Error: 1Password is not running. Start it before committing so commit signing works." >&2
-    exit 1
+  echo "Error: 1Password is not running. Start it before committing so commit signing works." >&2
+  exit 1
 fi
 
 # Validate composer.json/composer.lock when they're staged. Catches the
 # "lock file is not up to date" hash mismatch that the composer git merge
 # driver can introduce.
-staged_composer_dirs=$(git diff --cached --name-only --diff-filter=ACM -z \
-    | tr '\0' '\n' \
-    | grep -E '(^|/)composer\.(json|lock)$' \
-    | xargs -n1 dirname 2>/dev/null \
-    | sort -u || true)
+staged_composer_dirs=$(git diff --cached --name-only --diff-filter=ACM -z |
+  tr '\0' '\n' |
+  grep -E '(^|/)composer\.(json|lock)$' |
+  xargs -n1 dirname 2>/dev/null |
+  sort -u || true)
 
 if [[ -n "$staged_composer_dirs" ]]; then
-    if ! command -v composer >/dev/null 2>&1; then
-        echo "Error: composer is not installed but composer.json/lock is staged." >&2
-        exit 1
-    fi
+  if ! command -v composer >/dev/null 2>&1; then
+    echo "Error: composer is not installed but composer.json/lock is staged." >&2
+    exit 1
+  fi
 
-    while IFS= read -r dir; do
-        [[ -z "$dir" ]] && continue
-        if ! composer validate --working-dir "$dir"; then
-            echo "Error: composer validate failed in $dir" >&2
-            exit 1
-        fi
-    done <<< "$staged_composer_dirs"
+  while IFS= read -r dir; do
+    [[ -z "$dir" ]] && continue
+    if ! composer validate --working-dir "$dir"; then
+      echo "Error: composer validate failed in $dir" >&2
+      exit 1
+    fi
+  done <<<"$staged_composer_dirs"
 fi

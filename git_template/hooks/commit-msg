@@ -1,16 +1,16 @@
 #!/bin/bash
 
 if command -v opencode >/dev/null 2>&1 && [[ -f "$1" ]]; then
-    # Remove comment lines (#) and everything from diff --git onward
-    cleaned=$(awk '/^diff --git/ { found = 1 } !/^#/ && !found { print }' "$1")
-    if [[ -n "$cleaned" ]]; then
-        first_line=$(echo "$cleaned" | head -1)
-        case "$first_line" in
-            fixup!*|squash!*|amend!*) exit 0 ;;
-        esac
+  # Remove comment lines (#) and everything from diff --git onward
+  cleaned=$(awk '/^diff --git/ { found = 1 } !/^#/ && !found { print }' "$1")
+  if [[ -n "$cleaned" ]]; then
+    first_line=$(echo "$cleaned" | head -1)
+    case "$first_line" in
+    fixup!* | squash!* | amend!*) exit 0 ;;
+    esac
 
-        # Unset Git environment variables so OpenCode runs in a clean environment and doesn't pollute the active commit index
-        unset "$(git rev-parse --local-env-vars 2>/dev/null)"
-        echo "$cleaned" | opencode run --command=spellcheck --title="Spellcheck commit $(date)" --model="opencode/deepseek-v4-flash-free"
-    fi
+    # Unset Git environment variables so OpenCode runs in a clean environment and doesn't pollute the active commit index
+    unset "$(git rev-parse --local-env-vars 2>/dev/null)"
+    echo "$cleaned" | opencode run --command=spellcheck --title="Spellcheck commit $(date)" --model="opencode/deepseek-v4-flash-free"
+  fi
 fi

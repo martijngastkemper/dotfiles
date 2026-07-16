@@ -2,4 +2,3 @@
 
 /opt/homebrew/bin/tmux source-file ~/.dotfiles/tmux-themes/dark.conf
 pkill -USR2 -x ghostty 2>/dev/null
-
