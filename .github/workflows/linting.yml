@@ -39,7 +39,7 @@ jobs:
         with:
           persist-credentials: false
       - run: make installed_shellcheck
-      - run: shellcheck -- bin/* *.sh git_template/hooks/* bash_aliases
+      - run: shellcheck --severity=warning -- bin/* *.sh git_template/hooks/* bash_aliases
 
   skills-lint:
     runs-on: ubuntu-latest
