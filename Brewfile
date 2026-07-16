@@ -30,8 +30,9 @@ brew "hashicorp/tap/terraform"
 brew "imagemagick"
 brew "inetutils"
 brew "jq"
-brew "mysql@8.4", restart_service: true, link: true
+brew "markdownlint-cli2"
 brew "mkcert"
+brew "mysql@8.4", restart_service: true, link: true
 cask "ngrok/ngrok/ngrok"
 brew "anomalyco/tap/opencode"
 brew "ollama"
