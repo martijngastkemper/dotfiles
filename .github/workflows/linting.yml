@@ -43,6 +43,19 @@ jobs:
       - run: brew install editorconfig-checker
       - run: editorconfig-checker
 
+  json:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
+      - run: make installed_jq
+      - name: Run jq
+        run: |
+          find . \( -iname ".*.json" -or -iname "*.json" -or -iname ".*.jsonc" -or -iname "*.jsonc" \) -exec sh -c jq . "$1" \;
+
   markdownlint:
     runs-on: ubuntu-latest
     permissions:
