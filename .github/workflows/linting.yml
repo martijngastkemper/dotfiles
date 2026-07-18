@@ -124,6 +124,19 @@ jobs:
           sarif_file: results.sarif
           category: zizmor
 
+  zsh-lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
+      - run: go install github.com/z-shell/zsh-lint/cmd/zsh-lint@61e5ec26601b5f40004e9c1fb768afee5da9c5fc
+      - name: "Run zsh-lint"
+        run: |
+          "$(go env GOPATH)/bin/zsh-lint" ./*.zsh
+
   zunit:
     runs-on: macos-latest
     permissions:
