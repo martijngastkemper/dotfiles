@@ -69,6 +69,9 @@ end
 # Find security issues in GitHub Actions setups
 brew "zizmor"
 brew "zsh"
+# Lint ZSH files
+# NOTE: not installed becuase Brew always installs @latest, but that version is broken because the repo doesn't have release tags.
+# go "github.com/z-shell/zsh-lint/cmd/zsh-lint"
 brew "zunit-zsh/zunit/zunit"
 unless Dir.exist?("/Applications/1Password.app")
   cask "1password"
