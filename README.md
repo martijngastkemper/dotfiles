@@ -67,8 +67,12 @@ public_port 3306
 
 ```bash
 git clone git@github.com:martijngastkemper/dotfiles.git ~/.dotfiles
-# When git is not available, install brew (https://brew.sh).
-# This will install git on macOS
+```
+
+When git is not available, install brew (see [Step 2: Brew](#step-2-brew)).
+That will install git on macOS.
+
+```bash
 cd ~/.dotfiles
 make symlinks
 ```
@@ -77,8 +81,10 @@ make symlinks
 
 Follow the installation instructions on [brew.sh](https://brew.sh).
 
+Then run Brew bundle to install the dependencies from the Brewfile`:
+
 ```bash
-make install_brew_packages
+brew bundle install
 ```
 
 ### Step 3: Setup 1Password

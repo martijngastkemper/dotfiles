@@ -20,11 +20,6 @@ test:
 installed_%:
 	@which $* > /dev/null 2>&1 && echo "✓ $* is installed" || (echo "✗ $* is not installed" && exit 1)
 
-.PHONY: install_brew_packages
-install_brew_packages: installed_brew
-	brew update
-	brew bundle install
-
 .PHONY: install_composer_git_merge_driver
 install_composer_git_merge_driver: installed_composer
 	composer global require balbuf/composer-git-merge-driver
