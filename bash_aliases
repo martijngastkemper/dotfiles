@@ -10,3 +10,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Make dotfile binaries available
 export PATH="$HOME/.dotfiles/bin:$PATH"
+
+# Make Go binaries available
+GO_BIN_PATH="$(go env GOPATH)/bin"
+export PATH="$GO_BIN_PATH:$PATH"
