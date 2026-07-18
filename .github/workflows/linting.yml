@@ -27,7 +27,8 @@ jobs:
         with:
           persist-credentials: false
       - run: go install github.com/checkmake/checkmake/cmd/checkmake@59931d556f8f5cf4fbacf2c8390a8122ef7a881d
-      - run: |
+      - name: Run checkmake
+        run: |
           "$(go env GOPATH)/bin/checkmake" Makefile
 
   editorconfig-checker:
