@@ -1,5 +1,5 @@
 
-function gcm() {
+function gcm {
 
     git checkout $(git main)
 
