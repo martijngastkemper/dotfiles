@@ -76,6 +76,12 @@
     " allow backspacing over everything in insert mode
     set backspace=indent,eol,start
 
+    " Show a column in Markdown files at the maximum line length
+    augroup markdown_colorcolumn
+        autocmd!
+        autocmd FileType markdown setlocal colorcolumn=80
+    augroup END
+
 " }}}}
 
 " Mappings {{{{
