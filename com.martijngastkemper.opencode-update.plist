@@ -20,9 +20,9 @@
   <key>RunAtLoad</key>
   <true/>
   <key>StandardErrorPath</key>
-  <string>/tmp/com.martijngastkemper.opencode-update.err</string>
+  <string>~/Library/Logs/com.martijngastkemper/opencode-update.err.log</string>
   <key>StandardOutPath</key>
-  <string>/tmp/com.martijngastkemper.opencode-update.out</string>
+  <string>~/Library/Logs/com.martijngastkemper/opencode-update.out.log</string>
 </dict>
 </plist>
 

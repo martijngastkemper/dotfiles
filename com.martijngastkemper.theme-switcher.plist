@@ -15,8 +15,8 @@
   <key>StartInterval</key>
   <integer>5</integer>
   <key>StandardOutPath</key>
-  <string>/tmp/theme-switcher.stdout.log</string>
+  <string>~/Library/Logs/com.martijngastkemper/theme-switcher.out.log</string>
   <key>StandardErrorPath</key>
-  <string>/tmp/theme-switcher.stderr.log</string>
+  <string>~/Library/Logs/com.martijngastkemper/theme-switcher.err.log</string>
 </dict>
 </plist>
