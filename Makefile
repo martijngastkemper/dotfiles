@@ -129,8 +129,15 @@ configure_ghostty:
 	ln -nsf $(CURDIR)/ghostty/config ~/.config/ghostty/config
 	ln -nsf $(CURDIR)/ghostty/themes ~/.config/ghostty/themes
 
+.PHONY: configure_launchd_logs
+configure_launchd_logs:
+	mkdir -p ~/Library/Logs/com.martijngastkemper
+	touch ~/Library/Logs/com.martijngastkemper/theme-switcher.out.log ~/Library/Logs/com.martijngastkemper/theme-switcher.err.log
+	touch ~/Library/Logs/com.martijngastkemper/opencode-update.out.log ~/Library/Logs/com.martijngastkemper/opencode-update.err.log
+	sudo ln -nsf $(CURDIR)/newsyslog.conf /etc/newsyslog.d/com.martijngastkemper.conf
+
 .PHONY: configure_macos
-configure_macos: configure_theme_switcher install_opencode_update_agent
+configure_macos: configure_theme_switcher install_opencode_update_agent configure_launchd_logs
 	@sh macos_config.sh;\
 	exit $$?
 
