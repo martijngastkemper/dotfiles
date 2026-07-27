@@ -8,15 +8,11 @@
   <array>
     <string>/bin/sh</string>
     <string>-c</string>
-    <string>sh ~/.dotfiles/bin/macos_switch_theme</string>
+    <string>sh ~/.dotfiles/bin/macos_switch_theme >>$HOME/Library/Logs/com.martijngastkemper/theme-switcher.out.log 2>>$HOME/Library/Logs/com.martijngastkemper/theme-switcher.err.log</string>
   </array>
   <key>RunAtLoad</key>
   <true/>
   <key>StartInterval</key>
   <integer>5</integer>
-  <key>StandardOutPath</key>
-  <string>~/Library/Logs/com.martijngastkemper/theme-switcher.out.log</string>
-  <key>StandardErrorPath</key>
-  <string>~/Library/Logs/com.martijngastkemper/theme-switcher.err.log</string>
 </dict>
 </plist>
