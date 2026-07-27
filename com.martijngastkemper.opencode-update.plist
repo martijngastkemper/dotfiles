@@ -8,7 +8,7 @@
     <array>
       <string>/bin/sh</string>
       <string>-c</string>
-      <string>sh ~/.dotfiles/bin/check_opencode_update</string>
+      <string>sh ~/.dotfiles/bin/check_opencode_update >>$HOME/Library/Logs/com.martijngastkemper/opencode-update.out.log 2>>$HOME/Library/Logs/com.martijngastkemper/opencode-update.err.log</string>
     </array>
   <key>StartCalendarInterval</key>
   <dict>
@@ -19,10 +19,6 @@
   </dict>
   <key>RunAtLoad</key>
   <true/>
-  <key>StandardErrorPath</key>
-  <string>~/Library/Logs/com.martijngastkemper/opencode-update.err.log</string>
-  <key>StandardOutPath</key>
-  <string>~/Library/Logs/com.martijngastkemper/opencode-update.out.log</string>
 </dict>
 </plist>
 
