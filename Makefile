@@ -52,7 +52,7 @@ configure_bash: installed_bash
 	ln -nsf $(CURDIR)/bash_aliases ~/.bash_aliases
 
 .PHONY: symlinks
-symlinks: symlink_dotfiles symlink_opencode symlink_repo_root
+symlinks: symlink_dotfiles symlink_opencode symlink_repo_root symlink_terraform
 
 .PHONY: symlink_dotfiles
 symlink_dotfiles:
@@ -73,6 +73,11 @@ symlink_repo_root:
 	# When the repo isn't checkout in ~/.dotfiles, create a symlink to it. This allows me to hard code ~/.dotfiles in
 	# config files. E.g. in gitconfig.
 	if [ ! -d ~/.dotfiles ]; then ln -nsf $(CURDIR) ~/.dotfiles; fi
+
+.PHONY: symlink_terraform
+symlink_terraform:
+	mkdir -p ~/.terraform.d/plugin-cache
+	ln -nsf $(CURDIR)/terraformrc ~/.terraformrc
 
 bin/antigen.zsh: installed_curl
 	touch $(CURDIR)/bin/antigen.zsh
