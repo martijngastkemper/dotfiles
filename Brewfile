@@ -8,7 +8,6 @@ brew "awscli"
 cask "caffeine"
 go "github.com/checkmake/checkmake/cmd/checkmake"
 cask "claude-code"
-brew "composer"
 unless Dir.exist?("/Applications/Docker.app")
   cask "docker-desktop"
 end
@@ -46,6 +45,8 @@ brew "shivammathur/php/php@8.3"
 brew "shivammathur/php/php@8.4"
 brew "shivammathur/php/php@8.5"
 brew "shivammathur/php/php@8.6"
+# Install after PHP to prevent installing the default PHP version.
+brew "composer"
 brew "pyenv"
 unless Dir.exist?("/Applications/Rectangle.app")
   cask "rectangle"
