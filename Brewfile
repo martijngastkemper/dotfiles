@@ -1,4 +1,5 @@
 tap "anomalyco/tap", trusted: true # for OpenCode
+tap "molovo/revolver", trusted: true # for zunit
 tap "hashicorp/tap", trusted: true # for Terraform
 tap "ngrok/ngrok", trusted: true
 tap "zunit-zsh/zunit", trusted: true
