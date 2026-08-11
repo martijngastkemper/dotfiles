@@ -72,6 +72,17 @@ git clone git@github.com:martijngastkemper/dotfiles.git ~/.dotfiles
 When git is not available, install brew (see [Step 2: Brew](#step-2-brew)).
 That will install git on macOS.
 
+When you get an authentication error from GitHub use the http URL. When the
+installation of the dotfiles is finished you have to update it to the SSH URL.
+Because pushing via the http URL is not allowed.
+
+```bash
+git clone https://github.com/martijngastkemper/dotfiles.git ~/.dotfiles
+git remote set-url origin git@github.com:martijngastkemper/dotfiles.git
+```
+
+Run these commands when the checkout succeeded.
+
 ```bash
 cd ~/.dotfiles
 make symlinks
@@ -112,7 +123,11 @@ Developer:
 - Enable "Use the SSH Agent"
 - Set "Open SSH URLs with" to "Ghostty"
 
-### Step 4: Shell
+### Step 4: Terminal
+
+```bash
+make configure_ghostty
+```
 
 Brew will install Zsh. To activate it, execute:
 
