@@ -110,7 +110,7 @@ Developer:
 
 - Enable "Show 1Password Developer experience"
 - Enable "Use the SSH Agent"
-- Set "Open SSH URLs with" to "iTerm2"
+- Set "Open SSH URLs with" to "Ghostty"
 
 ### Step 4: Shell
 
