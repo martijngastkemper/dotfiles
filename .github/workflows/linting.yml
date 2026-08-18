@@ -76,7 +76,10 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - name: Install package
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 26.x
+      - name: Install packages
         run: npm install
       - name: Run markdown-link-check
         run: npm exec markdown-link-check -- *.md
@@ -124,14 +127,19 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 26.x
       - name: Cache token counts
         id: token-counts
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
           path: .skills-lint-cache/tokens.json
           key: token-counts
-      - run: make install_skills_lint
-      - run: skills-lint --quiet
+      - name: Install packages
+        run: npm install
+      - name: Run skills-lint
+        run: npm exec skills-lint --quiet
 
   zizmor:
     runs-on: macos-latest
