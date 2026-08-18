@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@haasstefan/skills-lint": "^0.1.2",
     "markdown-link-check": "^3.15.0"
-  }
+  },
+  "packageManager": "npm"
 }
