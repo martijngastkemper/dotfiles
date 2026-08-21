@@ -11,7 +11,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - run: make installed_brew
@@ -23,10 +23,10 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - run: go install github.com/checkmake/checkmake/cmd/checkmake@59931d556f8f5cf4fbacf2c8390a8122ef7a881d
+      - run: go install github.com/checkmake/checkmake/cmd/checkmake@59931d556f8f5cf4fbacf2c8390a8122ef7a881d # v0.3.2
       - name: Run checkmake
         run: |
           "$(go env GOPATH)/bin/checkmake" Makefile
@@ -36,7 +36,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - run: make installed_brew
@@ -48,7 +48,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - run: make installed_jq
@@ -61,10 +61,10 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 26.x
       - name: Install packages
@@ -77,10 +77,10 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 26.x
       - name: Install packages
@@ -93,7 +93,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - run: make installed_plutil
@@ -104,7 +104,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - run: make installed_shellcheck
@@ -115,10 +115,10 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - run: go install mvdan.cc/sh/v3/cmd/shfmt@2f3f5e36d9b0f8f14c998d50aa20a28832205ae8
+      - run: go install mvdan.cc/sh/v3/cmd/shfmt@2f3f5e36d9b0f8f14c998d50aa20a28832205ae8 # v3.13.1
       - name: "Run shfmt"
         run: |
           "$(go env GOPATH)/bin/shfmt" --diff -- bin/* git_template/hooks/* bash_aliases *.sh
@@ -128,15 +128,15 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 26.x
       - name: Cache token counts
         id: token-counts
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .skills-lint-cache/tokens.json
           key: token-counts
@@ -151,14 +151,14 @@ jobs:
       contents: read
       security-events: write
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - run: make installed_brew
       - run: brew install zizmor
       - run: zizmor --format=sarif . > results.sarif
       - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@5595ccaf912efad79be6eef63a5619ff05969be3
+        uses: github/codeql-action/upload-sarif@5595ccaf912efad79be6eef63a5619ff05969be3 # v4.37.6
         with:
           sarif_file: results.sarif
           category: zizmor
@@ -168,10 +168,10 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - run: go install github.com/z-shell/zsh-lint/cmd/zsh-lint@61e5ec26601b5f40004e9c1fb768afee5da9c5fc
+      - run: go install github.com/z-shell/zsh-lint/cmd/zsh-lint@61e5ec26601b5f40004e9c1fb768afee5da9c5fc # untagged (pre-v1.1.0)
       - name: "Run zsh-lint"
         run: |
           "$(go env GOPATH)/bin/zsh-lint" ./*.zsh
@@ -181,7 +181,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - run: make installed_brew
