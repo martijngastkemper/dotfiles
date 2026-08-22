@@ -9,6 +9,13 @@ if command -v opencode >/dev/null 2>&1 && [[ -f "$1" ]]; then
     fixup!* | squash!* | amend!*) exit 0 ;;
     esac
 
+    printf "Check spelling? [y/N] "
+    read -r answer < /dev/tty || answer=""
+    case "$answer" in
+    y* | Y*) ;;
+    *) exit 0 ;;
+    esac
+
     # Unset Git environment variables so OpenCode runs in a clean environment and doesn't pollute the active commit index
     unset "$(git rev-parse --local-env-vars 2>/dev/null)"
     echo "$cleaned" | opencode run --command=spellcheck --title="Spellcheck commit $(date)" --model="opencode/deepseek-v4-flash-free"
