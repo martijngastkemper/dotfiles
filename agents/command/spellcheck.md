@@ -1,7 +1,6 @@
 ---
 description: Spell checker
 agent: explore
-model: opencode/deepseek-v4-flash-free
 subtask: false
 ---
 
