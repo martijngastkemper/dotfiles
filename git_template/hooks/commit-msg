@@ -1,6 +1,14 @@
 #!/bin/bash
 
 if command -v opencode >/dev/null 2>&1 && [[ -f "$1" ]]; then
+  MODEL="opencode/nemotron-3.5-lightning-free"
+
+  # Prevent git commit interruption when model isn't available anymore.
+  if ! opencode models | grep -q "$MODEL"; then
+    echo "Model '$MODEL' not available, pick another from 'opencode models'."
+    exit 0
+  fi
+
   # Remove comment lines (#) and everything from diff --git onward
   cleaned=$(awk '/^diff --git/ { found = 1 } !/^#/ && !found { print }' "$1")
   if [[ -n "$cleaned" ]]; then
@@ -18,6 +26,7 @@ if command -v opencode >/dev/null 2>&1 && [[ -f "$1" ]]; then
 
     # Unset Git environment variables so OpenCode runs in a clean environment and doesn't pollute the active commit index
     unset "$(git rev-parse --local-env-vars 2>/dev/null)"
-    echo "$cleaned" | opencode run --command=spellcheck --title="Spellcheck commit $(date)" --model="opencode/deepseek-v4-flash-free"
+
+    echo "$cleaned" | opencode run --command=spellcheck --title="Spellcheck commit $(date)" --model="$MODEL"
   fi
 fi
