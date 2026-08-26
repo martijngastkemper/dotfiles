@@ -25,7 +25,8 @@ fi
 confirm() {
   local prompt="$1"
   local reply
-  read -p "$prompt (y/n) " -n 1 -r reply </dev/tty
+  printf "%s [y/N] " "$prompt"
+  read -r -n 1 reply </dev/tty
   echo
   [[ $reply =~ ^[Yy]$ ]]
 }

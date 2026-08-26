@@ -18,9 +18,10 @@ if command -v opencode >/dev/null 2>&1 && [[ -f "$1" ]]; then
     esac
 
     printf "Check spelling? [y/N] "
-    read -r answer < /dev/tty || answer=""
+    read -r -n 1 answer </dev/tty || answer=""
+    echo
     case "$answer" in
-    y* | Y*) ;;
+    [yY]) ;;
     *) exit 0 ;;
     esac
 
