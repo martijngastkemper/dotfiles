@@ -1,0 +1,29 @@
+
+name: Tests
+
+on:
+  push:
+
+permissions: {}
+
+jobs:
+  zunit:
+    runs-on: macos-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: make installed_brew
+      - run: brew install zsh
+      - run: brew trust molovo/revolver
+      - run: brew tap molovo/revolver
+      - run: brew install zunit-zsh/zunit/zunit
+      - name: Run zunit
+        run: |
+          # Make zunit and revolver available in the PATH
+          export PATH="./bin:$PATH"
+          # Fix for revolver to make it work in a non interactive shell
+          export TERM="dumb"
+          zunit
