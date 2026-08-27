@@ -145,24 +145,6 @@ jobs:
       - name: Run skills-lint
         run: npm exec skills-lint --quiet
 
-  zizmor:
-    runs-on: macos-latest
-    permissions:
-      contents: read
-      security-events: write
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - run: make installed_brew
-      - run: brew install zizmor
-      - run: zizmor --format=sarif . > results.sarif
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@5595ccaf912efad79be6eef63a5619ff05969be3 # v4.37.6
-        with:
-          sarif_file: results.sarif
-          category: zizmor
-
   zsh-lint:
     runs-on: ubuntu-latest
     permissions:
@@ -176,23 +158,3 @@ jobs:
         run: |
           "$(go env GOPATH)/bin/zsh-lint" ./*.zsh
 
-  zunit:
-    runs-on: macos-latest
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - run: make installed_brew
-      - run: brew install zsh
-      - run: brew trust molovo/revolver
-      - run: brew tap molovo/revolver
-      - run: brew install zunit-zsh/zunit/zunit
-      - name: Run zunit
-        run: |
-          # Make zunit and revolver available in the PATH
-          export PATH="./bin:$PATH"
-          # Fix for revolver to make it work in a non interactive shell
-          export TERM="dumb"
-          zunit

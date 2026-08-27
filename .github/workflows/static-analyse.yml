@@ -1,0 +1,25 @@
+name: Static analysis
+
+on:
+  push:
+
+permissions: {}
+
+jobs:
+  zizmor:
+    runs-on: macos-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: make installed_brew
+      - run: brew install zizmor
+      - run: zizmor --format=sarif . > results.sarif
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@5595ccaf912efad79be6eef63a5619ff05969be3 # v4.37.6
+        with:
+          sarif_file: results.sarif
+          category: zizmor
