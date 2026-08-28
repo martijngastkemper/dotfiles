@@ -35,6 +35,7 @@ brew "markdownlint-cli2"
 brew "mkcert"
 brew "mysql@8.4", restart_service: true, link: true
 cask "ngrok/ngrok/ngrok"
+cask "notion"
 brew "anomalyco/tap/opencode"
 brew "ollama"
 go "mvdan.cc/sh/v3/cmd/shfmt"
