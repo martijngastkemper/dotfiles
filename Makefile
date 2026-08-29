@@ -89,6 +89,7 @@ configure_zsh: installed_zsh bin/antigen.zsh
 install_vim_symlinks:
 	mkdir -p ~/.ctags.d/
 	ln -nsf $(CURDIR)/squirrel.ctags ~/.ctags.d/squirrel.ctags
+	ln -nsf $(CURDIR)/terraform.ctags ~/.ctags.d/terraform.ctags
 	ln -nsf $(CURDIR)/vim ~/.vim
 	ln -nsf $(CURDIR)/ideavimrc ~/.ideavimrc
 
