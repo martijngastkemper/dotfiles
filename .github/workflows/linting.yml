@@ -164,7 +164,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - run: go install github.com/z-shell/zsh-lint/cmd/zsh-lint@61e5ec26601b5f40004e9c1fb768afee5da9c5fc # untagged (pre-v1.1.0)
+      - run: go install github.com/z-shell/zsh-lint/cmd/zsh-lint@33bce8041faa1395455562c5a558a063ccdcc441 # v1.2.0
       - name: "Run zsh-lint"
         run: |
           "$(go env GOPATH)/bin/zsh-lint" ./*.zsh
