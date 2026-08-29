@@ -7,6 +7,7 @@ permissions: {}
 
 jobs:
   actionlint:
+    # Lints GitHub Actions workflow YAML files (.github/workflows/*.yml)
     runs-on: macos-latest
     permissions:
       contents: read
@@ -19,6 +20,7 @@ jobs:
       - run: actionlint -color
 
   checkmake:
+    # Lints Makefile
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -32,6 +34,7 @@ jobs:
           "$(go env GOPATH)/bin/checkmake" Makefile
 
   editorconfig-checker:
+    # Lints all files against .editorconfig
     runs-on: macos-latest
     permissions:
       contents: read
@@ -44,6 +47,7 @@ jobs:
       - run: editorconfig-checker
 
   json:
+    # Lints JSON and JSONC files (*.json, .*.json, *.jsonc, .*.jsonc)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -57,6 +61,7 @@ jobs:
           find . \( -iname ".*.json" -or -iname "*.json" -or -iname ".*.jsonc" -or -iname "*.jsonc" \) -exec echo "{}" \; -exec sh -c jq . "$1" \;
 
   markdownlint:
+    # Lints Markdown files (*.md)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -73,6 +78,7 @@ jobs:
         run: npm exec markdownlint-cli2 -- **.md
 
   markdown-link-check:
+    # Checks links in Markdown files (*.md)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -89,6 +95,7 @@ jobs:
         run: npm exec markdown-link-check -- *.md
 
   plutil:
+    # Lints macOS plist files (*.plist)
     runs-on: macos-latest
     permissions:
       contents: read
@@ -100,6 +107,7 @@ jobs:
       - run: plutil -- *.plist
 
   shellcheck:
+    # Lints shell scripts (bin/*, git_template/hooks/*, bash_aliases, *.sh)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -111,6 +119,7 @@ jobs:
       - run: shellcheck --severity=warning -- bin/* git_template/hooks/* bash_aliases *.sh
 
   shfmt:
+    # Formats shell scripts (bin/*, git_template/hooks/*, bash_aliases, *.sh)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -124,6 +133,7 @@ jobs:
           "$(go env GOPATH)/bin/shfmt" --diff -- bin/* git_template/hooks/* bash_aliases *.sh
 
   skills-lint:
+    # Lints skill definitions under agents/skills and .agents/skills
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -146,6 +156,7 @@ jobs:
         run: npm exec skills-lint --quiet
 
   zsh-lint:
+    # Lints zsh scripts (*.zsh)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -157,4 +168,3 @@ jobs:
       - name: "Run zsh-lint"
         run: |
           "$(go env GOPATH)/bin/zsh-lint" ./*.zsh
-
