@@ -28,6 +28,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - run: make installed_go
       - run: go install github.com/checkmake/checkmake/cmd/checkmake@59931d556f8f5cf4fbacf2c8390a8122ef7a881d # v0.3.2
       - name: Run checkmake
         run: |
@@ -127,6 +128,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - run: make installed_go
       - run: go install mvdan.cc/sh/v3/cmd/shfmt@2f3f5e36d9b0f8f14c998d50aa20a28832205ae8 # v3.13.1
       - name: "Run shfmt"
         run: |
@@ -164,6 +166,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - run: make installed_go
       - run: go install github.com/z-shell/zsh-lint/cmd/zsh-lint@33bce8041faa1395455562c5a558a063ccdcc441 # v1.2.0
       - name: "Run zsh-lint"
         run: |
