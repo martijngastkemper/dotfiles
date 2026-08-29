@@ -4,6 +4,7 @@ tap "hashicorp/tap", trusted: true # for Terraform
 tap "ngrok/ngrok", trusted: true
 tap "zunit-zsh/zunit", trusted: true
 tap "shivammathur/php", trusted: true
+tap "terraform-linters/tap", trusted: true # for tflint
 brew "actionlint"
 brew "awscli"
 cask "caffeine"
@@ -62,6 +63,7 @@ brew "sqlite"
 unless Dir.exist?("/Applications/TimeScribe.app")
   cask "timescribe"
 end
+cask "terraform-linters/tap/tflint"
 brew "tmux"
 brew "universal-ctags"
 brew "vim"
