@@ -7,7 +7,7 @@ tap "shivammathur/php", trusted: true
 tap "terraform-linters/tap", trusted: true # for tflint
 brew "actionlint"
 brew "awscli"
-cask "caffeine"
+cask "domzilla-caffeine"
 go "github.com/checkmake/checkmake/cmd/checkmake"
 cask "claude-code"
 unless Dir.exist?("/Applications/Docker.app")
@@ -54,7 +54,6 @@ brew "pyenv"
 unless Dir.exist?("/Applications/Rectangle.app")
   cask "rectangle"
 end
-brew "saml2aws"
 brew "shellcheck"
 unless Dir.exist?("/Applications/Signal.app")
   cask "signal"
