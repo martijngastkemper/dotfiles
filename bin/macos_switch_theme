@@ -11,6 +11,5 @@ fi
 last=$(cat "$STATE_FILE" 2>/dev/null)
 
 if [ "$current" != "$last" ]; then
-  echo "$current" >"$STATE_FILE"
-  ~/.dotfiles/bin/"$current"
+  ~/.dotfiles/bin/"$current" && echo "$current" >"$STATE_FILE"
 fi
