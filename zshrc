@@ -25,6 +25,14 @@ export HOMEBREW_BUNDLE_FILE=~/.dotfiles/Brewfile
 export HOMEBREW_NO_ENV_HINTS=1
 export PATH="/opt/homebrew/sbin:/opt/homebrew/bin:$PATH"
 
+# Configure pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
 # Hide username from statusline
 export DEFAULT_USER=`whoami`
 
