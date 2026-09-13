@@ -50,6 +50,7 @@ brew "shivammathur/php/php@8.5"
 brew "shivammathur/php/php@8.6"
 # Install after PHP to prevent installing the default PHP version.
 brew "composer"
+brew "pnpm"
 brew "pyenv"
 unless Dir.exist?("/Applications/Rectangle.app")
   cask "rectangle"
