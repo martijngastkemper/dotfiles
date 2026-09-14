@@ -8,7 +8,7 @@
     <array>
       <string>/bin/sh</string>
       <string>-c</string>
-      <string>sh ~/.dotfiles/bin/check_opencode_update >>$HOME/Library/Logs/com.martijngastkemper/opencode-update.out.log 2>>$HOME/Library/Logs/com.martijngastkemper/opencode-update.err.log</string>
+      <string>sh ~/.dotfiles/bin/check_opencode_update 2>&amp;1 | logger -t opencode-update</string>
     </array>
   <key>StartCalendarInterval</key>
   <dict>
