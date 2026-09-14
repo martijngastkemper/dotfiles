@@ -8,7 +8,7 @@
   <array>
     <string>/bin/sh</string>
     <string>-c</string>
-    <string>sh ~/.dotfiles/bin/macos_switch_theme >>$HOME/Library/Logs/com.martijngastkemper/theme-switcher.out.log 2>>$HOME/Library/Logs/com.martijngastkemper/theme-switcher.err.log</string>
+    <string>sh ~/.dotfiles/bin/macos_switch_theme 2>&amp;1 | logger -t theme-switcher</string>
   </array>
   <key>RunAtLoad</key>
   <true/>
