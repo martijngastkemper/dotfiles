@@ -30,7 +30,7 @@ install_nvm: installed_curl
 
 .PHONY: install_opencode_update_agent
 install_opencode_update_agent:
-	cp $(CURDIR)/com.martijngastkemper.opencode-update.plist ~/Library/LaunchAgents/
+	ln -nsf $(CURDIR)/com.martijngastkemper.opencode-update.plist ~/Library/LaunchAgents/com.martijngastkemper.opencode-update.plist
 	launchctl unload ~/Library/LaunchAgents/com.martijngastkemper.opencode-update.plist || true
 	launchctl load ~/Library/LaunchAgents/com.martijngastkemper.opencode-update.plist
 
