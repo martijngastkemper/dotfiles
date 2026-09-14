@@ -28,7 +28,7 @@ install_composer_git_merge_driver: installed_composer
 install_nvm: installed_curl
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
 
-.PHONY: install_opencode_update_agent
+.PHONY: configure_opencode_update_agent
 install_opencode_update_agent:
 	ln -nsf $(CURDIR)/com.martijngastkemper.opencode-update.plist ~/Library/LaunchAgents/com.martijngastkemper.opencode-update.plist
 	launchctl unload ~/Library/LaunchAgents/com.martijngastkemper.opencode-update.plist || true
@@ -132,7 +132,7 @@ configure_ghostty:
 	ln -nsf $(CURDIR)/ghostty/themes ~/.config/ghostty/themes
 
 .PHONY: configure_macos
-configure_macos: configure_theme_switcher install_opencode_update_agent
+configure_macos: configure_theme_switcher configure_opencode_update_agent
 	@sh macos_config.sh;\
 	exit $$?
 
