@@ -185,6 +185,12 @@ jobs:
           persist-credentials: false
       - run: make installed_go
       - run: go install github.com/z-shell/zsh-lint/cmd/zsh-lint@33bce8041faa1395455562c5a558a063ccdcc441 # v1.2.0
-      - name: "Run zsh-lint"
+      - name: "Install ZSH"
+        run: |
+          sudo apt-get update
+          sudo apt install zsh
+      - name: "Check native syntax"
+        run: zsh --no-rcs --no-exec -- ./*.zsh
+      - name: "Run semantic analysis"
         run: |
           "$(go env GOPATH)/bin/zsh-lint" ./*.zsh
