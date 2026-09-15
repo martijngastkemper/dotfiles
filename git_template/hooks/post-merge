@@ -11,12 +11,15 @@ check_run() {
 }
 
 check_run bower.json "run bower install"
+check_run compose.*yml "run docker compose build"
+check_run compose.*yaml "run docker compose build"
 check_run composer.json "run composer install"
 check_run composer.lock "run composer install"
-check_run docker-compose.*yml "run docker-compose build"
+check_run docker-compose.*yml "run docker compose build"
+check_run docker-compose.*yaml "run docker compose build"
 check_run .env.example "update your environment variables"
 check_run env.template "update your environment variables"
-check_run package.json "run yarn install"
+check_run package.json "run npm/pnpm/yarn install"
 check_run package-lock.json "run npm install"
 check_run pnpm-lock.yaml "run pnpm install"
 check_run yarn.lock "run yarn install"
