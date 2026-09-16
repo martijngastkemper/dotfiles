@@ -34,6 +34,7 @@ brew "inetutils"
 brew "jq"
 brew "markdownlint-cli2"
 brew "mkcert"
+brew "mistral-vibe"
 brew "mysql@8.4", restart_service: true, link: true
 cask "ngrok/ngrok/ngrok"
 cask "notion"
