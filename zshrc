@@ -33,6 +33,9 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# Make Mistral Vibe binary available
+export PATH="$HOME/.local/bin:$PATH"
+
 # Hide username from statusline
 export DEFAULT_USER=`whoami`
 
