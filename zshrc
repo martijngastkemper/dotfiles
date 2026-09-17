@@ -36,6 +36,9 @@ esac
 # Make Mistral Vibe binary available
 export PATH="$HOME/.local/bin:$PATH"
 
+# Make 1Password CLI plugins available
+[ -f ~/.config/op/plugins.sh ] && source ~/.config/op/plugins.sh
+
 # Hide username from statusline
 export DEFAULT_USER=`whoami`
 
@@ -82,9 +85,9 @@ alias gstpa="git stash --patch"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
 alias mv="mv -i"
 alias tf="terraform"
-alias tfi="terraform import"
-alias tfa="terraform fmt; terraform apply"
-alias tfp="terraform fmt; terraform plan"
+alias tfi="[ -f .env ] && (op run --env-file=.env -- terraform import) || terraform import"
+alias tfa="terraform fmt; [ -f .env ] && (op run --env-file=.env -- terraform apply) || terraform apply"
+alias tfp="terraform fmt; [ -f .env ] && (op run --env-file=.env -- terraform plan) || terraform plan"
 
 source $BASEDIR/fixup.zsh
 source $BASEDIR/gcm.zsh
