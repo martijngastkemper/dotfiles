@@ -84,10 +84,11 @@ alias gl="git pull --rebase"
 alias gstpa="git stash --patch"
 alias gstl="git stash list --format='%gd (%cr): %gs'"
 alias mv="mv -i"
-alias tf="terraform"
-alias tfi="[ -f .env ] && (op run --env-file=.env -- terraform import) || terraform import"
-alias tfa="terraform fmt; [ -f .env ] && (op run --env-file=.env -- terraform apply) || terraform apply"
-alias tfp="terraform fmt; [ -f .env ] && (op run --env-file=.env -- terraform plan) || terraform plan"
+alias tf="op run --env-file=.env -- terraform"
+alias tff="terraform fmt "
+alias tfi="op run --env-file=.env -- terraform import"
+alias tfa="tff; op run --env-file=.env -- terraform apply"
+alias tfp="tff; op run --env-file=.env -- terraform plan"
 
 source $BASEDIR/fixup.zsh
 source $BASEDIR/gcm.zsh
