@@ -123,6 +123,15 @@ Developer:
 - Enable "Use the SSH Agent"
 - Set "Open SSH URLs with" to "Ghostty"
 
+#### Plugins
+
+Plugins make it possible to automatically load secrets. When enabling a plugin,
+1Password asks for the item where it can find the secrets.
+
+```shell
+op plugin init aws
+```
+
 ### Step 4: Terminal
 
 ```bash
