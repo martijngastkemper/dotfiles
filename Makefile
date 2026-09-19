@@ -44,7 +44,7 @@ install_yarn: installed_curl
 	curl -o- -L https://yarnpkg.com/install.sh | bash
 
 .PHONY: configure_bash
-configure_bash: installed_bash
+configure_bash: installed_bash symlink_repo_root
 	ln -nsf $(CURDIR)/bash_aliases ~/.bash_aliases
 
 .PHONY: symlinks
