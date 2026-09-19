@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
 # shellcheck source=/dev/null
 
-export LC_ALL=en_GB.utf8
+BASEDIR="$HOME/.dotfiles"
+
+export LC_ALL=en_US.utf8
 export EDITOR='vim'
 
 export NVM_DIR="$HOME/.nvm"
