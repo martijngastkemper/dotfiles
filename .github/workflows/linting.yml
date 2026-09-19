@@ -128,7 +128,7 @@ jobs:
         with:
           persist-credentials: false
       - run: make installed_shellcheck
-      - run: shellcheck --severity=warning -- bin/* git_template/hooks/* bash_aliases *.sh
+      - run: shellcheck --severity=warning -- aliases bin/* git_template/hooks/* bash_aliases *.sh
 
   shfmt:
     # Formats shell scripts (bin/*, git_template/hooks/*, bash_aliases, *.sh)

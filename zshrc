@@ -49,7 +49,6 @@ source $BASEDIR/bin/antigen.zsh
 ZSH_TMUX_AUTOSTART=true
 
 antigen use oh-my-zsh
-antigen bundle git
 if command -v tmux > /dev/null ; then
     antigen bundle tmux
 fi
@@ -78,17 +77,7 @@ export EDITOR='vim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-alias artisan="php artisan"
-alias cp="cp -i"
-alias gl="git pull --rebase"
-alias gstpa="git stash --patch"
-alias gstl="git stash list --format='%gd (%cr): %gs'"
-alias mv="mv -i"
-alias tf="op run --env-file=.env -- terraform"
-alias tff="terraform fmt "
-alias tfi="op run --env-file=.env -- terraform import"
-alias tfa="tff; op run --env-file=.env -- terraform apply"
-alias tfp="tff; op run --env-file=.env -- terraform plan"
+source $BASEDIR/aliases
 
 source $BASEDIR/fixup.zsh
 source $BASEDIR/gcm.zsh
