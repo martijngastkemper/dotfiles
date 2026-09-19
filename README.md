@@ -92,11 +92,14 @@ make symlinks
 
 Follow the installation instructions on [brew.sh](https://brew.sh).
 
-Then run Brew bundle to install the dependencies from the Brewfile`:
+Then run Brew bundle to install the dependencies from the `Brewfile`:
 
 ```bash
 brew bundle install
 ```
+
+Note: you can run this command from any folder, because the environment variable
+`HOMEBREW_BUNDLE_FILE` is set in the `~/.zshrc` file.
 
 ### Step 3: Setup 1Password
 
@@ -122,6 +125,9 @@ Developer:
 - Enable "Show 1Password Developer experience"
 - Enable "Use the SSH Agent"
 - Set "Open SSH URLs with" to "Ghostty"
+- Enable "Integrate with 1Password CLI"
+- Enable "Integrate with 1Password SDKs", necessary for the Terraform 1Password
+  provider to work.
 
 #### Plugins
 
