@@ -13,5 +13,13 @@
         }
       }
     }
+  },
+  "mcp": {
+    "1Password": {
+      "type": "local",
+      "command": [
+        "1password-mcp"
+      ]
+    }
   }
 }
