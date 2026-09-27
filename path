@@ -4,7 +4,9 @@
 PATH="$HOME/.dotfiles/bin:$PATH"
 
 # Make Go binaries available
-PATH="$(go env GOPATH)/bin:$PATH"
+if command -v go > /dev/null 2>&1; then
+  PATH="$(go env GOPATH)/bin:$PATH"
+fi
 
 # Make bun binaries available
 PATH="$HOME/.bun/bin:$PATH"
