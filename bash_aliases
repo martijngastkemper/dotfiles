@@ -7,10 +7,10 @@ export LC_ALL=en_US.utf8
 export EDITOR='vim'
 
 # Load shared aliases
-. $BASEDIR/aliases
+. $BASEDIR/shell_aliases
 
 # Load shared PATH modifications
-. $BASEDIR/path
+. $BASEDIR/shell_paths
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
