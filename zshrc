@@ -12,7 +12,7 @@ export COMPOSER_MEMORY_LIMIT=-1
 export COMPOSER_HOME=~/.composer
 
 # Load shared PATH modifications
-. $BASEDIR/path
+. $BASEDIR/shell_paths
 
 # Make 1Password CLI plugins available
 [ -f ~/.config/op/plugins.sh ] && source ~/.config/op/plugins.sh
@@ -55,7 +55,7 @@ export EDITOR='vim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-. $BASEDIR/aliases
+. $BASEDIR/shell_aliases
 
 source $BASEDIR/fixup.zsh
 source $BASEDIR/gcm.zsh

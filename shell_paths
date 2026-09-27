@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 # Shared PATH modifications for both bash and zsh
 
 # Make dotfile binaries available
