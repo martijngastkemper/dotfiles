@@ -43,8 +43,23 @@ install_python: installed_pyenv
 install_yarn: installed_curl
 	curl -o- -L https://yarnpkg.com/install.sh | bash
 
+IS_OMARCHY := $(shell test -d /usr/share/omarchy && echo "1" || echo "0")
+
+.PHONY: configure_omarchy
+configure_omarchy:
+	@if [ "$(IS_OMARCHY)" = "1" ]; then \
+		if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then \
+			echo "Backing up ~/.bashrc to ~/.bashrc.backup..."; \
+			cp ~/.bashrc ~/.bashrc.backup; \
+		fi; \
+		echo "Symlinking Omarchy .bashrc..."; \
+		ln -nsf $(CURDIR)/omarchy/bashrc ~/.bashrc; \
+	else \
+		echo "Not running on Omarchy. Skipping Omarchy-specific config."; \
+	fi
+
 .PHONY: configure_bash
-configure_bash: installed_bash symlink_repo_root
+configure_bash: installed_bash configure_omarchy
 	ln -nsf $(CURDIR)/bash_aliases ~/.bash_aliases
 
 .PHONY: symlinks
