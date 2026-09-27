@@ -2,39 +2,17 @@ BASEDIR="$HOME/.dotfiles"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# Add sbin for Composer
-export PATH=/usr/local/sbin:$PATH
-
-# Make dotfile binaries available
-export PATH="$BASEDIR/bin:$PATH"
-
-# Make bun binaries available
-export PATH="$HOME/.bun/bin:$PATH"
+# Configure Brew
+HOMEBREW_BUNDLE_CASK_SKIP="docker-desktop elgato-control-center google-chrome ghostty signal whatsapp 1password 1password-cli" # Skip self updating apps
+export HOMEBREW_BUNDLE_FILE=~/.dotfiles/Brewfile
+export HOMEBREW_NO_ENV_HINTS=1
 
 # PHP Composer configuration
 export COMPOSER_MEMORY_LIMIT=-1
 export COMPOSER_HOME=~/.composer
-export PATH=$COMPOSER_HOME/vendor/bin:$PATH
 
-# Make Go binaries available
-export PATH="`go env GOPATH`/bin:$PATH"
-
-# Configure Brew
-export HOMEBREW_BUNDLE_CASK_SKIP="docker-desktop elgato-control-center google-chrome ghostty signal whatsapp 1password 1password-cli" # Skip self updating apps
-export HOMEBREW_BUNDLE_FILE=~/.dotfiles/Brewfile
-export HOMEBREW_NO_ENV_HINTS=1
-export PATH="/opt/homebrew/sbin:/opt/homebrew/bin:$PATH"
-
-# Configure pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
-
-# Make Mistral Vibe binary available
-export PATH="$HOME/.local/bin:$PATH"
+# Load shared PATH modifications
+. $BASEDIR/path
 
 # Make 1Password CLI plugins available
 [ -f ~/.config/op/plugins.sh ] && source ~/.config/op/plugins.sh
@@ -77,7 +55,7 @@ export EDITOR='vim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-source $BASEDIR/aliases
+. $BASEDIR/aliases
 
 source $BASEDIR/fixup.zsh
 source $BASEDIR/gcm.zsh

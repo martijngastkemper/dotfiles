@@ -1,0 +1,30 @@
+# Shared PATH modifications for both bash and zsh
+
+# Make dotfile binaries available
+PATH="$HOME/.dotfiles/bin:$PATH"
+
+# Make Go binaries available
+PATH="$(go env GOPATH)/bin:$PATH"
+
+# Make bun binaries available
+PATH="$HOME/.bun/bin:$PATH"
+
+# Make Mistral Vibe binary available
+PATH="$HOME/.local/bin:$PATH"
+
+# Add sbin for Composer
+PATH="/usr/local/sbin:$PATH"
+
+# Configure Brew
+PATH="/opt/homebrew/sbin:/opt/homebrew/bin:$PATH"
+
+# Configure pnpm
+PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+
+# PHP Composer configuration
+COMPOSER_HOME=~/.composer
+PATH="$COMPOSER_HOME/vendor/bin:$PATH"
