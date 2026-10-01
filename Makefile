@@ -45,6 +45,10 @@ install_yarn: installed_curl
 
 OMARCHY := $(shell test -d /usr/share/omarchy && echo 1)
 
+.PHONY: install_git_delta
+install_git_delta:
+	$(if $(OMARCHY),omarchy pkg add git-delta,@echo "Not running on Omarchy. Skipping.")
+
 .PHONY: backup_bashrc
 backup_bashrc:
 	@if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then echo "Backing up ~/.bashrc..."; cp ~/.bashrc ~/.bashrc.backup; fi

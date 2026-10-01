@@ -69,7 +69,7 @@ public_port 3306
 git clone git@github.com:martijngastkemper/dotfiles.git ~/.dotfiles
 ```
 
-When git is not available, install brew (see [Step 2: Brew](#step-2-brew)).
+When git is not available, install brew (see [Step 2a: Dependencies for MacOS](#step-2a-dependencies-for-macos)).
 That will install git on macOS.
 
 When you get an authentication error from GitHub use the http URL. When the
@@ -88,7 +88,7 @@ cd ~/.dotfiles
 make symlinks
 ```
 
-### Step 2: Brew
+### Step 2a: Dependencies for MacOS
 
 Follow the installation instructions on [brew.sh](https://brew.sh).
 
@@ -100,6 +100,12 @@ brew bundle install
 
 Note: you can run this command from any folder, because the environment variable
 `HOMEBREW_BUNDLE_FILE` is set in the `~/.zshrc` file.
+
+### Step 2b: Dependencies for Omarchy
+
+```bash
+make install_git_delta
+```
 
 ### Step 3: Setup 1Password
 
