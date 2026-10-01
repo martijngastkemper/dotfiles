@@ -1,8 +1,8 @@
 #!/bin/sh
 
-STATE_FILE="${TMPDIR:-/tmp}/theme-switcher-state"
+STATE_FILE="${TMPDIR:-/tmp/}theme-switcher-state"
 
-if defaults read 'Apple Global Domain' AppleInterfaceStyle >/dev/null 2>&1; then
+if defaults read 'Apple Global Domain' 'AppleInterfaceStyle' >/dev/null 2>&1; then
   current=dark
 else
   current=light
