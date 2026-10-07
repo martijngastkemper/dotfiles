@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 tap 'anomalyco/tap', trusted: true # for OpenCode
 tap 'molovo/revolver', trusted: true # for zunit
 tap 'hashicorp/tap', trusted: true # for Terraform
