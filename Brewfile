@@ -60,6 +60,9 @@ brew "shellcheck"
 unless Dir.exist?("/Applications/Signal.app")
   cask "signal"
 end
+unless Dir.exist?("/Applications/Slack.app")
+  cask "slack"
+end
 brew "sqlite"
 unless Dir.exist?("/Applications/TimeScribe.app")
   cask "timescribe"
