@@ -62,7 +62,8 @@ cask 'whatsapp' unless Dir.exist?('/Applications/WhatsApp.app')
 brew 'zizmor'
 brew 'zsh'
 # Lint ZSH files
-# NOTE: not installed becuase Brew always installs @latest, but that version is broken because the repo doesn't have release tags.
+# NOTE: not installed because Brew always installs @latest, but that version is broken because the repo doesn't have
+# release tags.
 # go "github.com/z-shell/zsh-lint/cmd/zsh-lint"
 brew 'zunit-zsh/zunit/zunit'
 unless Dir.exist?('/Applications/1Password.app')
