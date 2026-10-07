@@ -72,7 +72,7 @@ brew "tmux"
 brew "universal-ctags"
 brew "vim"
 brew "wget"
-unless Dir.exist?("/Applications/WhatsApp.php")
+unless Dir.exist?("/Applications/WhatsApp.app")
   cask "whatsapp"
 end
 # Find security issues in GitHub Actions setups
