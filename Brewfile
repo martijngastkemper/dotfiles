@@ -56,6 +56,7 @@ brew "pyenv"
 unless Dir.exist?("/Applications/Rectangle.app")
   cask "rectangle"
 end
+brew "rubocop"
 brew "shellcheck"
 unless Dir.exist?("/Applications/Signal.app")
   cask "signal"
