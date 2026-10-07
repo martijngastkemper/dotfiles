@@ -1,89 +1,89 @@
-tap "anomalyco/tap", trusted: true # for OpenCode
-tap "molovo/revolver", trusted: true # for zunit
-tap "hashicorp/tap", trusted: true # for Terraform
-tap "ngrok/ngrok", trusted: true
-tap "zunit-zsh/zunit", trusted: true
-tap "shivammathur/php", trusted: true
-tap "terraform-linters/tap", trusted: true # for tflint
-brew "actionlint"
-brew "awscli"
-cask "domzilla-caffeine"
-go "github.com/checkmake/checkmake/cmd/checkmake"
-cask "claude-code"
-unless Dir.exist?("/Applications/Docker.app")
-  cask "docker-desktop"
+tap 'anomalyco/tap', trusted: true # for OpenCode
+tap 'molovo/revolver', trusted: true # for zunit
+tap 'hashicorp/tap', trusted: true # for Terraform
+tap 'ngrok/ngrok', trusted: true
+tap 'zunit-zsh/zunit', trusted: true
+tap 'shivammathur/php', trusted: true
+tap 'terraform-linters/tap', trusted: true # for tflint
+brew 'actionlint'
+brew 'awscli'
+cask 'domzilla-caffeine'
+go 'github.com/checkmake/checkmake/cmd/checkmake'
+cask 'claude-code'
+unless Dir.exist?('/Applications/Docker.app')
+  cask 'docker-desktop'
 end
-brew "editorconfig-checker"
-unless Dir.exist?("/Applications/Elgato Control Center.app")
-  cask "elgato-control-center"
+brew 'editorconfig-checker'
+unless Dir.exist?('/Applications/Elgato Control Center.app')
+  cask 'elgato-control-center'
 end
-cask "font-menlo-for-powerline"
-unless Dir.exist?("/Applications/Ghostty.app")
-  cask "ghostty"
+cask 'font-menlo-for-powerline'
+unless Dir.exist?('/Applications/Ghostty.app')
+  cask 'ghostty'
 end
-brew "git"
+brew 'git'
 # Syntax-highlighting pager for git and diff output
-brew "git-delta"
-brew "go"
-unless Dir.exist?("/Applications/Google Chrome.app")
-  cask "google-chrome"
+brew 'git-delta'
+brew 'go'
+unless Dir.exist?('/Applications/Google Chrome.app')
+  cask 'google-chrome'
 end
-brew "hashicorp/tap/terraform"
-brew "imagemagick"
-brew "inetutils"
-brew "jq"
-brew "markdownlint-cli2"
-brew "mkcert"
-brew "mistral-vibe"
-brew "mysql@8.4", restart_service: true, link: true
-cask "ngrok/ngrok/ngrok"
-cask "notion"
-brew "anomalyco/tap/opencode"
-brew "ollama"
-go "mvdan.cc/sh/v3/cmd/shfmt"
-brew "shivammathur/php/php@7.4"
-brew "shivammathur/php/php@8.0"
-brew "shivammathur/php/php@8.1"
-brew "shivammathur/php/php@8.2"
-brew "shivammathur/php/php@8.3"
-brew "shivammathur/php/php@8.4"
-brew "shivammathur/php/php@8.5"
-brew "shivammathur/php/php@8.6"
+brew 'hashicorp/tap/terraform'
+brew 'imagemagick'
+brew 'inetutils'
+brew 'jq'
+brew 'markdownlint-cli2'
+brew 'mkcert'
+brew 'mistral-vibe'
+brew 'mysql@8.4', restart_service: true, link: true
+cask 'ngrok/ngrok/ngrok'
+cask 'notion'
+brew 'anomalyco/tap/opencode'
+brew 'ollama'
+go 'mvdan.cc/sh/v3/cmd/shfmt'
+brew 'shivammathur/php/php@7.4'
+brew 'shivammathur/php/php@8.0'
+brew 'shivammathur/php/php@8.1'
+brew 'shivammathur/php/php@8.2'
+brew 'shivammathur/php/php@8.3'
+brew 'shivammathur/php/php@8.4'
+brew 'shivammathur/php/php@8.5'
+brew 'shivammathur/php/php@8.6'
 # Install after PHP to prevent installing the default PHP version.
-brew "composer"
-brew "pnpm"
-brew "pyenv"
-unless Dir.exist?("/Applications/Rectangle.app")
-  cask "rectangle"
+brew 'composer'
+brew 'pnpm'
+brew 'pyenv'
+unless Dir.exist?('/Applications/Rectangle.app')
+  cask 'rectangle'
 end
-brew "rubocop"
-brew "shellcheck"
-unless Dir.exist?("/Applications/Signal.app")
-  cask "signal"
+brew 'rubocop'
+brew 'shellcheck'
+unless Dir.exist?('/Applications/Signal.app')
+  cask 'signal'
 end
-unless Dir.exist?("/Applications/Slack.app")
-  cask "slack"
+unless Dir.exist?('/Applications/Slack.app')
+  cask 'slack'
 end
-brew "sqlite"
-unless Dir.exist?("/Applications/TimeScribe.app")
-  cask "timescribe"
+brew 'sqlite'
+unless Dir.exist?('/Applications/TimeScribe.app')
+  cask 'timescribe'
 end
-cask "terraform-linters/tap/tflint"
-brew "tmux"
-brew "universal-ctags"
-brew "vim"
-brew "wget"
-unless Dir.exist?("/Applications/WhatsApp.app")
-  cask "whatsapp"
+cask 'terraform-linters/tap/tflint'
+brew 'tmux'
+brew 'universal-ctags'
+brew 'vim'
+brew 'wget'
+unless Dir.exist?('/Applications/WhatsApp.app')
+  cask 'whatsapp'
 end
 # Find security issues in GitHub Actions setups
-brew "zizmor"
-brew "zsh"
+brew 'zizmor'
+brew 'zsh'
 # Lint ZSH files
 # NOTE: not installed becuase Brew always installs @latest, but that version is broken because the repo doesn't have release tags.
 # go "github.com/z-shell/zsh-lint/cmd/zsh-lint"
-brew "zunit-zsh/zunit/zunit"
-unless Dir.exist?("/Applications/1Password.app")
-  cask "1password"
-  cask "1password-cli"
+brew 'zunit-zsh/zunit/zunit'
+unless Dir.exist?('/Applications/1Password.app')
+  cask '1password'
+  cask '1password-cli'
 end
