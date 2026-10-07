@@ -10,24 +10,16 @@ brew 'awscli'
 cask 'domzilla-caffeine'
 go 'github.com/checkmake/checkmake/cmd/checkmake'
 cask 'claude-code'
-unless Dir.exist?('/Applications/Docker.app')
-  cask 'docker-desktop'
-end
+cask 'docker-desktop' unless Dir.exist?('/Applications/Docker.app')
 brew 'editorconfig-checker'
-unless Dir.exist?('/Applications/Elgato Control Center.app')
-  cask 'elgato-control-center'
-end
+cask 'elgato-control-center' unless Dir.exist?('/Applications/Elgato Control Center.app')
 cask 'font-menlo-for-powerline'
-unless Dir.exist?('/Applications/Ghostty.app')
-  cask 'ghostty'
-end
+cask 'ghostty' unless Dir.exist?('/Applications/Ghostty.app')
 brew 'git'
 # Syntax-highlighting pager for git and diff output
 brew 'git-delta'
 brew 'go'
-unless Dir.exist?('/Applications/Google Chrome.app')
-  cask 'google-chrome'
-end
+cask 'google-chrome' unless Dir.exist?('/Applications/Google Chrome.app')
 brew 'hashicorp/tap/terraform'
 brew 'imagemagick'
 brew 'inetutils'
@@ -53,29 +45,19 @@ brew 'shivammathur/php/php@8.6'
 brew 'composer'
 brew 'pnpm'
 brew 'pyenv'
-unless Dir.exist?('/Applications/Rectangle.app')
-  cask 'rectangle'
-end
+cask 'rectangle' unless Dir.exist?('/Applications/Rectangle.app')
 brew 'rubocop'
 brew 'shellcheck'
-unless Dir.exist?('/Applications/Signal.app')
-  cask 'signal'
-end
-unless Dir.exist?('/Applications/Slack.app')
-  cask 'slack'
-end
+cask 'signal' unless Dir.exist?('/Applications/Signal.app')
+cask 'slack' unless Dir.exist?('/Applications/Slack.app')
 brew 'sqlite'
-unless Dir.exist?('/Applications/TimeScribe.app')
-  cask 'timescribe'
-end
+cask 'timescribe' unless Dir.exist?('/Applications/TimeScribe.app')
 cask 'terraform-linters/tap/tflint'
 brew 'tmux'
 brew 'universal-ctags'
 brew 'vim'
 brew 'wget'
-unless Dir.exist?('/Applications/WhatsApp.app')
-  cask 'whatsapp'
-end
+cask 'whatsapp' unless Dir.exist?('/Applications/WhatsApp.app')
 # Find security issues in GitHub Actions setups
 brew 'zizmor'
 brew 'zsh'
