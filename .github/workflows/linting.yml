@@ -118,6 +118,21 @@ jobs:
       - run: make installed_plutil
       - run: plutil -- *.plist
 
+  rubocop:
+    # Lints Ruby files (Brewfile)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: make installed_ruby
+      - run: make installed_gem
+      - run: sudo gem install rubocop -v 1.91.0
+      - run: make installed_rubocop
+      - run: rubocop Brewfile
+
   shellcheck:
     # Lints shell scripts (bin/*, git_template/hooks/*, bash_aliases, *.sh)
     runs-on: ubuntu-latest
