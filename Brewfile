@@ -43,6 +43,7 @@ brew 'shivammathur/php/php@8.3'
 brew 'shivammathur/php/php@8.4'
 brew 'shivammathur/php/php@8.5'
 brew 'shivammathur/php/php@8.6'
+brew 'shivammathur/php/php@8.7'
 # Install after PHP to prevent installing the default PHP version.
 brew 'composer'
 brew 'pnpm'
