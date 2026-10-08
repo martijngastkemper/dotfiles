@@ -17,6 +17,7 @@ jobs:
           persist-credentials: false
       - run: make installed_brew
       - run: brew install actionlint
+      - run: make installed_actionlint
       - run: actionlint -color
 
   checkmake:
@@ -45,6 +46,7 @@ jobs:
           persist-credentials: false
       - run: make installed_brew
       - run: brew install editorconfig-checker
+      - run: make installed_editorconfig-checker
       - run: editorconfig-checker
 
   json:
