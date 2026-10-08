@@ -17,6 +17,7 @@ including non-interactive bash.
 - `php84` for PHP 8.4
 - `php85` for PHP 8.5
 - `php86` for PHP 8.6
+- `php87` for PHP 8.7
 
 When a `composer.json` file is present in the root of the repository you are
 working in, look for the PHP version in the `require` section (e.g. `"php":
