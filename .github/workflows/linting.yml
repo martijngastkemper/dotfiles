@@ -193,7 +193,7 @@ jobs:
         with:
           persist-credentials: false
       - run: make installed_go
-      - run: go install github.com/z-shell/zsh-lint/cmd/zsh-lint@33bce8041faa1395455562c5a558a063ccdcc441 # v1.2.0
+      - run: go install github.com/z-shell/zsh-lint/cmd/zsh-lint@999cb76cc65ef6af56c0ae65ab0f3622eb527944 # v1.3.0
       - name: "Install ZSH"
         run: |
           sudo apt-get update

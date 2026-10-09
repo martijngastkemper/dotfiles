@@ -23,3 +23,20 @@ are not sustainable.
 
 Do not add Ghostty config options that just match the default — omit them
 instead.
+
+## Version pinning
+
+Do not remove commit-pinned versions in workflow files (e.g.
+`action@<hash> # vX.Y.Z` or `go install ...@<hash> # vX.Y.Z`). When
+upgrading, replace the commit hash and update the version comment
+accordingly. Never switch from a commit hash to a floating tag like
+`@v1.3.0` or `@latest` — always pin to a specific commit with the version
+in a comment.
+
+## Linting
+
+After changing files, run the appropriate linters. See
+`.github/workflows/linting.yml` for the full list of available linters,
+which includes: actionlint, checkmake, editorconfig-checker, json,
+markdownlint, markdown-link-check, nvmrc, plutil, rubocop, shellcheck,
+shfmt, skills-lint, and zsh-lint.
