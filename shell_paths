@@ -29,5 +29,6 @@ case ":$PATH:" in
 esac
 
 # PHP Composer configuration
-COMPOSER_HOME=~/.composer
+export COMPOSER_HOME="$HOME/.config/composer"
+export COMPOSER_CACHE_DIR="$HOME/.cache/composer"
 PATH="$COMPOSER_HOME/vendor/bin:$PATH"

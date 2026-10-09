@@ -7,10 +7,6 @@ HOMEBREW_BUNDLE_CASK_SKIP="docker-desktop elgato-control-center google-chrome gh
 export HOMEBREW_BUNDLE_FILE=~/.dotfiles/Brewfile
 export HOMEBREW_NO_ENV_HINTS=1
 
-# PHP Composer configuration
-export COMPOSER_MEMORY_LIMIT=-1
-export COMPOSER_HOME=~/.composer
-
 # Load shared PATH modifications
 . $BASEDIR/shell_paths
 
