@@ -8,16 +8,16 @@ export HOMEBREW_BUNDLE_FILE=~/.dotfiles/Brewfile
 export HOMEBREW_NO_ENV_HINTS=1
 
 # Load shared PATH modifications
-. $BASEDIR/shell_paths
+. "$BASEDIR/shell_paths"
 
 # Make 1Password CLI plugins available
-[ -f ~/.config/op/plugins.sh ] && source ~/.config/op/plugins.sh
+[[ -f ~/.config/op/plugins.sh ]] && . ~/.config/op/plugins.sh
 
 # Hide username from statusline
-export DEFAULT_USER=`whoami`
+export DEFAULT_USER=$(whoami)
 
 # Activate Antigen - ZSH plugin manager
-source $BASEDIR/bin/antigen.zsh
+. "$BASEDIR/bin/antigen.zsh"
 
 # Start tmux when a session starts
 ZSH_TMUX_AUTOSTART=true
@@ -51,17 +51,17 @@ export EDITOR='vim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-. $BASEDIR/shell_aliases
+. "$BASEDIR/shell_aliases"
 
-source $BASEDIR/fixup.zsh
-source $BASEDIR/gcm.zsh
-source $BASEDIR/idea.zsh
+. "$BASEDIR/fixup.zsh"
+. "$BASEDIR/gcm.zsh"
+. "$BASEDIR/idea.zsh"
 
 export NVM_DIR="$HOME/.nvm"
 nvm() {
   unset -f nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  [[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
   nvm "$@"
 }
 
