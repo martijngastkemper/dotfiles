@@ -1,3 +1,5 @@
+# shellcheck source=/dev/null
+
 # Load shared aliases
 . "$HOME/.dotfiles/shell_aliases"
 
