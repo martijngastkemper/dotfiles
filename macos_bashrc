@@ -1,16 +1,11 @@
-#!/usr/bin/env sh
-# shellcheck source=/dev/null
+# Load shared aliases
+. "$HOME/.dotfiles/shell_aliases"
 
-BASEDIR="$HOME/.dotfiles"
+# Load shared PATH modifications
+. "$HOME/.dotfiles/shell_paths"
 
 export LC_ALL=en_US.utf8
 export EDITOR='vim'
-
-# Load shared aliases
-. $BASEDIR/shell_aliases
-
-# Load shared PATH modifications
-. $BASEDIR/shell_paths
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
