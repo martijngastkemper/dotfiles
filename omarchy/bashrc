@@ -1,3 +1,5 @@
+# shellcheck source=/dev/null
+
 # Omarchy environment (OMARCHY_PATH + PATH), needed even for non-interactive shells
 [[ -r /usr/share/omarchy/default/bash/env-bootstrap ]] && source /usr/share/omarchy/default/bash/env-bootstrap
 
@@ -10,7 +12,12 @@ source "$OMARCHY_PATH/default/bash/rc"
 
 # Add your own exports, aliases, and functions here.
 #
+
+# Allow typing directory names without cd
+shopt -s autocd
+
 # Make an alias for invoking commands you use constantly
 # alias p='python'
 
 . "$HOME/.dotfiles/shell_aliases"
+. "$HOME/.dotfiles/shell_paths"

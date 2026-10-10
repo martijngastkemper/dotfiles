@@ -39,6 +39,22 @@ Switch tmux and vim to dark mode.
 
 Switch tmux and vim to light mode.
 
+### `bin/opencode_sessions`
+
+List the 20 most recently updated [OpenCode](https://opencode.ai) sessions
+across all projects.
+
+<!-- markdownlint-disable MD013 -->
+```bash
+opencode_sessions
+# id                              title                           directory          updated
+# ses_eea45142affe5ov3DmjRiitLnO  Ruby linter for Brewfile        ~/.dotfiles        2026-10-10 04:07:18
+# ses_f05544351ffe1kKZWTJfonfhTF  Reading macOS logs via comm...  ~/.dotfiles        2026-10-02 03:32:36
+```
+<!-- markdownlint-enable MD013 -->
+
+Uses `opencode db` to query the global session database.
+
 ### `bin/public_port`
 
 When using Docker Compose, it's not clear which public ports services expose.
@@ -154,14 +170,6 @@ Brew will install Zsh. To activate it, execute:
 
 ```bash
 make configure_zsh
-```
-
-Also configure bash so that convenient settings are available when Zsh isn't
-available, when you have to use Bash, or when a non-interactive shell uses
-Bash:
-
-```bash
-make configure_bash
 ```
 
 ### Step 5: vim

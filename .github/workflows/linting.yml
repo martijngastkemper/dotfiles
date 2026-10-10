@@ -7,7 +7,7 @@ permissions: {}
 
 jobs:
   actionlint:
-    # Lints GitHub Actions workflow YAML files (.github/workflows/*.yml)
+    # Lints GitHub Actions workflow files
     runs-on: macos-latest
     permissions:
       contents: read
@@ -50,7 +50,7 @@ jobs:
       - run: editorconfig-checker
 
   json:
-    # Lints JSON and JSONC files (*.json, .*.json, *.jsonc, .*.jsonc)
+    # Lints JSON and JSONC files
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -64,7 +64,7 @@ jobs:
           find . \( -iname ".*.json" -or -iname "*.json" -or -iname ".*.jsonc" -or -iname "*.jsonc" \) -exec echo "{}" \; -exec sh -c jq . "$1" \;
 
   markdownlint:
-    # Lints Markdown files (*.md)
+    # Lints Markdown files
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -79,7 +79,7 @@ jobs:
         run: pnpm exec markdownlint-cli2 -- **.md
 
   markdown-link-check:
-    # Checks links in Markdown files (*.md)
+    # Checks links in Markdown files
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -109,7 +109,7 @@ jobs:
         run: pnpm exec nvmrc
 
   plutil:
-    # Lints macOS plist files (*.plist)
+    # Lints macOS plist files
     runs-on: macos-latest
     permissions:
       contents: read
@@ -121,7 +121,7 @@ jobs:
       - run: plutil -- *.plist
 
   rubocop:
-    # Lints Ruby files (Brewfile)
+    # Lints Ruby files
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -136,7 +136,7 @@ jobs:
       - run: rubocop Brewfile
 
   shellcheck:
-    # Lints shell scripts (bin/*, git_template/hooks/*, bash_aliases, *.sh)
+    # Lints shell scripts
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -145,10 +145,11 @@ jobs:
         with:
           persist-credentials: false
       - run: make installed_shellcheck
-      - run: shellcheck --severity=warning -- bin/* git_template/hooks/* bash_aliases shell_* *.sh
+      - run: shellcheck -- bin/* git_template/hooks/* shell_* *.sh
+      - run: shellcheck --shell=bash -- **/bashrc
 
   shfmt:
-    # Formats shell scripts (bin/*, git_template/hooks/*, bash_aliases, *.sh)
+    # Formats shell scripts
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -160,10 +161,10 @@ jobs:
       - run: go install mvdan.cc/sh/v3/cmd/shfmt@2f3f5e36d9b0f8f14c998d50aa20a28832205ae8 # v3.13.1
       - name: "Run shfmt"
         run: |
-          "$(go env GOPATH)/bin/shfmt" --diff -- bin/* git_template/hooks/* bash_aliases *.sh
+          "$(go env GOPATH)/bin/shfmt" --diff -- bin/* git_template/hooks/* shell_* *.sh **/bashrc
 
   skills-lint:
-    # Lints skill definitions under agents/skills and .agents/skills
+    # Lints skill definitions
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -184,7 +185,7 @@ jobs:
         run: pnpm exec skills-lint --quiet
 
   zsh-lint:
-    # Lints zsh scripts (*.zsh)
+    # Lints zsh scripts
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -202,4 +203,4 @@ jobs:
         run: zsh --no-rcs --no-exec -- ./*.zsh
       - name: "Run semantic analysis"
         run: |
-          "$(go env GOPATH)/bin/zsh-lint" ./*.zsh
+          "$(go env GOPATH)/bin/zsh-lint" ./*.zsh ./zshrc

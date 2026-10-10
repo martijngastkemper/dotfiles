@@ -1,6 +1,10 @@
 #!/usr/bin/env sh
 
 # Shared aliases for both bash and zsh
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias artisan="php artisan"
 alias cp="cp -i"
 alias ga="git add"
@@ -21,6 +25,8 @@ alias glgp="git log --stat --patch"
 alias glog="git log --oneline --decorate --graph"
 alias gp="git push"
 alias gpf="git push --force-with-lease --force-if-includes"
+alias grba="git rebase --abort"
+alias grbc="git rebase --continue"
 alias grh="git reset"
 alias grhh="git reset --hard"
 alias gst="git status"
