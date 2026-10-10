@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# List the 20 most recently updated OpenCode sessions across all projects
+
+if ! command -v opencode >/dev/null 2>&1; then
+  echo "opencode not found in PATH" >&2
+  exit 1
+fi
+
+opencode db "
+SELECT
+  id,
+  CASE
+    WHEN length(title) > 30 THEN substr(title, 1, 27) || '...'
+    ELSE title
+  END AS title,
+  replace(directory, '$HOME', '~') AS directory,
+  datetime(time_updated / 1000, 'unixepoch') AS updated
+FROM session
+ORDER BY time_updated DESC
+LIMIT 20;
+" | column -t -s "$(printf '\t')"
