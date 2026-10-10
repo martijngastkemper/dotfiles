@@ -53,9 +53,14 @@ install_git_delta:
 backup_bashrc:
 	@if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then echo "Backing up ~/.bashrc..."; cp ~/.bashrc ~/.bashrc.backup; fi
 
+.PHONY: backup_hypr_input
+backup_hypr_input:
+	@if [ -f ~/.config/hypr/input.lua ] && [ ! -L ~/.config/hypr/input.lua ]; then echo "Backing up ~/.config/hypr/input.lua..."; cp ~/.config/hypr/input.lua ~/.config/hypr/input.lua.backup; fi
+
 .PHONY: configure_omarchy
-configure_omarchy: $(if $(OMARCHY),backup_bashrc)
+configure_omarchy: $(if $(OMARCHY),backup_bashrc backup_hypr_input)
 	$(if $(OMARCHY),ln -nsf $(CURDIR)/omarchy/bashrc ~/.bashrc,@echo "Not running on Omarchy. Skipping.")
+	$(if $(OMARCHY),ln -nsf $(CURDIR)/omarchy/hypr/input.lua ~/.config/hypr/input.lua,@echo "Not running on Omarchy. Skipping.")
 
 .PHONY: symlinks
 symlinks: symlink_dotfiles symlink_opencode symlink_repo_root symlink_terraform
