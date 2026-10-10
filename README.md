@@ -156,14 +156,6 @@ Brew will install Zsh. To activate it, execute:
 make configure_zsh
 ```
 
-Also configure bash so that convenient settings are available when Zsh isn't
-available, when you have to use Bash, or when a non-interactive shell uses
-Bash:
-
-```bash
-make configure_bash
-```
-
 ### Step 5: vim
 
 ```bash

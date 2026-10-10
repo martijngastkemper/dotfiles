@@ -57,10 +57,6 @@ backup_bashrc:
 configure_omarchy: $(if $(OMARCHY),backup_bashrc)
 	$(if $(OMARCHY),ln -nsf $(CURDIR)/omarchy/bashrc ~/.bashrc,@echo "Not running on Omarchy. Skipping.")
 
-.PHONY: configure_bash
-configure_bash: installed_bash configure_omarchy
-	ln -nsf $(CURDIR)/bash_aliases ~/.bash_aliases
-
 .PHONY: symlinks
 symlinks: symlink_dotfiles symlink_opencode symlink_repo_root symlink_terraform
 
@@ -146,7 +142,8 @@ configure_ghostty:
 	ln -nsf $(CURDIR)/ghostty/themes ~/.config/ghostty/themes
 
 .PHONY: configure_macos
-configure_macos: configure_theme_switcher configure_opencode_update_agent
+configure_macos: backup_bashrc configure_theme_switcher configure_opencode_update_agent
+	ln -nsf $(CURDIR)/macos_bashrc ~/.bashrc
 	@sh macos_config.sh;\
 	exit $$?
 

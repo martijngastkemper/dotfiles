@@ -145,7 +145,7 @@ jobs:
         with:
           persist-credentials: false
       - run: make installed_shellcheck
-      - run: shellcheck --severity=warning -- bin/* git_template/hooks/* bash_aliases shell_* *.sh
+      - run: shellcheck --severity=warning -- bin/* git_template/hooks/* shell_* *.sh
 
   shfmt:
     # Formats shell scripts (bin/*, git_template/hooks/*, bash_aliases, *.sh)
@@ -160,7 +160,7 @@ jobs:
       - run: go install mvdan.cc/sh/v3/cmd/shfmt@2f3f5e36d9b0f8f14c998d50aa20a28832205ae8 # v3.13.1
       - name: "Run shfmt"
         run: |
-          "$(go env GOPATH)/bin/shfmt" --diff -- bin/* git_template/hooks/* bash_aliases *.sh
+          "$(go env GOPATH)/bin/shfmt" --diff -- bin/* git_template/hooks/* *.sh
 
   skills-lint:
     # Lints skill definitions under agents/skills and .agents/skills
