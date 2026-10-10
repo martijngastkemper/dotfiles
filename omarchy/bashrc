@@ -18,3 +18,4 @@ shopt -s autocd
 # alias p='python'
 
 . "$HOME/.dotfiles/shell_aliases"
+. "$HOME/.dotfiles/shell_paths"
