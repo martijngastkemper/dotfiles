@@ -1,6 +1,10 @@
 #!/usr/bin/env sh
 
 # Shared aliases for both bash and zsh
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias artisan="php artisan"
 alias cp="cp -i"
 alias ga="git add"
