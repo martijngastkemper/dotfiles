@@ -1,7 +1,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 -- List current monitors and supported resolutions with: hyprctl monitors all
 
-local omarchy_gdk_scale = 4
+local omarchy_gdk_scale = 1
 local omarchy_monitor_scale = 1.5
 
 hl.env("GDK_SCALE", tostring(omarchy_gdk_scale))

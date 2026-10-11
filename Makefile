@@ -61,11 +61,16 @@ backup_hypr_input:
 backup_hypr_monitors:
 	@if [ -f ~/.config/hypr/monitors.lua ] && [ ! -L ~/.config/hypr/monitors.lua ]; then echo "Backing up ~/.config/hypr/monitors.lua..."; cp ~/.config/hypr/monitors.lua ~/.config/hypr/monitors.lua.backup; fi
 
+.PHONY: backup_hypr_bindings
+backup_hypr_bindings:
+	@if [ -f ~/.config/hypr/bindings.lua ] && [ ! -L ~/.config/hypr/bindings.lua ]; then echo "Backing up ~/.config/hypr/bindings.lua..."; cp ~/.config/hypr/bindings.lua ~/.config/hypr/bindings.lua.backup; fi
+
 .PHONY: configure_omarchy
-configure_omarchy: $(if $(OMARCHY),backup_bashrc backup_hypr_input backup_hypr_monitors)
+configure_omarchy: $(if $(OMARCHY),backup_bashrc backup_hypr_input backup_hypr_monitors backup_hypr_bindings)
 	$(if $(OMARCHY),ln -nsf $(CURDIR)/omarchy/bashrc ~/.bashrc,@echo "Not running on Omarchy. Skipping.")
 	$(if $(OMARCHY),ln -nsf $(CURDIR)/omarchy/hypr/input.lua ~/.config/hypr/input.lua,@echo "Not running on Omarchy. Skipping.")
 	$(if $(OMARCHY),ln -nsf $(CURDIR)/omarchy/hypr/monitors.lua ~/.config/hypr/monitors.lua,@echo "Not running on Omarchy. Skipping.")
+	$(if $(OMARCHY),ln -nsf $(CURDIR)/omarchy/hypr/bindings.lua ~/.config/hypr/bindings.lua,@echo "Not running on Omarchy. Skipping.")
 
 .PHONY: symlinks
 symlinks: symlink_dotfiles symlink_opencode symlink_repo_root symlink_terraform
