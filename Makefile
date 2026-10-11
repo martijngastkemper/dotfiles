@@ -57,10 +57,15 @@ backup_bashrc:
 backup_hypr_input:
 	@if [ -f ~/.config/hypr/input.lua ] && [ ! -L ~/.config/hypr/input.lua ]; then echo "Backing up ~/.config/hypr/input.lua..."; cp ~/.config/hypr/input.lua ~/.config/hypr/input.lua.backup; fi
 
+.PHONY: backup_hypr_monitors
+backup_hypr_monitors:
+	@if [ -f ~/.config/hypr/monitors.lua ] && [ ! -L ~/.config/hypr/monitors.lua ]; then echo "Backing up ~/.config/hypr/monitors.lua..."; cp ~/.config/hypr/monitors.lua ~/.config/hypr/monitors.lua.backup; fi
+
 .PHONY: configure_omarchy
-configure_omarchy: $(if $(OMARCHY),backup_bashrc backup_hypr_input)
+configure_omarchy: $(if $(OMARCHY),backup_bashrc backup_hypr_input backup_hypr_monitors)
 	$(if $(OMARCHY),ln -nsf $(CURDIR)/omarchy/bashrc ~/.bashrc,@echo "Not running on Omarchy. Skipping.")
 	$(if $(OMARCHY),ln -nsf $(CURDIR)/omarchy/hypr/input.lua ~/.config/hypr/input.lua,@echo "Not running on Omarchy. Skipping.")
+	$(if $(OMARCHY),ln -nsf $(CURDIR)/omarchy/hypr/monitors.lua ~/.config/hypr/monitors.lua,@echo "Not running on Omarchy. Skipping.")
 
 .PHONY: symlinks
 symlinks: symlink_dotfiles symlink_opencode symlink_repo_root symlink_terraform
