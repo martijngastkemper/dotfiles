@@ -6,9 +6,10 @@ services:
     volumes:
       - ./ollama-data:/root/.ollama
     restart: always
-#    environment:
-#      - OLLAMA_NUM_PARALLEL=1
-#      - OLLAMA_MAX_LOADED_MODELS=1
+    environment:
+      - OLLAMA_NUM_PARALLEL=1
+      - OLLAMA_MAX_LOADED_MODELS=1
+      - OLLAMA_NUM_THREADS=8  # Matches your 8 logical CPU threads (4 cores + HT)
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
