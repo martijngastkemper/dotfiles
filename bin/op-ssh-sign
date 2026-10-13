@@ -1,0 +1,12 @@
+#!/bin/sh
+
+for candidate in \
+  /opt/1Password/op-ssh-sign \
+  /Applications/1Password.app/Contents/MacOS/op-ssh-sign; do
+  if [ -x "$candidate" ]; then
+    exec "$candidate" "$@"
+  fi
+done
+
+echo "op-ssh-sign: 1Password SSH signing helper not found" >&2
+exit 1
