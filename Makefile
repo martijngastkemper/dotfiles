@@ -85,9 +85,9 @@ symlink_dotfiles:
 .PHONY: symlink_opencode
 symlink_opencode:
 	mkdir -p ~/.config/opencode
-	ln -nsf $(CURDIR)/agents/command ~/.config/opencode/command
+	ln -nsf $(CURDIR)/agents/cli.json ~/.config/opencode/cli.json
+	ln -nsf $(CURDIR)/agents/commands ~/.config/opencode/commands
 	ln -nsf $(CURDIR)/agents/opencode.jsonc ~/.config/opencode/opencode.jsonc
-	ln -nsf $(CURDIR)/agents/tui.jsonc ~/.config/opencode/tui.jsonc
 
 .PHONY: symlink_repo_root
 symlink_repo_root:

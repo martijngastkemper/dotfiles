@@ -32,7 +32,7 @@ brew 'mistral-vibe'
 brew 'mysql@8.4', restart_service: true, link: true
 cask 'ngrok/ngrok/ngrok'
 cask 'notion' unless Dir.exist?('/Applications/Notion.app')
-brew 'anomalyco/tap/opencode'
+brew 'anomalyco/tap/opencode-v2'
 brew 'ollama'
 go 'mvdan.cc/sh/v3/cmd/shfmt'
 brew 'shivammathur/php/php@7.4'
