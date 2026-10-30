@@ -76,7 +76,12 @@ jobs:
         with:
           cache: true
       - name: Run markdownlint-cli2
-        run: pnpm exec markdownlint-cli2 -- **.md
+        run: |
+          # Lint all Markdown files recursively, excluding vendor/build directories
+          # (in GLOBIGNORE, * also matches across /, so these exclude the whole directory trees)
+          shopt -s globstar nullglob
+          GLOBIGNORE="*.git/*:*node_modules/*:*vendor/*:*vim/bundle/*:*dist/*"
+          pnpm exec markdownlint-cli2 -- **/*.md
 
   markdown-link-check:
     # Checks links in Markdown files
@@ -91,7 +96,12 @@ jobs:
         with:
           cache: true
       - name: Run markdown-link-check
-        run: pnpm exec markdown-link-check -- *.md
+        run: |
+          # Check links in all Markdown files recursively, excluding vendor/build directories
+          # (in GLOBIGNORE, * also matches across /, so these exclude the whole directory trees)
+          shopt -s globstar nullglob
+          GLOBIGNORE="*.git/*:*node_modules/*:*vendor/*:*vim/bundle/*:*dist/*"
+          pnpm exec markdown-link-check -- **/*.md
 
   nvmrc:
     # Lints the .nvmrc file
