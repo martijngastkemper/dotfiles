@@ -1,7 +1,7 @@
 ---
 description: Spell checker
 agent: explore
-subtask: false
+subagent: false
 ---
 
 # Spellchecker agent

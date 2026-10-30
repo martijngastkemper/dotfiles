@@ -1,17 +1,16 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "permission": {
-    "bash": {
-      "*": "allow",
-      "op *": "deny",
-      "rm *": "ask"
-    }
-  },
-  "provider": {
+  "permissions": [
+    { "action": "shell", "resource": "*", "effect": "allow" },
+    { "action": "shell", "resource": "op *", "effect": "deny" },
+    { "action": "shell", "resource": "rm *", "effect": "ask" },
+    { "action": "external_directory", "resource": "*", "effect": "ask" }
+  ],
+  "providers": {
     "ollama": {
-      "npm": "@ai-sdk/openai-compatible",
       "name": "Ollama",
-      "options": {
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
         "baseURL": "http://localhost:11434/v1"
       },
       "models": {
@@ -22,11 +21,16 @@
     }
   },
   "mcp": {
-    "1Password": {
-      "type": "local",
-      "command": [
-        "1password-mcp"
-      ]
+    "servers": {
+      "1Password": {
+        "type": "local",
+        "command": [
+          "1password-mcp"
+        ]
+      }
     }
+  },
+  "experimental": {
+    "todo": true
   }
 }
