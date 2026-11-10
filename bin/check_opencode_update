@@ -13,7 +13,7 @@ EOD
   )
   if echo "$user_choice" | grep -q "Install"; then
     # Try to upgrade opencode
-    if ! brew upgrade opencode; then
+    if ! brew upgrade opencode-v2; then
       osascript -e 'display notification "OpenCode update failed. Try manually by calling \"brew upgrade opencode\"." with title "OpenCode Update"'
       exit 1
     fi
