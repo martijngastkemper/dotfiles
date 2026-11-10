@@ -47,6 +47,7 @@ brew 'shivammathur/php/php@8.7'
 # Install after PHP to prevent installing the default PHP version.
 brew 'composer'
 brew 'pnpm'
+cask 'proton-drive'
 brew 'pyenv'
 cask 'rectangle' unless Dir.exist?('/Applications/Rectangle.app')
 brew 'rubocop'
@@ -69,5 +70,5 @@ go 'github.com/z-shell/zsh-lint/cmd/zsh-lint'
 brew 'zunit-zsh/zunit/zunit'
 unless Dir.exist?('/Applications/1Password.app')
   cask '1password'
-  cask '1password-cli'
 end
+cask '1password-cli'
