@@ -12,6 +12,7 @@ brew 'awscli'
 cask 'domzilla-caffeine'
 go 'github.com/checkmake/checkmake/cmd/checkmake'
 cask 'claude-code'
+cask 'codex'
 cask 'docker-desktop' unless Dir.exist?('/Applications/Docker.app')
 brew 'editorconfig-checker'
 cask 'elgato-control-center' unless Dir.exist?('/Applications/Elgato Control Center.app')
@@ -48,6 +49,7 @@ brew 'shivammathur/php/php@8.7'
 brew 'composer'
 brew 'pnpm'
 cask 'proton-drive'
+cask 'protonvpn'
 brew 'pyenv'
 cask 'rectangle' unless Dir.exist?('/Applications/Rectangle.app')
 brew 'rubocop'
