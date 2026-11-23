@@ -69,7 +69,5 @@ brew 'zsh'
 # Lint ZSH files
 go 'github.com/z-shell/zsh-lint/cmd/zsh-lint'
 brew 'zunit-zsh/zunit/zunit'
-unless Dir.exist?('/Applications/1Password.app')
-  cask '1password'
-end
+cask '1password' unless Dir.exist?('/Applications/1Password.app')
 cask '1password-cli'
