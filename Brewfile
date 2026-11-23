@@ -55,7 +55,6 @@ cask 'rectangle' unless Dir.exist?('/Applications/Rectangle.app')
 brew 'rubocop'
 brew 'shellcheck'
 cask 'signal' unless Dir.exist?('/Applications/Signal.app')
-cask 'slack' unless Dir.exist?('/Applications/Slack.app')
 brew 'sqlite'
 cask 'timescribe' unless Dir.exist?('/Applications/TimeScribe.app')
 cask 'terraform-linters/tap/tflint'
